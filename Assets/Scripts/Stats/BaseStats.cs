@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using RPG.Core;
 
 namespace RPG.Stats
 {
-    public class BaseStats : MonoBehaviour
+    public class BaseStats : MonoBehaviour, IPredicateEvaluator
     {
         [SerializeField, Range(1, 99)] int startingLevel = 1;
         [SerializeField] Progression progression = null;
@@ -142,6 +143,18 @@ namespace RPG.Stats
         private float GetBaseStat(Stat stat, int level)
         {
             return progression.FindProgressionWithStat(stat).Calculate(level);
+        }
+
+        public bool? Evaluate(EPredicate predicate, List<string> parameters)
+        {
+            if(predicate == EPredicate.HasLevel)
+            {
+                if(int.TryParse(parameters[0], out int testLevel))
+                {
+                    return currentLevel >= testLevel;
+                }
+            }
+            return null;
         }
     }
 }

@@ -257,11 +257,11 @@ namespace InventorySystem.Inventories
             }
         }
 
-        public bool? Evaluate(string predicate, List<string> parameters)
+        public bool? Evaluate(EPredicate predicate, List<string> parameters)
         {
             switch(predicate)
             {
-                case "HasInventoryItem":
+                case EPredicate.HasItem:
                 {
                     return HasItem(InventoryItem.GetFromID(parameters[0]));
                 }

@@ -66,22 +66,21 @@ namespace RPG.Quests
             }
         }
 
-        public bool? Evaluate(string predicate, List<string> parameters)
+        public bool? Evaluate(EPredicate predicate, List<string> parameters)
         {
-            if(predicate != "HasQuest"){return null;}
             switch(predicate)
             {
-                case "HasQuest":
+                case EPredicate.HasQuest:
                 {
                     return HasQuest(Quest.GetByName(parameters[0]));
                 }
-                case "DoesNotHaveQuest":
-                {
-                    return !HasQuest(Quest.GetByName(parameters[0]));
-                }
-                case "CompletedQuest":
+                case EPredicate.CompletedQuest:
                 {
                     return GetQuestStatus(Quest.GetByName(parameters[0])).IsCompleted();
+                }
+                case EPredicate.CompletedObjective:
+                {
+                    return GetQuestStatus(Quest.GetByName(parameters[0])).GetCompleteObjectives().Contains(parameters[0]);
                 }
             }
             
