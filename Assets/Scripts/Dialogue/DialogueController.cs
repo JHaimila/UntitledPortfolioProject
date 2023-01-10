@@ -14,10 +14,17 @@ namespace RPG.Dialogue
         public event Action UpdatedNode;
         private bool isChoosing = false;
         private Speaker _currentSpeaker;
+        private Speaker _aiSpeaker;
+        private Speaker _playerSpeaker;
         
         public void StartDialogue(Dialogue newDialogue, AISpeaker speaker)
         {
-            _currentSpeaker = speaker;
+            _aiSpeaker = speaker;
+            if(_playerSpeaker == null)
+            {
+                _playerSpeaker = GameObject.FindGameObjectWithTag("Player").GetComponent<Speaker>();
+            }
+            _currentSpeaker = _aiSpeaker;
             currentDialogue = newDialogue;
             currentNode = currentDialogue.GetRootNode();
             TriggerEnterAction();
@@ -38,7 +45,7 @@ namespace RPG.Dialogue
             int numPlayerResponses = FilterOnCondition(currentDialogue.GetPlayerChildren(currentNode)).Count();
             if(numPlayerResponses > 0)
             {
-                isChoosing = true;
+                SetIsChoosing(true);
                 TriggerExitAction();
                 UpdatedNode?.Invoke();
                 return;
@@ -54,7 +61,7 @@ namespace RPG.Dialogue
         {
             currentNode = choice;
             TriggerEnterAction();
-            isChoosing = false;
+            SetIsChoosing(false);
             Next();
         }
         public bool HasNext()
@@ -72,6 +79,22 @@ namespace RPG.Dialogue
         public bool IsChoosing()
         {
             return isChoosing;
+        }
+        private void SetIsChoosing(bool state)
+        {
+            isChoosing = state;
+            ChangeSpeaker();
+        }
+        private void ChangeSpeaker()
+        {
+            if(isChoosing)
+            {
+                _currentSpeaker = _playerSpeaker;
+            }
+            else
+            {
+                _currentSpeaker = _aiSpeaker;
+            }
         }
         public IEnumerable<DialogueNode> GetChoices()
         {
