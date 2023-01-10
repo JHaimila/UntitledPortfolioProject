@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4804934790336361878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: b8b7040b-2edd-4680-a2b0-3d883861f99f
+  m_EditorClassIdentifier: 
+  text: '[Unwritten Dialogue]'
+  children:
+  - 3db480ab-2a9a-463d-a41d-b57fd7ff56f1
+  nodeRect:
+    serializedVersion: 2
+    x: 842
+    y: 97
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+--- !u!114 &-2146911823884865506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 3db480ab-2a9a-463d-a41d-b57fd7ff56f1
+  m_EditorClassIdentifier: 
+  text: '[Unwritten Dialogue]'
+  children: []
+  nodeRect:
+    serializedVersion: 2
+    x: 1084
+    y: 112
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f72b4f58e46da4c97dd8bc0a002cb5, type: 3}
+  m_Name: BestDialogue
+  m_EditorClassIdentifier: 
+  <nodes>k__BackingField:
+  - {fileID: 2970855599210535711}
+  - {fileID: 7585242278063641920}
+  - {fileID: -4804934790336361878}
+  - {fileID: -2146911823884865506}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &2970855599210535711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 7d408890-2464-484a-a88c-83a017161235
+  m_EditorClassIdentifier: 
+  text: '[Unwritten Dialogue]'
+  children:
+  - fe80ca6e-1438-47ca-955a-852d6eda7e24
+  nodeRect:
+    serializedVersion: 2
+    x: 323
+    y: 109
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+--- !u!114 &7585242278063641920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: fe80ca6e-1438-47ca-955a-852d6eda7e24
+  m_EditorClassIdentifier: 
+  text: '[Unwritten Dialogue]'
+  children:
+  - b8b7040b-2edd-4680-a2b0-3d883861f99f
+  nodeRect:
+    serializedVersion: 2
+    x: 579
+    y: 90
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1

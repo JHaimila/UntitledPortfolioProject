@@ -1,0 +1,89 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.AI;
+using RPG.Control.PlayerController;
+
+namespace RPG.SceneManagement
+{
+    public class Portal : MonoBehaviour
+    {
+        enum DestinationIdentifier
+        {
+            A, B, C, D, E
+        }
+
+        [SerializeField] private int sceneToLoad = -1;
+        [SerializeField] private Transform spawnPoint;
+        [SerializeField] private DestinationIdentifier destination;
+
+        [SerializeField] private float fadeInTime = 2;
+        [SerializeField] private float fadeOutTime = 1;
+        [SerializeField] private float fadeWaitTime = .5f;
+
+        private void OnTriggerEnter(Collider other) 
+        {
+            if(other.tag.Equals("Player"))
+            {
+                StartCoroutine(Transition());
+            }
+        }
+
+        private IEnumerator Transition()
+        {
+            if(sceneToLoad < 0)
+            {
+                yield break;
+            }
+
+            DontDestroyOnLoad(gameObject);
+            
+            Fader fader = FindObjectOfType<Fader>();
+            SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
+            GameObject.FindWithTag("Player").GetComponent<PlayerStateMachine>().FreezePlayer();
+
+            fader.FadeOut(fadeOutTime);
+            
+            //Save Current Level
+            
+            savingWrapper.Save();
+
+            yield return SceneManager.LoadSceneAsync(sceneToLoad);
+            GameObject.FindWithTag("Player").GetComponent<PlayerStateMachine>().FreezePlayer();
+
+            //Load Current Level
+            savingWrapper.Load();
+
+            Portal otherPortal = GetOtherPortal();
+            UpdatePlayer(otherPortal);
+            
+            savingWrapper.Save();
+
+
+            yield return new WaitForSeconds(fadeWaitTime);
+            fader.FadeIn(fadeInTime);
+            
+            GameObject.FindWithTag("Player").GetComponent<PlayerStateMachine>().UnFreezePlayer();
+            Destroy(gameObject);
+        }
+
+        private void UpdatePlayer(Portal otherPortal)
+        {
+            GameObject Player = GameObject.FindWithTag("Player");
+            Player.transform.position = otherPortal.spawnPoint.position;
+            Player.GetComponent<NavMeshAgent>().Warp(otherPortal.spawnPoint.position);
+            Player.transform.rotation = otherPortal.spawnPoint.rotation;
+        }
+
+        private Portal GetOtherPortal()
+        {
+            foreach(Portal portal in FindObjectsOfType<Portal>())
+            {
+                if(portal == this) {continue;}
+                if(portal.destination != this.destination){continue;}
+                return portal;
+            }
+            return null;
+        }
+    }
+}

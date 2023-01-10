@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb958add1c07ca41adcc248ca03755b, type: 3}
+  m_Name: Sword
+  m_EditorClassIdentifier: 
+  itemID: dfc41d06-d90f-4993-87c7-c70252d8e5cc
+  displayName: Sword
+  description: 'It be a sword '
+  icon: {fileID: 21300000, guid: 7fd3cda14282bb7429b8eeb6c121e5bb, type: 3}
+  pickup: {fileID: 8450779169784231210, guid: 536c10535cb05b349bfddae47f8f4e70, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
+  equippedPrefab: {fileID: 6577048835114804932, guid: 67727c7aaf2c9fc42a748e45ad2c091b,
+    type: 3}
+  <Range>k__BackingField: 2
+  <Damage>k__BackingField: 25
+  <PercentageBonus>k__BackingField: 10
+  <isRightHand>k__BackingField: 1
+  <Projectile>k__BackingField: {fileID: 0}
+  <AnimationString>k__BackingField: Melee2
