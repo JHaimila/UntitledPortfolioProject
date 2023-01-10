@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 691962337716115006}
   - component: {fileID: 5434102241625657370}
   - component: {fileID: 5550183590130540918}
-  - component: {fileID: 3899160970613488336}
   - component: {fileID: 4308310759068783544}
   - component: {fileID: 320454903019054860}
   - component: {fileID: 320454903019054861}
@@ -23,10 +22,12 @@ GameObject:
   - component: {fileID: -1480338800568467368}
   - component: {fileID: 5432161106019065044}
   - component: {fileID: 1615107894919670479}
+  - component: {fileID: 2817972019935039290}
   - component: {fileID: 2672925357273237204}
   - component: {fileID: 5663760393760059674}
   - component: {fileID: 7711344256499856765}
   - component: {fileID: 1498545468575663263}
+  - component: {fileID: 6139357376391338078}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -108,21 +109,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3899160970613488336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320454903019054863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1709d6e0d42bc32498688d4a95d30c70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speakerName: Justin
-  speakerIcon: {fileID: 21300000, guid: 05c7c959c51d80744a7b42df19945506, type: 3}
-  _testDialogue: {fileID: 0}
 --- !u!195 &4308310759068783544
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -322,6 +308,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropRadius: 1
+--- !u!114 &2817972019935039290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320454903019054863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238d6aa6772efff4d852a69cd97aa3ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2672925357273237204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +370,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statuses: []
+--- !u!114 &6139357376391338078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320454903019054863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e104fe085d37eb643af021e0550e1d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakerName: Justin
+  speakerIcon: {fileID: 21300000, guid: f2adfe1a7adfdac4f968512484b4b931, type: 3}
 --- !u!1 &1579981007264330057
 GameObject:
   m_ObjectHideFlags: 0

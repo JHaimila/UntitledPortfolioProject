@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using RPG.Control.PlayerController;
@@ -8,15 +7,14 @@ using RPG.Core;
 
 namespace RPG.Dialogue
 {
-    public class PlayerSpeaker : Speaker
+    public class DialogueController : MonoBehaviour
     {
-        [SerializeField] private Dialogue _testDialogue;
         private Dialogue currentDialogue;
         private DialogueNode currentNode;
         public event Action UpdatedNode;
         private bool isChoosing = false;
-        private AISpeaker _currentSpeaker;
-
+        private Speaker _currentSpeaker;
+        
         public void StartDialogue(Dialogue newDialogue, AISpeaker speaker)
         {
             _currentSpeaker = speaker;
@@ -120,27 +118,12 @@ namespace RPG.Dialogue
 
         internal string GetSpeakerName()
         {
-            if(isChoosing)
-            {
-                return speakerName;
-            }
-            else
-            {
-                return _currentSpeaker.GetName();
-            }
+            return _currentSpeaker.GetName();
         }
         internal Sprite GetSpeakerIcon()
         {
-            if(isChoosing)
-            {
-                return speakerIcon;
-            }
-            else
-            {
-                return _currentSpeaker.GetIcon();
-            }
+            return _currentSpeaker.GetIcon();
         }
-
         private IEnumerable<DialogueNode> FilterOnCondition(IEnumerable<DialogueNode> inputNode)
         {
             foreach(var node in inputNode)

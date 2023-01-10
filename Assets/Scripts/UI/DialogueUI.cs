@@ -9,7 +9,7 @@ namespace RPG.UI
 {
     public class DialogueUI : MonoBehaviour
     {
-        PlayerSpeaker playerSpeaker;
+        private DialogueController _dialogueController;
         [SerializeField] private TextMeshProUGUI speakerName;
         [SerializeField] private TextMeshProUGUI convoLine;
         [SerializeField] private TextMeshProUGUI aiLine;
@@ -23,36 +23,36 @@ namespace RPG.UI
 
         private void Awake() 
         {
-            playerSpeaker = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSpeaker>();
+            _dialogueController = GameObject.FindGameObjectWithTag("Player").GetComponent<DialogueController>();
             nextButton.onClick.RemoveAllListeners();
             nextButton.onClick.AddListener(Next);
         }
         private void Start()
         {
             UpdateUI();
-            playerSpeaker.UpdatedNode += UpdateUI;
+            _dialogueController.UpdatedNode += UpdateUI;
         }
         private void OnDestroy() {
-            playerSpeaker.UpdatedNode -= UpdateUI;
+            _dialogueController.UpdatedNode -= UpdateUI;
         }
 
         private void Next()
         {
-            playerSpeaker.Next();
+            _dialogueController.Next();
             UpdateUI();
         }
         private void UpdateUI()
         {
-            if(!playerSpeaker.IsActive()){return;}
+            if(!_dialogueController.IsActive()){return;}
             if(!gameObject.activeSelf){gameObject.SetActive(true);}
 
-            speakerName.text = playerSpeaker.GetSpeakerName();
-            _icon.sprite = playerSpeaker.GetSpeakerIcon();
-            aiTextParent.SetActive(!playerSpeaker.IsChoosing());
-            optionParent.gameObject.SetActive(playerSpeaker.IsChoosing());
-            if(playerSpeaker.IsChoosing())
+            speakerName.text = _dialogueController.GetSpeakerName();
+            _icon.sprite = _dialogueController.GetSpeakerIcon();
+            aiTextParent.SetActive(!_dialogueController.IsChoosing());
+            optionParent.gameObject.SetActive(_dialogueController.IsChoosing());
+            if(_dialogueController.IsChoosing())
             {
-                convoLine.text = playerSpeaker.GetText();
+                convoLine.text = _dialogueController.GetText();
                 if(optionContainer.childCount > 0)
                 {
                     for(int i =0; i<optionContainer.childCount; i++)
@@ -60,12 +60,12 @@ namespace RPG.UI
                         Destroy(optionContainer.GetChild(i).gameObject);
                     }
                 }
-                foreach(DialogueNode choice in playerSpeaker.GetChoices())
+                foreach(DialogueNode choice in _dialogueController.GetChoices())
                 {
                     GameObject newOption = Instantiate(optionPrefab, optionContainer);
                     newOption.GetComponent<Button>().onClick.AddListener(delegate 
                     {
-                        playerSpeaker.SelectChoice(choice);
+                        _dialogueController.SelectChoice(choice);
                         UpdateUI();
                     });
                     newOption.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = choice.GetText();
@@ -73,9 +73,9 @@ namespace RPG.UI
             }
             else
             {
-                aiLine.text = playerSpeaker.GetText();
+                aiLine.text = _dialogueController.GetText();
             }
-            if(!playerSpeaker.HasNext())
+            if(!_dialogueController.HasNext())
             {
                 nextButton.gameObject.SetActive(false);
             }
@@ -91,8 +91,8 @@ namespace RPG.UI
 
         public void Close()
         {
-            playerSpeaker.EndDialogue();
-            playerSpeaker.UnfreezePlayer();
+            _dialogueController.EndDialogue();
+            _dialogueController.UnfreezePlayer();
             gameObject.SetActive(false);
         }
     }

@@ -23,7 +23,10 @@ namespace RPG.UI.Quests
             _questList.OnUpdate += UpdateList;
         }
         private void OnDestroy() {
-            _questList.OnUpdate -= UpdateList;
+            if(_questList != null)
+            {
+                _questList.OnUpdate -= UpdateList;
+            }
         }
         private Quest _currentQuest;
         public void ToggleUI()

@@ -9,9 +9,9 @@ namespace RPG.Dialogue
     {
         [SerializeField] private float _interactRange;
         [SerializeField] private Dialogue _dialouge;
-        private PlayerSpeaker _playerSpeaker;
+        private DialogueController _dialogueController;
         private void OnEnable() {
-            _playerSpeaker = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSpeaker>();
+            _dialogueController = GameObject.FindGameObjectWithTag("Player").GetComponent<DialogueController>();
         }
         public float GetInteractRange()
         {
@@ -20,20 +20,11 @@ namespace RPG.Dialogue
 
         public void OnInteract()
         {
-            if(_playerSpeaker == null)
+            if(_dialogueController == null)
             {
-                _playerSpeaker = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSpeaker>();
+                _dialogueController = GameObject.FindGameObjectWithTag("Player").GetComponent<DialogueController>();
             }
-            _playerSpeaker.StartDialogue(_dialouge, this);
-        }
-
-        public string GetName()
-        {
-            return speakerName;
-        }
-        public Sprite GetIcon()
-        {
-            return speakerIcon;
+            _dialogueController.StartDialogue(_dialouge, this);
         }
     }
 }
