@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Find the Sword
   m_EditorClassIdentifier: 
   objectives:
-  - _reference: 
-    _description: 
+  - _reference: a
+    _description: Use the portal by the cabin
+    _optional: 0
+    _hasTrigger: 0
+  - _reference: b
+    _description: Use the portal by the cabin
     _optional: 0
     _hasTrigger: 0
   rewards: []

@@ -12,6 +12,8 @@ namespace RPG.Quests
         [SerializeField] List<QuestStatus> statuses;
         public event Action OnUpdate;
 
+        private QuestStatus _trackedQuest;
+
         public List<QuestStatus> GetStatuses()
         {
             return statuses;
@@ -54,6 +56,21 @@ namespace RPG.Quests
             return state;
         }
 
+        public void TrackQuest(Quest trackQuest)
+        {
+            foreach(var status in statuses)
+            {
+                if(status.GetQuest() == trackQuest)
+                {
+                    if(_trackedQuest != null)
+                    {
+                        _trackedQuest.TrackQuest(false);
+                    }
+                    _trackedQuest = status;
+                    _trackedQuest.TrackQuest(true);
+                }
+            }
+        }
         public void RestoreState(object state)
         {
             List<object> stateList = state as List<object>;

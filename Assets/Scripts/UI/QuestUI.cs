@@ -11,7 +11,7 @@ namespace RPG.UI.Quests
         [SerializeField] private GameObject _questPanel;
         [SerializeField] private Transform _questListParent, _objListParent, _rewardListParent;
         [SerializeField] private GameObject _questItemPrefab, _objItemPrefab;
-        [SerializeField] private Button _rewardTab, _objTab;
+        [SerializeField] private Button _rewardTab, _objTab, _trackBtn;
         [SerializeField] private TextMeshProUGUI _title;
         private bool _isObjective = true;
         private Button _currentBtn;
@@ -117,6 +117,8 @@ namespace RPG.UI.Quests
         private void PopulateQuestInfo(Quest quest)
         {
             _currentQuest = quest;
+            _trackBtn.onClick.RemoveAllListeners();
+            _trackBtn.onClick.AddListener(delegate {_questList.TrackQuest(_currentQuest);});
             PopulateQuestInfo();
         }
         private void CloseUI()

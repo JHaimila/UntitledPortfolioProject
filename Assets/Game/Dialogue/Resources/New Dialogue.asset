@@ -96,7 +96,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 1237
-    y: 437
+    y: 427
     width: 200
     height: 150
   isPlayerSpeaking: 1
@@ -224,8 +224,8 @@ MonoBehaviour:
   children: []
   nodeRect:
     serializedVersion: 2
-    x: 1487
-    y: 654
+    x: 1493
+    y: 618
     width: 200
     height: 150
   isPlayerSpeaking: 0
@@ -279,8 +279,8 @@ MonoBehaviour:
   - ae862289-e442-41ce-9ac6-01cca2e4e4f0
   nodeRect:
     serializedVersion: 2
-    x: 991
-    y: 458
+    x: 999
+    y: 443
     width: 200
     height: 150
   isPlayerSpeaking: 0
@@ -331,8 +331,8 @@ MonoBehaviour:
   - c3ac4dc5-0ebe-4478-9ce0-5023092ddee3
   nodeRect:
     serializedVersion: 2
-    x: 1231
-    y: 596
+    x: 1238
+    y: 572
     width: 200
     height: 150
   isPlayerSpeaking: 1

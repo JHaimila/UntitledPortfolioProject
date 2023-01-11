@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: First Quest
   m_EditorClassIdentifier: 
   objectives:
-  - reference: a
-    description: Talk to the farmer
-  - reference: b
-    description: Talk to the farmer again
-  - reference: c
-    description: Do I really need to say it
+  - _reference: a
+    _description: Talk to the Farmer
+    _optional: 0
+    _hasTrigger: 0
+  - _reference: b
+    _description: Talk to him again
+    _optional: 0
+    _hasTrigger: 0
+  - _reference: c
+    _description: And again
+    _optional: 0
+    _hasTrigger: 0
   rewards:
   - number: 1
     item: {fileID: 11400000, guid: c74c2f08b15e67044b52e67addcd38bf, type: 2}

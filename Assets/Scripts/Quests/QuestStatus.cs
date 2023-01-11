@@ -31,6 +31,7 @@ namespace RPG.Quests
         [SerializeField] private Quest _quest;
         [SerializeField] private List<ObjectiveStatus> _objectiveStatuses;
         [SerializeField] private List<string> completedObjs;
+        [SerializeField] private bool _isActive;
 
         public Quest GetQuest()
         {
@@ -74,6 +75,14 @@ namespace RPG.Quests
             state.questName = _quest.name;
             state.completedObjs = completedObjs;
             return state;
+        }
+        public void TrackQuest(bool status)
+        {
+            _isActive = status;
+        }
+        public bool IsActive()
+        {
+            return _isActive;
         }
 
         private void PopulateObjectives()
