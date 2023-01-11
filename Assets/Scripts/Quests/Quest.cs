@@ -17,12 +17,7 @@ namespace RPG.Quests
             public int number;
             public InventoryItem item;
         }
-        [System.Serializable]
-        public class Objective
-        {
-            public string reference;
-            public string description;
-        }
+        
 
         public string GetTitle()
         {
@@ -41,7 +36,7 @@ namespace RPG.Quests
         {
             foreach(var objective in objectives)
             {
-                if(objective.reference == objectiveRef)
+                if(objective.GetReference() == objectiveRef)
                 {
                     return true;
                 }
