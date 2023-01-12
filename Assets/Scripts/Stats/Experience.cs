@@ -1,5 +1,6 @@
 using Saving.Saving;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 namespace RPG.Stats
@@ -11,10 +12,13 @@ namespace RPG.Stats
         // public delegate void ExperienceGainedDelegate();
         public event Action OnExperienceGainedEvent;
         
+
+        private BaseStats baseStats;
+        
         private void Awake() {
             if(experiencePoints < 0)
             {
-                BaseStats baseStats = GetComponent<BaseStats>();
+                baseStats = GetComponent<BaseStats>();
                 experiencePoints = baseStats.GetStat(Stat.ExperienceToLevelUp, baseStats.currentLevel -1);
             }
         }
@@ -37,5 +41,14 @@ namespace RPG.Stats
         {
             return experiencePoints;
         }
+        public float GetPointToNextLevel()
+        {
+            return baseStats.GetStat(Stat.ExperienceToLevelUp);
+        }
+        public float GetPointToLastLevel()
+        {
+            return baseStats.GetStat(Stat.ExperienceToLevelUp, baseStats.currentLevel -1);
+        }
+        
     }
 }

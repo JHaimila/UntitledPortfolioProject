@@ -98,6 +98,10 @@ namespace RPG.Attributes
         {
             health = baseStats.GetStat(Stat.Health);
         }
+        public float GetMaxHealth()
+        {
+            return baseStats.GetStat(Stat.Health);
+        }
 
         private void AwardExperience(GameObject instigator)
         {
