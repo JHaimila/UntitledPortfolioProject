@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System;
 using RPG.Core;
+using UnityEngine.EventSystems;
 
 namespace RPG.Control.PlayerController
 {
@@ -19,6 +20,8 @@ namespace RPG.Control.PlayerController
         [SerializeField] float maxNavMeshProjectionDistance = 1f;
         [SerializeField] float maxNavPathLength = 25f;
 
+        [SerializeField] private EventSystem _eventSystem;
+
         private CursorType currentCursor = CursorType.None;
 
         enum CursorType
@@ -26,7 +29,8 @@ namespace RPG.Control.PlayerController
             None, 
             Movement,
             Combat,
-            Interact
+            Interact,
+            UI
         }
         [System.Serializable]
         struct CursorMapping
@@ -95,6 +99,10 @@ namespace RPG.Control.PlayerController
                         SetCursor(CursorType.Combat);
                     }
                 }
+                else if(MouseOverUILayerObject.IsPointerOverUIObject(InputReader.pointerPosition))
+                {
+                    SetCursor(CursorType.UI);
+                }
                 else if(hit.transform.TryGetComponent<IInteractable>(out IInteractable interactable))
                 {
                     SetCursor(CursorType.Interact);
@@ -120,6 +128,12 @@ namespace RPG.Control.PlayerController
         private void HandleClick()
         {
             if(uiOpen){return;}
+
+            if(MouseOverUILayerObject.IsPointerOverUIObject(InputReader.pointerPosition))
+            {
+                return;
+            }
+
             Ray ray = mainCamera.ScreenPointToRay(InputReader.pointerPosition);
 
             bool hasHit = Physics.Raycast(ray, out hit);

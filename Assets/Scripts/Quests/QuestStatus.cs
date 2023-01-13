@@ -31,13 +31,16 @@ namespace RPG.Quests
         [SerializeField] private Quest _quest;
         [SerializeField] private List<ObjectiveStatus> _objectiveStatuses;
         [SerializeField] private List<string> completedObjs;
-        [SerializeField] private bool _isActive;
+        [SerializeField] private bool _isTracked;
 
         public Quest GetQuest()
         {
             return _quest;
         }
-        
+        public List<ObjectiveStatus> GetObjectivesStatuses()
+        {
+            return _objectiveStatuses;
+        }
         public List<string> GetCompleteObjectives()
         {
             return completedObjs;
@@ -58,6 +61,9 @@ namespace RPG.Quests
         public void CompleteObjective(string objective)
         {
             if(!_quest.HasObjective(objective)){return;}
+            if(GetObjectiveStatus(objective).IsCompleted()){return;}
+            
+            if(IsCompleted()){return;}
 
             foreach(var t_objective in _objectiveStatuses)
             {
@@ -78,13 +84,31 @@ namespace RPG.Quests
         }
         public void TrackQuest(bool status)
         {
-            _isActive = status;
+            _isTracked = status;
         }
         public bool IsActive()
         {
-            return _isActive;
+            return _isTracked;
         }
-
+        public void ResetObjectives()
+        {
+            foreach(var objective in _objectiveStatuses)
+            {
+                objective.SetCompleted(false);
+            }
+            completedObjs.Clear();
+        }
+        private ObjectiveStatus GetObjectiveStatus(string objective)
+        {
+            foreach(var status in _objectiveStatuses)
+            {
+                if(status.GetObjective().GetReference() == objective)
+                {
+                    return status;
+                }
+            }
+            return null;
+        }
         private void PopulateObjectives()
         {
             _objectiveStatuses = new List<ObjectiveStatus>();
@@ -93,5 +117,6 @@ namespace RPG.Quests
                 _objectiveStatuses.Add(new ObjectiveStatus(objective, false, false));
             }
         }
+        
     }
 }

@@ -20,13 +20,25 @@ namespace RPG.Quests
         }
         public void AddQuest(Quest quest)
         {
+            if(HasQuest(quest) && !quest.IsRepeatable()){return;}
+            if(HasQuest(quest) && quest.IsRepeatable())
+            {
+                QuestStatus status = GetQuestStatus(quest);
+                status.ResetObjectives();
+                return;
+            }
+
             statuses.Add(new QuestStatus(quest));
             OnUpdate?.Invoke();
         }
 
         public void CompleteObjective(Quest quest, string objective)
         {
+            if(!HasQuest(quest)){return;}
             QuestStatus status = GetQuestStatus(quest);
+
+            if(status.IsCompleted()){return;}
+            Debug.Log("COMPLETE OBJ: "+objective);
             status.CompleteObjective(objective);
             OnUpdate?.Invoke();
         }
@@ -34,7 +46,7 @@ namespace RPG.Quests
         {
             return GetQuestStatus(quest) != null;
         }
-        private QuestStatus GetQuestStatus(Quest quest)
+        public QuestStatus GetQuestStatus(Quest quest)
         {
             foreach(QuestStatus status in statuses)
             {

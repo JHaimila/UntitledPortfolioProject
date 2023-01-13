@@ -147,7 +147,7 @@ MonoBehaviour:
   - b6cc2137-f4a9-411f-b50c-f670e33d9c92
   nodeRect:
     serializedVersion: 2
-    x: 262
+    x: 261
     y: 326
     width: 200
     height: 150
@@ -155,7 +155,12 @@ MonoBehaviour:
   EnterActions: 
   ExitActions: 
   condition:
-    and: []
+    and:
+    - or:
+      - predicate: 6
+        parameters:
+        - c4dac422-1c33-43a8-9912-becedc8c4457
+        negate: 0
 --- !u!114 &-5215358252438461492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,15 +178,20 @@ MonoBehaviour:
   - 5ed018e3-f288-46fa-9a0d-ee029acdc3b9
   nodeRect:
     serializedVersion: 2
-    x: 269
-    y: 482
+    x: 260
+    y: 478
     width: 200
     height: 250
   isPlayerSpeaking: 1
   EnterActions: 
   ExitActions: GiveQuest
   condition:
-    and: []
+    and:
+    - or:
+      - predicate: 1
+        parameters:
+        - First Quest
+        negate: 1
 --- !u!114 &-1889431842445006487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +209,7 @@ MonoBehaviour:
   - 5ed018e3-f288-46fa-9a0d-ee029acdc3b9
   nodeRect:
     serializedVersion: 2
-    x: 267
+    x: 268
     y: 735
     width: 200
     height: 250
@@ -207,7 +217,17 @@ MonoBehaviour:
   EnterActions: 
   ExitActions: CompleteQuest
   condition:
-    and: []
+    and:
+    - or:
+      - predicate: 1
+        parameters:
+        - First Quest
+        negate: 0
+    - or:
+      - predicate: 2
+        parameters:
+        - First Quest
+        negate: 1
 --- !u!114 &-3469072355524526
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,6 +19,11 @@ namespace RPG.UI
             title.text = status.GetQuest().GetTitle();
             progress.text = status.GetCompletedCount()+"/"+status.GetQuest().GetObjectives().Count;
 
+            if(status.IsCompleted())
+            {
+                title.fontStyle = FontStyles.Strikethrough;
+            }
+
         }
     }
 }

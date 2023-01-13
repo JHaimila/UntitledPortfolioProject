@@ -10,6 +10,7 @@ namespace RPG.Quests
     {
         [SerializeField] private List<Objective> objectives = new List<Objective>();
         [SerializeField] private List<Reward>  rewards = new List<Reward>();
+        [SerializeField] private bool repeatable = false;
 
         [System.Serializable]
         public class Reward
@@ -30,6 +31,10 @@ namespace RPG.Quests
         public List<Reward> GetRewards()
         {
             return rewards;
+        }
+        public bool IsRepeatable()
+        {
+            return repeatable;
         }
 
         public bool HasObjective(string objectiveRef)

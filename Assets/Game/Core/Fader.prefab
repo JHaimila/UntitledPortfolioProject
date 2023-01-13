@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 806770692440992311}
   - component: {fileID: 806770692440992304}
   - component: {fileID: 806770692440992305}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fader
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -72,18 +72,15 @@ namespace RPG.UI.Quests
             if(_currentQuest == null){return;}
             if(_isObjective)
             {
-                foreach(var objective in _currentQuest.GetObjectives())
+                QuestStatus status  = _questList.GetQuestStatus(_currentQuest);
+                foreach(var objective in status.GetObjectivesStatuses())
                 {
+                    Debug.Log(objective.GetObjective().GetDescription()+": "+objective.IsCompleted());
                     GameObject newItem = Instantiate(_objItemPrefab, _objListParent);
-                    newItem.GetComponent<TextMeshProUGUI>().text = objective.GetDescription();
-                    foreach(var status in _questList.GetStatuses())
+                    newItem.GetComponent<TextMeshProUGUI>().text = objective.GetObjective().GetDescription();
+                    if(objective.IsCompleted())
                     {
-                        if(status.GetQuest() != _currentQuest){continue;}
-                        if(status.GetCompletedCount() == 0){continue;}
-                        if(status.GetCompleteObjectives().Contains(objective.GetReference()))
-                        {
-                            newItem.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-                        }
+                        newItem.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
                     }
                 }
             }
