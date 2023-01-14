@@ -37,7 +37,14 @@ namespace RPG.Dialogue
         {
             return condition.Check(evaluators);
         }
-
+        public string GetEnterActions()
+        {
+            return EnterActions;
+        }
+        public string GetExitActions()
+        {
+            return ExitActions;
+        }
 #if UNITY_EDITOR
         public void SetPosition(Vector2 newPosition)
         {
@@ -72,14 +79,7 @@ namespace RPG.Dialogue
             children.Remove(childID);
             EditorUtility.SetDirty(this);
         }
-        public string GetEnterActions()
-        {
-            return EnterActions;
-        }
-        public string GetExitActions()
-        {
-            return ExitActions;
-        }
+        
 
         
 #endif

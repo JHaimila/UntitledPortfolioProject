@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 namespace RPG.Control
 {
@@ -15,8 +14,8 @@ namespace RPG.Control
 
         private GameObject target;
 
-        public event Action SeesTargetEvent;
-        public event Action LostTargetEvent;
+        public event System.Action SeesTargetEvent;
+        public event System.Action LostTargetEvent;
 
         private List<GameObject> _objects = new List<GameObject>();
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace RPG.Control
 {
-    public class Area : MonoBehaviour
+    public class StateChecker : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

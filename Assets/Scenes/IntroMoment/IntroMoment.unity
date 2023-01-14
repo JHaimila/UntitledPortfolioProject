@@ -204,7 +204,7 @@ PrefabInstance:
         type: 3}
       propertyPath: <defaultWeapon>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: 162566aae36965c4e82efb1fb5297c1a,
+      objectReference: {fileID: 11400000, guid: 12d530b6a6527194f959589060c3aeca,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65c167bd2baad3c4aa66056ccae1cb72, type: 3}
@@ -2224,11 +2224,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1541703529171128450, guid: 948caeaa10423414c88d4f26ca1fdc35,
-        type: 3}
-      propertyPath: speakerName
-      value: Farmer
-      objectReference: {fileID: 0}
     - target: {fileID: 2497112133130690756, guid: 948caeaa10423414c88d4f26ca1fdc35,
         type: 3}
       propertyPath: m_RootOrder

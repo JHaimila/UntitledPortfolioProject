@@ -6,7 +6,10 @@ using UnityEngine;
 namespace RPG.Dialogue
 {
     [CreateAssetMenu(fileName ="New Dialogue", menuName ="Dialogue")]
-    public class Dialogue : ScriptableObject, ISerializationCallbackReceiver
+    public class Dialogue : ScriptableObject
+    #if UNITY_EDITOR
+    , ISerializationCallbackReceiver
+    #endif
     {
         [field: SerializeField] public List<DialogueNode> nodes{get; private set;} = new List<DialogueNode>();
         [SerializeField] Vector2 newNodeOffset = new Vector2(250, 0);
@@ -38,9 +41,8 @@ namespace RPG.Dialogue
         {
             CreateLookupTable();
         }
-#if UNITY_EDITOR
-            
 
+#if UNITY_EDITOR
         public void CreateNode(DialogueNode parentNode)
         {
             DialogueNode newNode = MakeNode(parentNode);
@@ -50,8 +52,35 @@ namespace RPG.Dialogue
             AddNode(newNode);
         }
 
-        
-
+        public void RemoveNode(DialogueNode deleteNode)
+        {
+            nodes.Remove(deleteNode);
+            foreach(var node in GetAllNodes())
+            {
+                node.RemoveChild(deleteNode.name);
+            }
+            CreateLookupTable();
+            Undo.DestroyObjectImmediate(deleteNode);
+            Undo.RecordObject(this, "Removed Dialogue Node");
+        }
+        public void OnBeforeSerialize()
+        {
+            if(!string.IsNullOrEmpty(AssetDatabase.GetAssetPath(this)))
+            {
+                if(nodes.Count == 0)
+                {
+                    DialogueNode newNode = MakeNode(null);
+                    AddNode(newNode);
+                }
+                foreach(DialogueNode node in GetAllNodes())
+                {
+                    if(string.IsNullOrEmpty(AssetDatabase.GetAssetPath(node)))
+                    {
+                        AssetDatabase.AddObjectToAsset(node, this);
+                    }
+                }
+            }
+        }
         private DialogueNode MakeNode(DialogueNode parentNode)
         {
             DialogueNode newNode = ScriptableObject.CreateInstance<DialogueNode>();
@@ -73,19 +102,13 @@ namespace RPG.Dialogue
             nodes.Add(newNode);
             CreateLookupTable();
         }
-
-        public void RemoveNode(DialogueNode deleteNode)
-        {
-            nodes.Remove(deleteNode);
-            foreach(var node in GetAllNodes())
-            {
-                node.RemoveChild(deleteNode.name);
-            }
-            CreateLookupTable();
-            Undo.DestroyObjectImmediate(deleteNode);
-            Undo.RecordObject(this, "Removed Dialogue Node");
-        }
+        public void OnAfterDeserialize(){}
 #endif
+        
+        
+        
+        
+
         private void CreateLookupTable()
         {
             _nodeLookup.Clear();
@@ -94,28 +117,6 @@ namespace RPG.Dialogue
                 _nodeLookup.Add(node.name, node);
             }
         }
-
-        public void OnBeforeSerialize()
-        {
-            if(!string.IsNullOrEmpty(AssetDatabase.GetAssetPath(this)))
-            {
-                if(nodes.Count == 0)
-                {
-                    DialogueNode newNode = MakeNode(null);
-                    AddNode(newNode);
-                }
-                foreach(DialogueNode node in GetAllNodes())
-                {
-                    if(string.IsNullOrEmpty(AssetDatabase.GetAssetPath(node)))
-                    {
-                        AssetDatabase.AddObjectToAsset(node, this);
-                    }
-                }
-            }
-        }
-
-        public void OnAfterDeserialize(){}
-
         public IEnumerable<DialogueNode> GetPlayerChildren(DialogueNode currentNode)
         {
             foreach(DialogueNode node in GetAllChildren(currentNode))
