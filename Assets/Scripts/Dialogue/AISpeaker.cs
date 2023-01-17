@@ -10,8 +10,10 @@ namespace RPG.Dialogue
         [SerializeField] private float _interactRange;
         [SerializeField] private Dialogue _dialouge;
         private DialogueController _dialogueController;
-        private void OnEnable() {
+        private void OnEnable() 
+        {
             _dialogueController = GameObject.FindGameObjectWithTag("Player").GetComponent<DialogueController>();
+            _dialouge.CreateLookupTable();
         }
         public float GetInteractRange()
         {

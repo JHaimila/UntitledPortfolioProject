@@ -45,43 +45,40 @@ namespace RPG.Dialogue
         {
             return ExitActions;
         }
-#if UNITY_EDITOR
+// #if UNITY_EDITOR
         public void SetPosition(Vector2 newPosition)
         {
-            Undo.RecordObject(this, "Changed Node Position");
+            // Undo.RecordObject(this, "Changed Node Position");
             nodeRect.position = newPosition;
-            EditorUtility.SetDirty(this);
+            // EditorUtility.SetDirty(this);
         }
         public void SetText(string newText)
         {
             if(newText != text)
             {
-                Undo.RecordObject(this, "Changed Node Text");
+                // Undo.RecordObject(this, "Changed Node Text");
                 text = newText;
-                EditorUtility.SetDirty(this);
+                // EditorUtility.SetDirty(this);
             }
         }
         public void SetPlayerSpeaking(bool value)
         {
-            Undo.RecordObject(this, "Changed is player speaking");
+            // Undo.RecordObject(this, "Changed is player speaking");
             isPlayerSpeaking = value;
-            EditorUtility.SetDirty(this);
+            // EditorUtility.SetDirty(this);
         }
         public void AddChild(string childID)
         {
-            Undo.RecordObject(this, "Add dialogue link");
+            // Undo.RecordObject(this, "Add dialogue link");
             children.Add(childID);
-            EditorUtility.SetDirty(this);
+            // EditorUtility.SetDirty(this);
         }
         public void RemoveChild(string childID)
         {
-            Undo.RecordObject(this, "Add dialogue link");
+            // Undo.RecordObject(this, "Add dialogue link");
             children.Remove(childID);
-            EditorUtility.SetDirty(this);
+            // EditorUtility.SetDirty(this);
         }
-        
-
-        
-#endif
+// #endif
     }
 }

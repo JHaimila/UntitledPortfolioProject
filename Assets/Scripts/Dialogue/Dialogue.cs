@@ -1,21 +1,22 @@
 using System;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace RPG.Dialogue
 {
     [CreateAssetMenu(fileName ="New Dialogue", menuName ="Dialogue")]
     public class Dialogue : ScriptableObject
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     , ISerializationCallbackReceiver
-    #endif
+#endif
     {
         [field: SerializeField] public List<DialogueNode> nodes{get; private set;} = new List<DialogueNode>();
         [SerializeField] Vector2 newNodeOffset = new Vector2(250, 0);
 
         private Dictionary<string,DialogueNode> _nodeLookup = new Dictionary<string, DialogueNode>();
-        
         
         public IEnumerable<DialogueNode> GetAllChildren(DialogueNode parentNode)
         {
@@ -42,12 +43,12 @@ namespace RPG.Dialogue
             CreateLookupTable();
         }
 
-#if UNITY_EDITOR
+
         public void CreateNode(DialogueNode parentNode)
         {
             DialogueNode newNode = MakeNode(parentNode);
-            Undo.RegisterCreatedObjectUndo(newNode, "Created Dialogue Node");
-            Undo.RecordObject(this, "Added Dialogue Node");
+            // Undo.RegisterCreatedObjectUndo(newNode, "Created Dialogue Node");
+            // Undo.RecordObject(this, "Added Dialogue Node");
 
             AddNode(newNode);
         }
@@ -60,9 +61,10 @@ namespace RPG.Dialogue
                 node.RemoveChild(deleteNode.name);
             }
             CreateLookupTable();
-            Undo.DestroyObjectImmediate(deleteNode);
-            Undo.RecordObject(this, "Removed Dialogue Node");
+            // Undo.DestroyObjectImmediate(deleteNode);
+            // Undo.RecordObject(this, "Removed Dialogue Node");
         }
+#if UNITY_EDITOR
         public void OnBeforeSerialize()
         {
             if(!string.IsNullOrEmpty(AssetDatabase.GetAssetPath(this)))
@@ -81,6 +83,7 @@ namespace RPG.Dialogue
                 }
             }
         }
+#endif
         private DialogueNode MakeNode(DialogueNode parentNode)
         {
             DialogueNode newNode = ScriptableObject.CreateInstance<DialogueNode>();
@@ -103,13 +106,13 @@ namespace RPG.Dialogue
             CreateLookupTable();
         }
         public void OnAfterDeserialize(){}
-#endif
+
         
         
         
         
 
-        private void CreateLookupTable()
+        public void CreateLookupTable()
         {
             _nodeLookup.Clear();
             foreach(var node in nodes)
