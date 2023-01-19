@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace RPG.Control
 {
-    public class StateActionMap
+    public interface IChangeBehaviour
     {
-        
+        UnityEngine.Events.UnityAction<RPG.Control.Action> GetEvent();
     }
 }

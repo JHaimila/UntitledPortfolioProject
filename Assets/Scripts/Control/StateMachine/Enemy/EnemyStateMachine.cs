@@ -3,6 +3,7 @@ using UnityEngine.AI;
 using Saving.Saving;
 using RPG.Combat;
 using RPG.Attributes;
+using System.Collections.Generic;
 
 namespace RPG.Control.EnemyController
 {
@@ -27,11 +28,13 @@ namespace RPG.Control.EnemyController
 
         [field:SerializeField] public GameObject Target {get; private set;}
         [field:SerializeField] public PatrolPath PatrolPath {get; private set;} = null;
-        [field:SerializeField] public bool Aggressive {get; private set;} = false;
+        [field:SerializeField] public StateChecker StateChecker {get; private set;}
+        [field:SerializeField] public BehaviourState DefaultBehaviour {get; private set;}
 
         // [field:SerializeField] public Weapon weapon {get; private set;} = null;
         // [field:SerializeField] public Transform handTransform {get; private set;} = null;
         [field:SerializeField] public WeaponHandler WeaponHandler {get; private set;} = null;
+        [field:SerializeField] public List<StateBehaviourMap> BehaviourMaps {get; private set;} = new List<StateBehaviourMap>();
 
         private int guarPointIndex = 0;
         [SerializeField] private float aggroRadius = 8f;
@@ -41,29 +44,25 @@ namespace RPG.Control.EnemyController
         {
             Health.DeathEvent += HandleDeath;
             Health.ReviveEvent += HandleRevive;
-            Health.HitEvent += HandleHit;
+            Health.HitEvent += StateChecker.Check;
+            StateChecker.OnBehaviourChange += ChangeState;
             Sight.SeesTargetEvent += HandleSeesPlayer;
         }
         private void Start() {
             Target = GameObject.FindGameObjectWithTag("Player");
             Sight.SetTarget(Target);
+            StateChecker.SetCurrentBehaviour(DefaultBehaviour);
             if(Health.GetHealth() > 0)
             {
-                if(PatrolPath != null)
-                {
-                    SetPatrolling();
-                }
-                else
-                {
-                    SwitchState(new EnemyIdlingState(this));
-                }
+                ChangeState();
             }
         }
         private void OnDisable() 
         {
             Health.DeathEvent -= HandleDeath;
             Health.ReviveEvent -= HandleRevive;
-            Health.HitEvent -= HandleHit;
+            Health.HitEvent -= StateChecker.Check;
+            StateChecker.OnBehaviourChange += ChangeState;
             Sight.SeesTargetEvent -= HandleSeesPlayer;
         }
 
@@ -73,17 +72,11 @@ namespace RPG.Control.EnemyController
             Agent.enabled = true;
             GetComponent<CapsuleCollider>().enabled = true;
             Sight.enabled = true;
-            SetPatrolling();
-        }
-        private void HandleHit()
-        {
-            AggroNearByEnemies();
-            WeaponHandler.SetTarget(Target.GetComponent<Health>());
-            SwitchState(new EnemyChasingState(this));
+            SetNeutralState();
         }
         private void HandleDeath()
         {
-           SwitchState(new EnemyDeathState(this));
+            SwitchState(new EnemyDeathState(this));
         }
         public void TriggerAggro()
         {
@@ -121,6 +114,35 @@ namespace RPG.Control.EnemyController
             {
                 
                 SwitchState(new EnemySearchingState(this));
+            }
+        }
+        public void ChangeState()
+        {
+            switch(StateChecker.GetCurrentBehaviour())
+            {
+                case BehaviourState.Neutral:
+                {
+                    SetNeutralState();
+                    break;
+                }
+                case BehaviourState.Fighting:
+                {
+                    AggroNearByEnemies();
+                    WeaponHandler.SetTarget(Target.GetComponent<Health>());
+                    SwitchState(new EnemyChasingState(this));
+                    break;
+                }
+                case BehaviourState.Searching:
+                {
+                    // SwitchState(new EnemySearchingState(this));
+                    Debug.LogError("Searching isn't implemented yet on enemies");
+                    break;
+                }
+                case BehaviourState.Dead:
+                {
+                    HandleDeath();
+                    break;
+                }
             }
         }
 
@@ -170,9 +192,16 @@ namespace RPG.Control.EnemyController
         //         weapon.Spawn(handTransform, Animator);
         //     }
         // }
-        public void SetPatrolling()
+        public void SetNeutralState()
         {
-            SwitchState(new EnemyPatrollingState(this, PatrolPath.GetCurrentWaypoint()));
+            if(PatrolPath != null)
+            {
+                SwitchState(new EnemyPatrollingState(this, PatrolPath.GetCurrentWaypoint()));
+            }
+            else
+            {
+                SwitchState(new EnemyIdlingState(this));
+            }
         }
         #if UNITY_EDITOR
         // private void OnDrawGizmos() {

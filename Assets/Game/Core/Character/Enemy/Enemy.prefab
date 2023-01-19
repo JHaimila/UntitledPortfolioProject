@@ -284,6 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 3821100762403873124}
   percentText: {fileID: 1994879259526694363}
+  _healthBar: {fileID: 0}
 --- !u!1 &3271056865923737940
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +486,7 @@ GameObject:
   - component: {fileID: 6753179279312240536}
   - component: {fileID: 4489733740724103037}
   - component: {fileID: -9124901689211004743}
+  - component: {fileID: -7917974031847421175}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -597,7 +599,10 @@ MonoBehaviour:
   <TargetInSight>k__BackingField: 0
   <Target>k__BackingField: {fileID: 0}
   <PatrolPath>k__BackingField: {fileID: 0}
+  <StateChecker>k__BackingField: {fileID: -7917974031847421175}
+  <DefaultBehaviour>k__BackingField: 6
   <WeaponHandler>k__BackingField: {fileID: 6753179279312240536}
+  <BehaviourMaps>k__BackingField: []
   aggroRadius: 8
   agroLayer:
     serializedVersion: 2
@@ -710,10 +715,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingLevel: 1
-  characterClass: 1
   progression: {fileID: 11400000, guid: 3ac6a1e4f72eb3846bcb10a94f970dfc, type: 2}
   levelUpParticleEffect: {fileID: 0}
   shouldUseMods: 0
+  currentLevel: -1
+--- !u!114 &-7917974031847421175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821100762403873126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326cc4b2557658745944d632ba834dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maps:
+  - <Behaviour>k__BackingField: 0
+    <TransitionsTo>k__BackingField: 3
+    <TriggeredBy>k__BackingField: 0
+    <AmountOfActionsBeforeTransition>k__BackingField: 1
+  ActionEvents: []
 --- !u!1 &6040359562865615047
 GameObject:
   m_ObjectHideFlags: 0

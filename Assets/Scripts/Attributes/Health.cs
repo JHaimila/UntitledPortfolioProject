@@ -4,19 +4,21 @@ using Saving.Saving;
 using RPG.Stats;
 using RPG.Core;
 using UnityEngine.Events;
+using RPG.Control;
 
 namespace RPG.Attributes
 {
-    public class Health : MonoBehaviour, IAttackable, ISaveable
+    public class Health : MonoBehaviour, IAttackable, ISaveable, IChangeBehaviour
     {
         private float health = -1f;
-        public event Action HitEvent;
-        public event Action DeathEvent;
-        public event Action ReviveEvent;
+        public event System.Action<RPG.Control.Action> HitEvent;
+        public event System.Action DeathEvent;
+        public event System.Action ReviveEvent;
         public bool isDead = false;
+        
+        [SerializeField] private StateChecker stateChecker;
 
         public UnityEvent TakeDamage;
-        public UnityEvent Death;
 
         private GameObject instigator;
 
@@ -53,13 +55,13 @@ namespace RPG.Attributes
             if(health == 0)
             {
                 isDead = true;
-                DeathEvent?.Invoke();
-                Death?.Invoke();
+                stateChecker.Check(RPG.Control.Action.Killed);
                 AwardExperience(instigator);
             }
             else
             {
-                HitEvent?.Invoke();
+                // HitEvent?.Invoke(RPG.Control.Action.Attacked);
+                stateChecker.Check(RPG.Control.Action.Attacked);
                 TakeDamage?.Invoke();
             }
         }
@@ -74,8 +76,8 @@ namespace RPG.Attributes
         {
             health = (float)state;
             if(health <= 0)
-            {
-                DeathEvent?.Invoke();
+            {   
+                stateChecker.Check(RPG.Control.Action.Killed);
                 isDead = true;
                 return;
             }
@@ -109,6 +111,11 @@ namespace RPG.Attributes
             if(experience == null){return;}
 
             experience.GainExperience(baseStats.GetStat(Stat.ExperienceReward));
+        }
+
+        public UnityAction<Control.Action> GetEvent()
+        {
+            throw new NotImplementedException();
         }
     }
 }

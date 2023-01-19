@@ -4,13 +4,15 @@ using UnityEngine;
 
 namespace RPG.Control
 {
-    public enum AggressionState
+    public enum BehaviourState
     {
-        Neutral,
+        Any,
         Instigative,
         Warning,
         Fighting,
         Fleeing,
-        Searching
+        Searching,
+        Neutral,
+        Dead
     }
 }

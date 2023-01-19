@@ -284,6 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 2619821073782195040}
   percentText: {fileID: 788978316025685983}
+  _healthBar: {fileID: 0}
 --- !u!1 &2619821072740914092
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +360,7 @@ GameObject:
   - component: {fileID: 5540592205401382300}
   - component: {fileID: 3391917005159417209}
   - component: {fileID: 1153460013174831805}
+  - component: {fileID: 851253912758079381}
   m_Layer: 6
   m_Name: NPC
   m_TagString: Untagged
@@ -603,6 +605,24 @@ MonoBehaviour:
   levelUpParticleEffect: {fileID: 0}
   shouldUseMods: 0
   currentLevel: -1
+--- !u!114 &851253912758079381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619821073782195042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326cc4b2557658745944d632ba834dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maps:
+  - <TransitionsTo>k__BackingField: 4
+    <Behaviour>k__BackingField: 0
+    <TriggeredBy>k__BackingField: 0
+    <AmountOfActionsBeforeTransition>k__BackingField: 0
+    <IsDefault>k__BackingField: 1
 --- !u!1 &4339534233034607440
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ namespace RPG.Control
         SeesPlayerInArea,
         RestrictedActionSeen,
         LeaderDied,
-        LostPlayer
+        LostPlayer,
+        Killed
     }
 }
