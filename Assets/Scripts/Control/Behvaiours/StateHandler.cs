@@ -5,18 +5,20 @@ using System;
 
 namespace RPG.Control
 {
-    public class StateChecker : MonoBehaviour
+    public class StateHandler : MonoBehaviour
     {
         [SerializeField] List<StateActionMap> maps = new List<StateActionMap>();
 
         private BehaviourState currentBehaviour;
         public event System.Action OnBehaviourChange;
-        public List<GameObject> ActionEvents;
         
         public void Check(RPG.Control.Action givenAction)
         {
             foreach(StateActionMap map in maps)
             {
+                if(map.TriggeredBy != givenAction){continue;}
+                if(map.TransitionsTo == currentBehaviour){continue;}
+
                 if(map.Behaviour == BehaviourState.Any && map.TriggeredBy == givenAction)
                 {
                     currentBehaviour = map.TransitionsTo;
@@ -25,9 +27,6 @@ namespace RPG.Control
                 }
 
                 if(currentBehaviour != map.Behaviour){continue;}
-
-                if(map.TriggeredBy != givenAction){continue;}
-                // if(!map.TransitionsFromStates.Contains(currentBehaviour)){continue;}
 
                 currentBehaviour = map.TransitionsTo;
                 OnBehaviourChange?.Invoke();

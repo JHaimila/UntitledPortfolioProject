@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace RPG.Control.EnemyController
 {
-    public class EnemyStateMachine : StateMachine, IHoverable
+    public class EnemyStateMachine : StateMachine
     {
         //Components
         [field:SerializeField] public NavMeshAgent Agent {get; private set;}
@@ -28,7 +28,7 @@ namespace RPG.Control.EnemyController
 
         [field:SerializeField] public GameObject Target {get; private set;}
         [field:SerializeField] public PatrolPath PatrolPath {get; private set;} = null;
-        [field:SerializeField] public StateChecker StateChecker {get; private set;}
+        [field:SerializeField] public StateHandler StateChecker {get; private set;}
         [field:SerializeField] public BehaviourState DefaultBehaviour {get; private set;}
 
         // [field:SerializeField] public Weapon weapon {get; private set;} = null;
@@ -42,11 +42,7 @@ namespace RPG.Control.EnemyController
         public bool isChasing;
         private void OnEnable() 
         {
-            Health.DeathEvent += HandleDeath;
-            Health.ReviveEvent += HandleRevive;
-            Health.HitEvent += StateChecker.Check;
             StateChecker.OnBehaviourChange += ChangeState;
-            Sight.SeesTargetEvent += HandleSeesPlayer;
         }
         private void Start() {
             Target = GameObject.FindGameObjectWithTag("Player");
@@ -59,11 +55,7 @@ namespace RPG.Control.EnemyController
         }
         private void OnDisable() 
         {
-            Health.DeathEvent -= HandleDeath;
-            Health.ReviveEvent -= HandleRevive;
-            Health.HitEvent -= StateChecker.Check;
-            StateChecker.OnBehaviourChange += ChangeState;
-            Sight.SeesTargetEvent -= HandleSeesPlayer;
+            StateChecker.OnBehaviourChange -= ChangeState;
         }
 
         private void HandleRevive()
@@ -72,16 +64,11 @@ namespace RPG.Control.EnemyController
             Agent.enabled = true;
             GetComponent<CapsuleCollider>().enabled = true;
             Sight.enabled = true;
-            SetNeutralState();
-        }
-        private void HandleDeath()
-        {
-            SwitchState(new EnemyDeathState(this));
         }
         public void TriggerAggro()
         {
             WeaponHandler.SetTarget(Target.GetComponent<Health>());
-            SwitchState(new EnemyChasingState(this));
+            StateChecker.Check(RPG.Control.Action.Attacked);
         }
         public void AggroNearByEnemies()
         {
@@ -134,26 +121,15 @@ namespace RPG.Control.EnemyController
                 }
                 case BehaviourState.Searching:
                 {
-                    // SwitchState(new EnemySearchingState(this));
-                    Debug.LogError("Searching isn't implemented yet on enemies");
+                    SwitchState(new EnemySearchingState(this));
                     break;
                 }
                 case BehaviourState.Dead:
                 {
-                    HandleDeath();
+                    SwitchState(new EnemyDeathState(this));
                     break;
                 }
             }
-        }
-
-        public void OnHoverEnter()
-        {
-            
-        }
-
-        public void OnHoverExit()
-        {
-        
         }
         
         public bool PlayerWithinRange(float range)
@@ -185,13 +161,7 @@ namespace RPG.Control.EnemyController
             transform.position = savedPos.ToVector();
             // Agent.Warp(transform.position);
         }
-        // private void SpawnWeapon()
-        // {
-        //     if(WeaponHandler.currentWeapon != null)
-        //     {
-        //         weapon.Spawn(handTransform, Animator);
-        //     }
-        // }
+
         public void SetNeutralState()
         {
             if(PatrolPath != null)

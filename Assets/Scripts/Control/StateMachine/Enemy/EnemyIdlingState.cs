@@ -35,7 +35,7 @@ namespace RPG.Control.EnemyController
             {
                 if(duration <= 0)
                 {
-                    stateMachine.SetNeutralState();
+                    stateMachine.ChangeState();
                 }
                 duration -= deltaTime;
             }

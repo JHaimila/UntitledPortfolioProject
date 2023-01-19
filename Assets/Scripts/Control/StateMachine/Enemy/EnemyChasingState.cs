@@ -18,8 +18,6 @@ namespace RPG.Control.EnemyController
             stateMachine.Agent.isStopped = false;
             stateMachine.Animator.CrossFadeInFixedTime(IdleHash, CrossFadeInFixedTime);
             stateMachine.isChasing = true;
-
-            stateMachine.Sight.LostTargetEvent += HandleLostPlayer;
         }
         public override void Tick(float deltaTime)
         {
@@ -32,23 +30,16 @@ namespace RPG.Control.EnemyController
                 }
                 return;
             }
-            // if(!stateMachine.PlayerWithinRange(stateMachine.SightRange))
-            // {
-            //     stateMachine.SetPatrolling();
-            //     return;
-            // }
-            // stateMachine.transform.LookAt(stateMachine.Player.transform, Vector3.up);
             stateMachine.Agent.destination = stateMachine.Target.transform.position;
         }
         public override void Exit()
         {
             stateMachine.isChasing = false;
-            stateMachine.Sight.LostTargetEvent -= HandleLostPlayer;
         }
 
         public void HandleLostPlayer()
         {
-            stateMachine.SwitchState(new EnemySearchingState(stateMachine));
+            stateMachine.StateChecker.Check(Action.LostTarget);
         }
     }
 }

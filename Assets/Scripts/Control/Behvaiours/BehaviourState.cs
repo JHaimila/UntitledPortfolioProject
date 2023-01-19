@@ -13,6 +13,7 @@ namespace RPG.Control
         Fleeing,
         Searching,
         Neutral,
-        Dead
+        Dead,
+        Chasing
     }
 }

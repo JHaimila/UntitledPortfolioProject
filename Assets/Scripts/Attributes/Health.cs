@@ -12,11 +12,11 @@ namespace RPG.Attributes
     {
         private float health = -1f;
         public event System.Action<RPG.Control.Action> HitEvent;
-        public event System.Action DeathEvent;
-        public event System.Action ReviveEvent;
+        public event System.Action<RPG.Control.Action> DeathEvent;
+        public event System.Action<RPG.Control.Action> ReviveEvent;
         public bool isDead = false;
         
-        [SerializeField] private StateChecker stateChecker;
+        private StateHandler stateChecker;
 
         public UnityEvent TakeDamage;
 
@@ -27,19 +27,18 @@ namespace RPG.Attributes
         private void OnEnable() 
         {
             baseStats = GetComponent<BaseStats>();
-            if(gameObject.tag == "Player")
-            {
-                Debug.Log(name +" Before: "+ health);
-            }
             if(health < 0)
             {
                 health = baseStats.GetStat(Stat.Health);
-                if(gameObject.tag == "Player")
-                {
-                    Debug.Log(name +": "+ health);
-                }
             }
             baseStats.LevelUpEvent += SetMaxHealth;
+            gameObject.TryGetComponent<StateHandler>(out stateChecker);
+            if(stateChecker != null)
+            {
+                HitEvent += stateChecker.Check;
+                DeathEvent += stateChecker.Check;
+                ReviveEvent += stateChecker.Check;
+            }
         }
         private void OnDisable() 
         {
@@ -55,13 +54,12 @@ namespace RPG.Attributes
             if(health == 0)
             {
                 isDead = true;
-                stateChecker.Check(RPG.Control.Action.Killed);
+                DeathEvent?.Invoke(RPG.Control.Action.Killed);
                 AwardExperience(instigator);
             }
             else
             {
-                // HitEvent?.Invoke(RPG.Control.Action.Attacked);
-                stateChecker.Check(RPG.Control.Action.Attacked);
+                HitEvent?.Invoke(RPG.Control.Action.Attacked);
                 TakeDamage?.Invoke();
             }
         }
@@ -83,7 +81,7 @@ namespace RPG.Attributes
             }
             else
             {
-                ReviveEvent?.Invoke();
+                ReviveEvent?.Invoke(RPG.Control.Action.Revived);
                 return;
             }
         }

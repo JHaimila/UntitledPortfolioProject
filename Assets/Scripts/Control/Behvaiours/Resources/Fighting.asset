@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Fighting
   m_EditorClassIdentifier: 
   behaviour: 3
-  isAggressive: 0
+  isAggressive: 1

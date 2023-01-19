@@ -38,8 +38,8 @@ namespace RPG.Control.PlayerController
             InteractionHandler.MoveEvent += HandleMove;
             InteractionHandler.AttackEvent += HandleAttack;
             InteractionHandler.InteractEvent += HandleInteraction;
-            Health.DeathEvent += HandleDeath;
-            Health.ReviveEvent += HandleRevive;
+            // Health.DeathEvent += HandleDeath;
+            // Health.ReviveEvent += HandleRevive;
             equipment = GetComponent<Equipment>();
             if(equipment)
             {
@@ -83,8 +83,8 @@ namespace RPG.Control.PlayerController
             InteractionHandler.MoveEvent -= HandleMove;
             InteractionHandler.AttackEvent -= HandleAttack;
             InteractionHandler.InteractEvent -= HandleInteraction;
-            Health.DeathEvent -= HandleDeath;
-            Health.ReviveEvent -= HandleRevive;
+            // Health.DeathEvent -= HandleDeath;
+            // Health.ReviveEvent -= HandleRevive;
         }
 
         private void HandleRevive()

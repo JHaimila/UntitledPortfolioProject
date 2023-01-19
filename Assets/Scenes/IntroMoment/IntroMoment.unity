@@ -135,6 +135,81 @@ PrefabInstance:
       propertyPath: uniqueIdentifier
       value: 9f013c42-ee53-4b54-93d3-146eb11cb407
       objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: ActionEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: ActionEvents.Array.data[0]
+      value: 
+      objectReference: {fileID: 131157343}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[0].<Behaviour>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[0].<IsDefault>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[1].<Behaviour>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[1].<IsDefault>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[2].<Behaviour>k__BackingField
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[2].<IsDefault>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[1].<TriggeredBy>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[2].<TriggeredBy>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[1].<TransitionsTo>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[2].<TransitionsTo>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[1].<AmountOfActionsBeforeTransition>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[2].<AmountOfActionsBeforeTransition>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3391430437547558784, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
       propertyPath: m_Name
@@ -214,29 +289,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 54387380}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &131157355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131157343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 326cc4b2557658745944d632ba834dba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maps:
-  - <TransitionsTo>k__BackingField: 3
-    <Behaviour>k__BackingField: 0
-    <TriggeredBy>k__BackingField: 0
-    <AmountOfActionsBeforeTransition>k__BackingField: 1
-    <IsDefault>k__BackingField: 1
-  - <TransitionsTo>k__BackingField: 0
-    <Behaviour>k__BackingField: 3
-    <TriggeredBy>k__BackingField: 5
-    <AmountOfActionsBeforeTransition>k__BackingField: 1
-    <IsDefault>k__BackingField: 0
 --- !u!1 &349748303
 GameObject:
   m_ObjectHideFlags: 0

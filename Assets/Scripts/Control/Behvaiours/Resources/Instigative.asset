@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5353400c4c6aaf2449bcc22663ab6727, type: 3}
   m_Name: Instigative
   m_EditorClassIdentifier: 
-  behaviour: 0
-  isAggressive: 0
+  behaviour: 1
+  isAggressive: 1

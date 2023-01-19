@@ -7,11 +7,13 @@ namespace RPG.Control
     public enum Action
     {
         Attacked,
-        SeesPlayer,
+        SeesTarget,
         SeesPlayerInArea,
         RestrictedActionSeen,
         LeaderDied,
-        LostPlayer,
-        Killed
+        LostTarget,
+        Killed,
+        Revived,
+        TargetInRange
     }
 }

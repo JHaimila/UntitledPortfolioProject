@@ -14,8 +14,8 @@ namespace RPG.Control
 
         private GameObject target;
 
-        public event System.Action SeesTargetEvent;
-        public event System.Action LostTargetEvent;
+        public event System.Action<RPG.Control.Action> OnSeesTarget;
+        public event System.Action<RPG.Control.Action> OnLostTarget;
 
         private List<GameObject> _objects = new List<GameObject>();
 
@@ -28,11 +28,20 @@ namespace RPG.Control
         private float scanTimer;
         public bool seesPlayer = false;
         public Transform playerPosition;
+        
+        [SerializeField] private StateHandler stateChecker;
 
-        // Start is called before the first frame update
+        private void OnEnable() {
+            if(stateChecker != null)
+            {
+                OnSeesTarget += stateChecker.Check;
+                OnLostTarget += stateChecker.Check;
+            }
+        }
         void Start()
         {
             _scanInterval = 1.0f/_scanFrequency;
+            
         }
 
         // Update is called once per frame
@@ -43,6 +52,15 @@ namespace RPG.Control
             {
                 scanTimer += _scanInterval;
                 Scan();
+            }
+        }
+
+        private void OnDisable() 
+        {
+            if(stateChecker != null)
+            {
+                OnSeesTarget -= stateChecker.Check;
+                OnLostTarget -= stateChecker.Check;
             }
         }
 
@@ -67,7 +85,7 @@ namespace RPG.Control
                         if(!seesPlayer)
                         {
                             seesPlayer = true;
-                            SeesTargetEvent?.Invoke();
+                            OnSeesTarget?.Invoke(RPG.Control.Action.SeesTarget);
                         }
                     }
                 }
@@ -77,7 +95,7 @@ namespace RPG.Control
                 if(seesPlayer)
                 {
                     seesPlayer = false;
-                    LostTargetEvent?.Invoke();
+                    OnLostTarget?.Invoke(RPG.Control.Action.LostTarget);
                 }
             }
         }

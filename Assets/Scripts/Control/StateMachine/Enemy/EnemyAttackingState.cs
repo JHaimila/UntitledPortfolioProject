@@ -26,23 +26,9 @@ namespace RPG.Control.EnemyController
         {
             stateMachine.transform.LookAt(stateMachine.Target.transform, Vector3.up);
             float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
-            if(normalizedTime < 0.8f)
+            if(normalizedTime > 0.8f)
             {
-                // Do Attack stuff when you set that up
-
-                // if(normalizedTime > attack.ForceTime)
-                // {
-                //     TryApplyForce();
-                // }
-                // if(stateMachine.InputReader.IsAttacking)
-                // {
-                //     TryComboAttack(normalizedTime);
-                // }
-            }
-            else
-            {
-                // _target.transform.GetComponent<IAttackable>().OnAttack(stateMachine.WeaponHandler.currentWeapon.Damage);
-                stateMachine.HandleSeesPlayer();
+                stateMachine.ChangeState();
             }
             previousFrameTime = normalizedTime;
         }
