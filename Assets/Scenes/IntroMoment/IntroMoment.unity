@@ -138,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
       propertyPath: maps.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
@@ -163,7 +163,7 @@ PrefabInstance:
     - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
       propertyPath: maps.Array.data[1].<Behaviour>k__BackingField
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
@@ -173,7 +173,7 @@ PrefabInstance:
     - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
       propertyPath: maps.Array.data[2].<Behaviour>k__BackingField
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
@@ -182,8 +182,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
+      propertyPath: maps.Array.data[3].<Behaviour>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[4].<Behaviour>k__BackingField
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[0].<TriggeredBy>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
       propertyPath: maps.Array.data[1].<TriggeredBy>k__BackingField
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
@@ -192,13 +207,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
-      propertyPath: maps.Array.data[1].<TransitionsTo>k__BackingField
+      propertyPath: maps.Array.data[3].<TriggeredBy>k__BackingField
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[4].<TriggeredBy>k__BackingField
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[0].<TransitionsTo>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[1].<TransitionsTo>k__BackingField
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
       propertyPath: maps.Array.data[2].<TransitionsTo>k__BackingField
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[3].<TransitionsTo>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[4].<TransitionsTo>k__BackingField
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
@@ -208,6 +248,16 @@ PrefabInstance:
     - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
       propertyPath: maps.Array.data[2].<AmountOfActionsBeforeTransition>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[3].<AmountOfActionsBeforeTransition>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: maps.Array.data[4].<AmountOfActionsBeforeTransition>k__BackingField
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3391430437547558784, guid: 65c167bd2baad3c4aa66056ccae1cb72,
@@ -270,6 +320,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3391430438586718000, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+        type: 3}
+      propertyPath: stateChecker
+      value: 
+      objectReference: {fileID: 131157344}
     - target: {fileID: 3391430438586718030, guid: 65c167bd2baad3c4aa66056ccae1cb72,
         type: 3}
       propertyPath: m_IsActive
@@ -289,6 +344,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 54387380}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &131157344 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 579339788847508975, guid: 65c167bd2baad3c4aa66056ccae1cb72,
+    type: 3}
+  m_PrefabInstance: {fileID: 54387380}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131157343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326cc4b2557658745944d632ba834dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &349748303
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +485,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd44df9c514be7942b04f7ab655afd64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &433387357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433387329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155c8bcd30777924da4e2531fcfd5e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  routine:
+    RoutineName: 
+    nodes: []
+    loops: 1
 --- !u!1001 &766735908
 PrefabInstance:
   m_ObjectHideFlags: 0
