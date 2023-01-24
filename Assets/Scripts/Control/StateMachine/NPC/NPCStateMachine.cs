@@ -14,7 +14,8 @@ namespace RPG.Control.NPCController
         //Components
         [field:SerializeField] public NavMeshAgent Agent {get; private set;}
         
-        [field:SerializeField] public Health Health {get; private set;}
+        [field:SerializeField, Header("Senses")] public Health Health {get; private set;}
+        [field:SerializeField] public Sight Sight {get; private set;}
 
         [field:SerializeField, Header("Animation")] public Animator Animator {get; private set;}
         
@@ -26,14 +27,14 @@ namespace RPG.Control.NPCController
         [field:SerializeField] public float RunSpeed {get; private set;} = 4.5f;
 
         // Searching Variables
-        public int searchedCount = 0;
+        [Header("Searching")]public int searchedCount = 0;
         private bool isSearching = false;
         [field:SerializeField] public int MaxSearchCount = 3;
-        [field:SerializeField] public Sight Sight {get; private set;}
+        
         [field:SerializeField] public float RotationSpeed {get; private set;} = 3;
         [field:SerializeField] public GameObject Target {get; private set;}
         [field:SerializeField] public RoutineHandler RoutineHandler {get; private set;} = null;
-        [field:SerializeField] public StateHandler StateChecker {get; private set;}
+        [field:SerializeField] public StateHandler StateHandler {get; private set;}
         [field:SerializeField] public BehaviourState DefaultBehaviour {get; private set;}
         [field:SerializeField] public WeaponHandler WeaponHandler {get; private set;} = null;
         [field:SerializeField] public List<StateBehaviourMap> BehaviourMaps {get; private set;} = new List<StateBehaviourMap>();
@@ -42,20 +43,28 @@ namespace RPG.Control.NPCController
         public bool isChasing;
         private void OnEnable() 
         {
-            StateChecker.OnBehaviourChange += ChangeState;
+            StateHandler.OnBehaviourChange += ChangeState;
         }
         private void Start() {
             Target = GameObject.FindGameObjectWithTag("Player");
-            Sight.SetTarget(Target);
-            StateChecker.SetCurrentBehaviour(DefaultBehaviour);
-            if(Health.GetHealth() > 0)
+            if(Sight != null)
             {
-                ChangeState();
+                Sight.SetTarget(Target);
             }
+            
+            StateHandler.SetCurrentBehaviour(DefaultBehaviour);
+            if(Health != null)
+            {
+                if(Health.GetHealth() > 0)
+                {
+                    ChangeState();
+                }
+            }
+            
         }
         private void OnDisable() 
         {
-            StateChecker.OnBehaviourChange -= ChangeState;
+            StateHandler.OnBehaviourChange -= ChangeState;
         }
 
         private void HandleRevive()
@@ -68,23 +77,20 @@ namespace RPG.Control.NPCController
         public void TriggerAggro()
         {
             WeaponHandler.SetTarget(Target.GetComponent<Health>());
-            StateChecker.Check(RPG.Control.Action.Attacked);
+            StateHandler.Check(RPG.Control.Action.Attacked);
         }
         public void AggroNearByEnemies()
         {
             RaycastHit[] hits = Physics.SphereCastAll(transform.position, aggroRadius, Vector3.up, 0, agroLayer);
             foreach(RaycastHit enemyHit in hits)
             {
-                NPCStateMachine nearByEnemy = enemyHit.transform.GetComponent<NPCStateMachine>();
-                if(nearByEnemy == null){continue;}
-                if(nearByEnemy.Health.isDead){continue;}
-
-                nearByEnemy.TriggerAggro();
+                StateHandler nearByEnemy = enemyHit.transform.GetComponent<StateHandler>();
+                nearByEnemy.Check(Action.Attacked);
             }
         }
         public void ChangeState()
         {
-            switch(StateChecker.GetCurrentBehaviour())
+            switch(StateHandler.GetCurrentBehaviour())
             {
                 case BehaviourState.Neutral:
                 {
@@ -109,8 +115,18 @@ namespace RPG.Control.NPCController
                     SwitchState(new NPCDeathState(this));
                     break;
                 }
+                case BehaviourState.Fleeing:
+                {
+                    if(Vector3.Distance(Target.transform.position, transform.position) > 10)
+                    {
+                        StateHandler.Check(Action.LostTarget);
+                        break;
+                    }
+                    SwitchState(new NPCFleeingState(this));
+                    break;
+                }
             }
-            if(StateChecker.GetCurrentBehaviour() != BehaviourState.Searching && isSearching)
+            if(StateHandler.GetCurrentBehaviour() != BehaviourState.Searching && isSearching)
             {
                 isSearching = false;
                 searchedCount = 0;

@@ -15,7 +15,7 @@ namespace RPG.Control.NPCController
         {
             if(stateMachine.searchedCount >= stateMachine.MaxSearchCount)
             {
-                stateMachine.StateChecker.Check(Action.LostTarget);
+                stateMachine.StateHandler.Check(Action.LostTarget);
                 return;
             }
             Debug.Log("searching "+stateMachine.searchedCount);

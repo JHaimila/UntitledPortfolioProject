@@ -40,7 +40,7 @@ namespace RPG.Control.NPCController
 
         public void HandleLostPlayer()
         {
-            stateMachine.StateChecker.Check(Action.LostTarget);
+            stateMachine.StateHandler.Check(Action.LostTarget);
         }
     }
 }
