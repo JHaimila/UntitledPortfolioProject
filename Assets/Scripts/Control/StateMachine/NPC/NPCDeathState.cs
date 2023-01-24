@@ -1,15 +1,15 @@
 using UnityEngine;
 
-namespace RPG.Control.EnemyController
+namespace RPG.Control.NPCController
 {
-    public class EnemyDeathState : EnemyBaseState
+    public class NPCDeathState : NPCBaseState
     {
         private readonly int IdleHash = Animator.StringToHash("Death");
 
         private const float AnimatorDampTime = 0.1f;
         private const float CrossFadeInFixedTime = 0.1f;
 
-        public EnemyDeathState(EnemyStateMachine stateMachine) : base(stateMachine)
+        public NPCDeathState(NPCStateMachine stateMachine) : base(stateMachine)
         {
         }
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Saving.Saving;
+using System.Collections;
 
 namespace RPG.Control
 {
@@ -27,6 +28,14 @@ namespace RPG.Control
             {
                 currentState.Enter();
             }
+        }
+        public void BeginCorotine(IEnumerator enumerator)
+        {
+            StartCoroutine(enumerator);
+        }
+        public void EndAllCorotines()
+        {
+            StopAllCoroutines();
         }
 
         public abstract object CaptureState();

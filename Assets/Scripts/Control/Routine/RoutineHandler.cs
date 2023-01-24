@@ -8,6 +8,11 @@ namespace RPG.Control.Routine
     {
         [SerializeField] private Routine routine;
 
+        public Routine GetRoutine()
+        {
+            return routine;
+        }
+
     }
 }
 

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using RPG.Core;
 using UnityEngine;
 
-namespace RPG.Control.EnemyController
+namespace RPG.Control.NPCController
 {
-    public class EnemyAttackingState : EnemyBaseState
+    public class NPCAttackingState : NPCBaseState
     {
         private const float AnimatorDampTime = 0.1f;
         private const float CrossFadeInFixedTime = 0.1f;
@@ -13,7 +13,7 @@ namespace RPG.Control.EnemyController
         private GameObject _target;
         float previousFrameTime;
 
-        public EnemyAttackingState(EnemyStateMachine stateMachine) : base(stateMachine){}
+        public NPCAttackingState(NPCStateMachine stateMachine) : base(stateMachine){}
 
         public override void Enter()
         {

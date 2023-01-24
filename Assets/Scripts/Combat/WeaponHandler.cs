@@ -2,6 +2,7 @@ using UnityEngine;
 using RPG.Attributes;
 using RPG.Stats;
 using System.Collections.Generic;
+using InventorySystem.Inventories;
 
 namespace RPG.Combat
 {

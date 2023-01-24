@@ -1,9 +1,9 @@
 using RPG.Core;
 using UnityEngine;
 
-namespace RPG.Control.EnemyController
+namespace RPG.Control.NPCController
 {
-    public class EnemyChasingState : EnemyBaseState
+    public class NPCChasingState : NPCBaseState
     {
         private readonly int IdleHash = Animator.StringToHash("1H_Run_Forward");
 
@@ -11,22 +11,23 @@ namespace RPG.Control.EnemyController
         private const float CrossFadeInFixedTime = 0.1f;
 
 
-        public EnemyChasingState(EnemyStateMachine stateMachine) : base(stateMachine){}
+        public NPCChasingState(NPCStateMachine stateMachine) : base(stateMachine){}
 
         public override void Enter()
         {
             stateMachine.Agent.isStopped = false;
             stateMachine.Animator.CrossFadeInFixedTime(IdleHash, CrossFadeInFixedTime);
             stateMachine.isChasing = true;
+            stateMachine.Agent.speed = stateMachine.RunSpeed;
         }
         public override void Tick(float deltaTime)
         {
             
-            if(stateMachine.PlayerWithinRange(stateMachine.WeaponHandler.currentWeapon.Range))
+            if(stateMachine.TargetWithinRange(stateMachine.WeaponHandler.currentWeapon.Range))
             {
                 if(stateMachine.Target.TryGetComponent<IAttackable>(out IAttackable target))
                 {   
-                    stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
+                    stateMachine.SwitchState(new NPCAttackingState(stateMachine));
                 }
                 return;
             }

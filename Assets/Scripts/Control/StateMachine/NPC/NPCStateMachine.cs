@@ -4,15 +4,19 @@ using Saving.Saving;
 using RPG.Combat;
 using RPG.Attributes;
 using System.Collections.Generic;
+using RPG.Control.Routine;
+using System.Collections;
 
-namespace RPG.Control.EnemyController
+namespace RPG.Control.NPCController
 {
-    public class EnemyStateMachine : StateMachine
+    public class NPCStateMachine : StateMachine
     {
         //Components
         [field:SerializeField] public NavMeshAgent Agent {get; private set;}
-        [field:SerializeField] public Animator Animator {get; private set;}
+        
         [field:SerializeField] public Health Health {get; private set;}
+
+        [field:SerializeField, Header("Animation")] public Animator Animator {get; private set;}
         
         //Ranges
         // [field:SerializeField] public float SightRange {get; private set;}
@@ -22,21 +26,17 @@ namespace RPG.Control.EnemyController
         [field:SerializeField] public float RunSpeed {get; private set;} = 4.5f;
 
         // Searching Variables
-        [field:SerializeField] public int PointsLookedAt {get; private set;} = 0;
+        public int searchedCount = 0;
+        private bool isSearching = false;
+        [field:SerializeField] public int MaxSearchCount = 3;
         [field:SerializeField] public Sight Sight {get; private set;}
-        [field:SerializeField] public bool TargetInSight {get; private set;}
-
+        [field:SerializeField] public float RotationSpeed {get; private set;} = 3;
         [field:SerializeField] public GameObject Target {get; private set;}
-        [field:SerializeField] public PatrolPath PatrolPath {get; private set;} = null;
+        [field:SerializeField] public RoutineHandler RoutineHandler {get; private set;} = null;
         [field:SerializeField] public StateHandler StateChecker {get; private set;}
         [field:SerializeField] public BehaviourState DefaultBehaviour {get; private set;}
-
-        // [field:SerializeField] public Weapon weapon {get; private set;} = null;
-        // [field:SerializeField] public Transform handTransform {get; private set;} = null;
         [field:SerializeField] public WeaponHandler WeaponHandler {get; private set;} = null;
         [field:SerializeField] public List<StateBehaviourMap> BehaviourMaps {get; private set;} = new List<StateBehaviourMap>();
-
-        private int guarPointIndex = 0;
         [SerializeField] private float aggroRadius = 8f;
         [SerializeField] LayerMask agroLayer;
         public bool isChasing;
@@ -75,32 +75,11 @@ namespace RPG.Control.EnemyController
             RaycastHit[] hits = Physics.SphereCastAll(transform.position, aggroRadius, Vector3.up, 0, agroLayer);
             foreach(RaycastHit enemyHit in hits)
             {
-                EnemyStateMachine nearByEnemy = enemyHit.transform.GetComponent<EnemyStateMachine>();
+                NPCStateMachine nearByEnemy = enemyHit.transform.GetComponent<NPCStateMachine>();
                 if(nearByEnemy == null){continue;}
                 if(nearByEnemy.Health.isDead){continue;}
 
                 nearByEnemy.TriggerAggro();
-            }
-        }
-        public void HandleSeesPlayer()
-        {
-            if(Sight.seesPlayer)
-            {
-                if(Target.GetComponent<Health>().enabled != false)
-                {
-                    WeaponHandler.SetTarget(Target.GetComponent<Health>());
-                    SwitchState(new EnemyChasingState(this));
-                    AggroNearByEnemies();
-                }
-                else
-                {
-                    SwitchState(new EnemyPatrollingState(this, PatrolPath.GetCurrentWaypoint()));
-                }
-            }
-            else
-            {
-                
-                SwitchState(new EnemySearchingState(this));
             }
         }
         public void ChangeState()
@@ -116,23 +95,29 @@ namespace RPG.Control.EnemyController
                 {
                     AggroNearByEnemies();
                     WeaponHandler.SetTarget(Target.GetComponent<Health>());
-                    SwitchState(new EnemyChasingState(this));
+                    SwitchState(new NPCChasingState(this));
                     break;
                 }
                 case BehaviourState.Searching:
                 {
-                    SwitchState(new EnemySearchingState(this));
+                    isSearching = true;
+                    SwitchState(new NPCSearchingState(this));
                     break;
                 }
                 case BehaviourState.Dead:
                 {
-                    SwitchState(new EnemyDeathState(this));
+                    SwitchState(new NPCDeathState(this));
                     break;
                 }
             }
+            if(StateChecker.GetCurrentBehaviour() != BehaviourState.Searching && isSearching)
+            {
+                isSearching = false;
+                searchedCount = 0;
+            }
         }
         
-        public bool PlayerWithinRange(float range)
+        public bool TargetWithinRange(float range)
         {
             if(Target.TryGetComponent<Health>(out Health targetHealth))
             {
@@ -164,13 +149,13 @@ namespace RPG.Control.EnemyController
 
         public void SetNeutralState()
         {
-            if(PatrolPath != null)
+            if(RoutineHandler.GetRoutine() != null)
             {
-                SwitchState(new EnemyPatrollingState(this, PatrolPath.GetCurrentWaypoint()));
+                SwitchState(new NPCRoutineState(this, RoutineHandler.GetRoutine().GetCurrentNode()));
             }
             else
             {
-                SwitchState(new EnemyIdlingState(this));
+                SwitchState(new NPCIdlingState(this));
             }
         }
         #if UNITY_EDITOR

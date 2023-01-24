@@ -36,5 +36,13 @@ namespace RPG.Control
             Quaternion lookRotation = Quaternion.LookRotation(direction);
             agent.transform.rotation = Quaternion.Slerp(agent.transform.rotation, lookRotation, deltaTime * rotationSpeed);
         }
+        public void SetYRotation(NavMeshAgent agent, Transform target, float deltaTime, float rotationSpeed)
+        {
+            agent.isStopped = false;
+            // Vector3 direction = (target.position - agent.transform.position).normalized;
+            // Quaternion lookRotation = Quaternion.LookRotation(new Vector3(target.rotation.x, target.rotation.y, target.rotation.z));
+            // agent.transform.rotation = Quaternion.Slerp(agent.transform.rotation, lookRotation, deltaTime * rotationSpeed);
+            agent.transform.rotation = Quaternion.Euler(agent.transform.localEulerAngles.x, target.localEulerAngles.y, agent.transform.localEulerAngles.z);
+        }
     }
 }

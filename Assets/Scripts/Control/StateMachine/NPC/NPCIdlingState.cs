@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace RPG.Control.EnemyController
+namespace RPG.Control.NPCController
 {
-    public class EnemyIdlingState : EnemyBaseState
+    public class NPCIdlingState : NPCBaseState
     {
         // private readonly int IldingValueHash = Animator.StringToHash("Idling");
         private readonly int IdleHash = Animator.StringToHash("Idle2");
@@ -13,8 +13,8 @@ namespace RPG.Control.EnemyController
         private float duration = 0;
         private bool hasDuration = false;
 
-        public EnemyIdlingState(EnemyStateMachine stateMachine) : base(stateMachine){}
-        public EnemyIdlingState(EnemyStateMachine stateMachine, float duration) : base(stateMachine)
+        public NPCIdlingState(NPCStateMachine stateMachine) : base(stateMachine){}
+        public NPCIdlingState(NPCStateMachine stateMachine, float duration) : base(stateMachine)
         {
             this.duration = duration;
             hasDuration = true;
