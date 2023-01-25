@@ -15,8 +15,8 @@ namespace RPG.Control.PlayerController
         public bool uiOpen = false;
 
         public event Action<Vector3> MoveEvent;
-        public event Action<RaycastHit> AttackEvent;
-        public event Action<RaycastHit> InteractEvent;
+        public event Action<Transform> AttackEvent;
+        public event Action<Transform> InteractEvent;
         [SerializeField] float maxNavMeshProjectionDistance = 1f;
         [SerializeField] float maxNavPathLength = 25f;
 
@@ -92,14 +92,8 @@ namespace RPG.Control.PlayerController
                 
                 IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
 
-                if(hit.transform.TryGetComponent<IAttackable>(out IAttackable target))
-                {
-                    if(hit.transform != transform)
-                    {
-                        SetCursor(CursorType.Combat);
-                    }
-                }
-                else if(MouseOverUILayerObject.IsPointerOverUIObject(InputReader.pointerPosition))
+                
+                if(MouseOverUILayerObject.IsPointerOverUIObject(InputReader.pointerPosition))
                 {
                     SetCursor(CursorType.UI);
                 }
@@ -107,20 +101,19 @@ namespace RPG.Control.PlayerController
                 {
                     SetCursor(CursorType.Interact);
                 }
+                else if(hit.transform.TryGetComponent<IAttackable>(out IAttackable target))
+                {
+                    if(target.Attackable())
+                    {
+                        if(hit.transform != transform)
+                        {
+                            SetCursor(CursorType.Combat);
+                        }
+                    }
+                }
                 else
                 {
                     SetCursor(CursorType.Movement);
-                    // bool hasHitNavmesh = RaycastNavmesh(out Vector3 position);
-                    // if(!hasHitNavmesh)
-                    // {
-                    //     Debug.Log("NO CURSOR");
-                    //     SetCursor(CursorType.None);
-                    // }
-                    // else
-                    // {
-                    //     
-                    // }
-                    // Debug.Log("HIT POSITION: "+hit.transform.position);
                 }
             }
         }
@@ -136,26 +129,28 @@ namespace RPG.Control.PlayerController
 
             Ray ray = mainCamera.ScreenPointToRay(InputReader.pointerPosition);
 
-            bool hasHit = Physics.Raycast(ray, out hit);
-            if(hasHit)
-            {
-                if(hit.transform.TryGetComponent<IAttackable>(out IAttackable target))
-                {
-                    AttackEvent?.Invoke(hit);
-                }
-                else if(hit.transform.TryGetComponent<IInteractable>(out IInteractable interactable))
-                {
-                    InteractEvent?.Invoke(hit);
-                }
-                else
-                {
-                    bool hasHitNavmesh = RaycastNavmesh(out Vector3 position);
-                    if(!hasHitNavmesh){return;}
+            if(!Physics.Raycast(ray, out hit)){return;}
 
-                    MoveEvent?.Invoke(position);
-                    // Debug.Log("HIT POSITION: "+hit.transform.position);
-                }
+            IAttackable target;
+            hit.transform.TryGetComponent<IAttackable>(out target);
+            
+            Debug.Log(hit.transform.position);
+            
+            if(target != null && target.Attackable())
+            {
+                AttackEvent?.Invoke(hit.transform);
+                return;
             }
+            if(hit.transform.TryGetComponent<IInteractable>(out IInteractable interactable))
+            {
+                InteractEvent?.Invoke(hit.transform);
+                return;
+            }
+            
+            bool hasHitNavmesh = RaycastNavmesh(out Vector3 position);
+            if(!hasHitNavmesh){return;}
+
+            MoveEvent?.Invoke(position);
         }
 
         private bool RaycastNavmesh(out Vector3 target)

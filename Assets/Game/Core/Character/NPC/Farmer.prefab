@@ -171,18 +171,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2619821073782195040, guid: 5b3119219494ffc46a9d27cca1f6e89e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5b3119219494ffc46a9d27cca1f6e89e, type: 3}
---- !u!114 &949342320603900976 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 851253912758079381, guid: 5b3119219494ffc46a9d27cca1f6e89e,
-    type: 3}
-  m_PrefabInstance: {fileID: 503557788011357093}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2497112133130690759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 326cc4b2557658745944d632ba834dba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &2497112133130690755 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 2619821073782195046, guid: 5b3119219494ffc46a9d27cca1f6e89e,
@@ -217,6 +205,35 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: f65e5881bc268234fa9412c0609f52d2, type: 3}
   _interactRange: 3
   _dialouge: {fileID: 11400000, guid: c3815c228426d9f4f8c227c83ac3160a, type: 2}
+--- !u!114 &3235536532903459247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2497112133130690759}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2b7f7b3c79f554fb4e502c2f772998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDead: 0
+  TakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5632199037970005240}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isAttackable: 0
 --- !u!114 &3532552090055074030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Agent>k__BackingField: {fileID: 2497112133130690755}
-  <Health>k__BackingField: {fileID: 0}
+  <Health>k__BackingField: {fileID: 3235536532903459247}
   <Sight>k__BackingField: {fileID: 2497112134169817207}
   <Animator>k__BackingField: {fileID: 2497112133130690766}
   <WalkSpeed>k__BackingField: 3.5
@@ -240,7 +257,7 @@ MonoBehaviour:
   <RotationSpeed>k__BackingField: 3
   <Target>k__BackingField: {fileID: 0}
   <RoutineHandler>k__BackingField: {fileID: 8154585552888545881}
-  <StateChecker>k__BackingField: {fileID: 949342320603900976}
+  <StateHandler>k__BackingField: {fileID: 0}
   <DefaultBehaviour>k__BackingField: 6
   <WeaponHandler>k__BackingField: {fileID: 5339259674102545977}
   <BehaviourMaps>k__BackingField: []
@@ -292,6 +309,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c517aec82204d4aa290c4789a87113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &5632199037970005240 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5248215345079246685, guid: 5b3119219494ffc46a9d27cca1f6e89e,
+    type: 3}
+  m_PrefabInstance: {fileID: 503557788011357093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7341845290279450060 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7142575175357650537, guid: 5b3119219494ffc46a9d27cca1f6e89e,

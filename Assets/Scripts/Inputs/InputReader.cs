@@ -32,7 +32,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActionsActions
     {
         if(context.started)
         {
-            PlayerActionEvent?.Invoke();
+            // PlayerActionEvent?.Invoke();
         }
         if(context.performed) 
         {

@@ -11,26 +11,24 @@ namespace RPG.Control.PlayerController
         private const float CrossFadeInFixedTime = 0.1f;
 
         Vector3 destination;
-        RaycastHit hit;
+        Transform target;
         float range = 0;
 
 
-        public PlayerMovingState(PlayerStateMachine stateMachine, RaycastHit hit, float range) : base(stateMachine)
+        public PlayerMovingState(PlayerStateMachine stateMachine, Transform target, float range) : base(stateMachine)
         {
-            this.hit = hit;
+            this.target = target;
+            this.destination = target.position;
             this.range = range;
         }
-        public PlayerMovingState(PlayerStateMachine stateMachine, RaycastHit hit) : base(stateMachine)
+        public PlayerMovingState(PlayerStateMachine stateMachine, Transform target) : base(stateMachine)
         {
-            this.hit = hit;
+            this.target = target;
+            this.destination = target.position;
         }
-        public PlayerMovingState(PlayerStateMachine stateMachine, Vector3 position) : base(stateMachine)
+        public PlayerMovingState(PlayerStateMachine stateMachine, Vector3 desitnation) : base(stateMachine)
         {
-            this.destination = position;
-        }
-        public PlayerMovingState(PlayerStateMachine stateMachine) : base(stateMachine)
-        {
-            
+            this.destination = desitnation;
         }
 
         public override void Enter()
@@ -38,18 +36,9 @@ namespace RPG.Control.PlayerController
             stateMachine.Agent.isStopped = false;
             stateMachine.InteractionHandler.MoveEvent += NewLocation;
             stateMachine.Animator.CrossFadeInFixedTime(WalkForwardHash, CrossFadeInFixedTime);
-            NewLocation(hit);
-            stateMachine.isInMovingState = true;
-        }
-        public void Enter(RaycastHit hit)
-        {
+            NewLocation(destination);
             
-            this.hit = hit;
-        }
-        public void Enter(RaycastHit hit, float range)
-        {
-            this.hit = hit;
-            this.range = range;
+            stateMachine.isInMovingState = true;
         }
         public override void Tick(float deltaTime)
         {
@@ -62,36 +51,17 @@ namespace RPG.Control.PlayerController
             }
             else
             {
+                
                 if(Vector3.Distance(stateMachine.transform.position, stateMachine.Agent.destination) <= range)
                 {
-                    if(hit.transform.TryGetComponent<IAttackable>(out IAttackable target))
-                    {
-                        stateMachine.HandleAttack(hit);
-                    }
-                    else if(hit.transform.TryGetComponent<IInteractable>(out IInteractable interact))
-                    {
-                        stateMachine.HandleInteraction(hit);
-                    }
-                    else
-                    {
-                        stateMachine.SwitchState(new PlayerIdlingState(stateMachine));
-                    }
+                    stateMachine.AtDestination(target);
                 } 
             }
-              
-            
         }
         public override void Exit()
         {
             stateMachine.InteractionHandler.MoveEvent -= NewLocation;
             stateMachine.isInMovingState = false;
-        }
-        
-        
-        private void NewLocation(RaycastHit hit)
-        {
-            this.hit = hit;
-            stateMachine.Agent.SetDestination(hit.point);
         }
         private void NewLocation(Vector3 position)
         {

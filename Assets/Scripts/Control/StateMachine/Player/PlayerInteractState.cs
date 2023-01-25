@@ -5,16 +5,16 @@ namespace RPG.Control.PlayerController
 {
     public class PlayerInteractState : PlayerBaseState
     {
-        RaycastHit interactObj;
-        public PlayerInteractState(PlayerStateMachine stateMachine, RaycastHit interact) : base(stateMachine)
+        IInteractable interactable;
+        public PlayerInteractState(PlayerStateMachine stateMachine, IInteractable interact) : base(stateMachine)
         {
-            this.interactObj = interact;
+            this.interactable = interact;
         }
 
         public override void Enter()
         {
             stateMachine.Agent.isStopped = true;
-            interactObj.transform.GetComponent<IInteractable>().OnInteract();
+            interactable.OnInteract();
             stateMachine.SwitchState(new PlayerIdlingState(stateMachine));
         }
         public override void Tick(float deltaTime)

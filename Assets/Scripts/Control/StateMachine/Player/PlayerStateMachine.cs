@@ -56,17 +56,7 @@ namespace RPG.Control.PlayerController
             }
             WeaponHandler.EquipWeapon(equipWeapon);
         }
-        public void HandleInteraction(RaycastHit obj)
-        {
-            if(Vector3.Distance(transform.position, obj.transform.position) <= obj.transform.GetComponent<IInteractable>().GetInteractRange())
-            {
-                SwitchState(new PlayerInteractState(this, obj));
-            }
-            else
-            {
-                HandleMove(obj, obj.transform.GetComponent<IInteractable>().GetInteractRange());
-            }
-        }
+        
 
         private void Start() 
         {
@@ -95,18 +85,11 @@ namespace RPG.Control.PlayerController
             SwitchState(new PlayerIdlingState(this));
         }
 
-        private void HandleMove(RaycastHit hit)
+        public void HandleMove(Transform target, float range)
         {
             if(!isInMovingState)
             {
-                SwitchState(new PlayerMovingState(this, hit));
-            }
-        }
-        public void HandleMove(RaycastHit hit, float range)
-        {
-            if(!isInMovingState)
-            {
-                SwitchState(new PlayerMovingState(this, hit, range));
+                SwitchState(new PlayerMovingState(this, target, range));
             }
         }
         public void HandleMove(Vector3 position)
@@ -116,17 +99,46 @@ namespace RPG.Control.PlayerController
                 SwitchState(new PlayerMovingState(this, position));
             }
         }
-        public void HandleAttack(RaycastHit hit)
+        public void AtDestination(Transform target)
         {
-            currentTarget = hit;
-            WeaponHandler.SetTarget(currentTarget.transform.GetComponent<Health>());
-            if(Vector3.Distance(transform.position, hit.transform.position) > WeaponHandler.currentWeapon.Range)
+            if(target.TryGetComponent<IInteractable>(out IInteractable interact))
             {
-                HandleMove(hit, WeaponHandler.currentWeapon.Range);
+                HandleInteraction(target);
+                return;
+            }
+            if(target.TryGetComponent<IAttackable>(out IAttackable attackable))
+            {
+                HandleAttack(target);
+                return;
+            }
+            SwitchState(new PlayerIdlingState(this));
+        }
+        public void HandleInteraction(Transform target)
+        {
+            if(!target.TryGetComponent<IInteractable>(out IInteractable interact)){return;}
+            
+            if(Vector3.Distance(transform.position, target.position) > interact.GetInteractRange())
+            {
+                HandleMove(target, target.GetComponent<IInteractable>().GetInteractRange());
+            }
+            else
+            {
+                SwitchState(new PlayerInteractState(this, interact));
+            }
+        }
+        public void HandleAttack(Transform target)
+        {
+            if(!target.TryGetComponent<Health>(out Health targetHealth)){return;}
+            if(!targetHealth.Attackable()){return;}
+
+            WeaponHandler.SetTarget(targetHealth);
+            if(Vector3.Distance(transform.position,target.position) > WeaponHandler.currentWeapon.Range)
+            {
+                HandleMove(target, WeaponHandler.currentWeapon.Range);
             }
             else if((DateTime.Now - LastAttack).TotalSeconds > AttackCooldownTime)
             {
-                SwitchState(new PlayerAttackingState(this, hit));
+                SwitchState(new PlayerAttackingState(this, target));
             }
         }
         public void FreezePlayer()

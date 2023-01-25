@@ -8,11 +8,11 @@ using RPG.Control;
 
 namespace RPG.Attributes
 {
-    public class Health : MonoBehaviour, IAttackable, ISaveable, IChangeBehaviour
+    public class Health : MonoBehaviour, IAttackable, ISaveable
     {
         private float health = -1f;
         public event System.Action<RPG.Control.Action> HitEvent;
-        public event System.Action<RPG.Control.Action> DeathEvent;
+        public event System.Action DeathEvent;
         public event System.Action<RPG.Control.Action> ReviveEvent;
         public bool isDead = false;
         
@@ -23,6 +23,7 @@ namespace RPG.Attributes
         private GameObject instigator;
 
         private BaseStats baseStats;
+        [SerializeField] private bool isAttackable;
 
         private void OnEnable() 
         {
@@ -36,7 +37,6 @@ namespace RPG.Attributes
             if(stateChecker != null)
             {
                 HitEvent += stateChecker.Check;
-                DeathEvent += stateChecker.Check;
                 ReviveEvent += stateChecker.Check;
             }
         }
@@ -54,8 +54,9 @@ namespace RPG.Attributes
             if(health == 0)
             {
                 isDead = true;
-                DeathEvent?.Invoke(RPG.Control.Action.Killed);
+                DeathEvent?.Invoke();
                 AwardExperience(instigator);
+                isAttackable = false;
             }
             else
             {
@@ -111,9 +112,9 @@ namespace RPG.Attributes
             experience.GainExperience(baseStats.GetStat(Stat.ExperienceReward));
         }
 
-        public UnityAction<Control.Action> GetEvent()
+        public bool Attackable()
         {
-            throw new NotImplementedException();
+            return isAttackable;
         }
     }
 }

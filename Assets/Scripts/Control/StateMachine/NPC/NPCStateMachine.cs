@@ -59,12 +59,14 @@ namespace RPG.Control.NPCController
                 {
                     ChangeState();
                 }
+                Health.DeathEvent += HandleDeath;
             }
             
         }
         private void OnDisable() 
         {
             StateHandler.OnBehaviourChange -= ChangeState;
+            Health.DeathEvent -= HandleDeath;
         }
 
         private void HandleRevive()
@@ -78,6 +80,10 @@ namespace RPG.Control.NPCController
         {
             WeaponHandler.SetTarget(Target.GetComponent<Health>());
             StateHandler.Check(RPG.Control.Action.Attacked);
+        }
+        private void HandleDeath()
+        {
+            SwitchState(new NPCDeathState(this));
         }
         public void AggroNearByEnemies()
         {
@@ -108,11 +114,6 @@ namespace RPG.Control.NPCController
                 {
                     isSearching = true;
                     SwitchState(new NPCSearchingState(this));
-                    break;
-                }
-                case BehaviourState.Dead:
-                {
-                    SwitchState(new NPCDeathState(this));
                     break;
                 }
                 case BehaviourState.Fleeing:

@@ -12,7 +12,6 @@ namespace RPG.Control.Routine
 
         public void NextNode()
         {
-            Debug.Log(currentIndex + " " + nodes.Count);
             if(currentIndex+1 < nodes.Count)
             {
                 currentIndex++;

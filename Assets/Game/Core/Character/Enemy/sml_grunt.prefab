@@ -1895,6 +1895,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3821100762403873124, guid: a3951c437a46d3c4ba2acdd0a1b16ac3,
+        type: 3}
+      propertyPath: isAttackable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3821100762403873125, guid: a3951c437a46d3c4ba2acdd0a1b16ac3,
         type: 3}
       propertyPath: m_RootOrder

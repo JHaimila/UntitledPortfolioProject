@@ -5,7 +5,7 @@ namespace RPG.Control.PlayerController
 {
     public class PlayerAttackingState : PlayerBaseState
     {
-        private RaycastHit _target;
+        private Transform target;
 
         // private readonly int AttackHash = Animator.StringToHash();
 
@@ -14,18 +14,14 @@ namespace RPG.Control.PlayerController
 
         float previousFrameTime;
 
-        public PlayerAttackingState(PlayerStateMachine stateMachine, RaycastHit hit) : base(stateMachine)
+        public PlayerAttackingState(PlayerStateMachine stateMachine, Transform target) : base(stateMachine)
         {
-            this._target = hit;
-        }
-        public PlayerAttackingState(PlayerStateMachine stateMachine) : base(stateMachine)
-        {
-            
+            this.target = target;
         }
 
         public override void Enter()
         {
-            if(_target.transform.gameObject == stateMachine.gameObject) 
+            if(target.tag.Equals("Player")) 
             {
                 stateMachine.SwitchState(new PlayerIdlingState(stateMachine));
                 return;
@@ -33,14 +29,10 @@ namespace RPG.Control.PlayerController
             stateMachine.Agent.isStopped = true;
             stateMachine.LastAttack = DateTime.Now;
             stateMachine.Animator.CrossFadeInFixedTime(Animator.StringToHash(stateMachine.WeaponHandler.currentWeapon.AnimationString), CrossFadeInFixedTime);
-            // if(stateMachine.WeaponHandler.currentWeapon.HasProjectile())
-            // {
-            //     stateMachine.WeaponHandler.currentWeapon.LaunchProjectile(stateMachine.WeaponHandler.rightHandTransform, stateMachine.WeaponHandler.leftHandTransform, _target.transform.GetComponent<Health>());
-            // }
         }
         public override void Tick(float deltaTime)
         {
-            stateMachine.transform.LookAt(_target.transform, Vector3.up);
+            stateMachine.transform.LookAt(target, Vector3.up);
             float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
             if(normalizedTime < 0.8f)
             {
