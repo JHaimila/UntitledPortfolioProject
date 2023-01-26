@@ -90,8 +90,10 @@ namespace RPG.Control.NPCController
             RaycastHit[] hits = Physics.SphereCastAll(transform.position, aggroRadius, Vector3.up, 0, agroLayer);
             foreach(RaycastHit enemyHit in hits)
             {
-                StateHandler nearByEnemy = enemyHit.transform.GetComponent<StateHandler>();
-                nearByEnemy.Check(Action.Attacked);
+                if (enemyHit.transform.TryGetComponent<StateHandler>(out StateHandler nearByEnemy))
+                {
+                    nearByEnemy.Check(Action.Attacked);
+                }
             }
         }
         public void ChangeState()
@@ -175,11 +177,6 @@ namespace RPG.Control.NPCController
                 SwitchState(new NPCIdlingState(this));
             }
         }
-        #if UNITY_EDITOR
-        // private void OnDrawGizmos() {
-        //     Gizmos.DrawWireSphere(transform.position, WeaponHandler.currentWeapon.Range);
-        // }
-        #endif
     }
 }
 

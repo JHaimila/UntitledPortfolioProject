@@ -42,7 +42,7 @@ namespace RPG.Control.NPCController
         }
         public override void Exit()
         {
-            
+            stateMachine.Agent.isStopped = false;
         }
 
         

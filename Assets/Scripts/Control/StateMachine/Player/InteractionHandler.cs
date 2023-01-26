@@ -137,8 +137,6 @@ namespace RPG.Control.PlayerController
             IInteractable interactable;
             hit.transform.TryGetComponent<IInteractable>(out interactable);
             
-            Debug.Log(hit.transform.position);
-            
             if(target != null && target.Attackable())
             {
                 AttackEvent?.Invoke(hit.transform);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace RPG.Control.NPCController
 {
@@ -17,13 +18,17 @@ namespace RPG.Control.NPCController
 
         private void DeterminRunDirection()
         {
-            Vector3 dirToTarget = stateMachine.transform.position - stateMachine.Target.transform.position;
-
-            Vector3 newPos = stateMachine.transform.position + dirToTarget;
-
-            stateMachine.SwitchState(new NPCTravelState(stateMachine, newPos));
+            Vector3 currentPosition = stateMachine.transform.position;
+            Vector3 dirToTarget = currentPosition - stateMachine.Target.transform.position;
+            Vector3 newPos = currentPosition + dirToTarget;
+            
+            NavMeshHit hit;
+            
+            if(NavMesh.SamplePosition(newPos, out hit, 3f, NavMesh.AllAreas))
+            {
+                stateMachine.SwitchState(new NPCTravelState(stateMachine, newPos, "1H_Run_Forward"));
+            }
         }
-        
     }
 }
 

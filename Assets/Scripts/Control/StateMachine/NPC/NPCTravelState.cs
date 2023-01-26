@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace RPG.Control.NPCController
 {
     public class NPCTravelState : NPCBaseState
     {
-        private readonly int WalkHash = Animator.StringToHash("1H_Walk_Forward");
+        private int travelAnimationHash = Animator.StringToHash("1H_Walk_Forward");
         private const float AnimatorDampTime = 0.1f;
         private const float CrossFadeInFixedTime = 0.1f;
 
@@ -15,10 +16,20 @@ namespace RPG.Control.NPCController
         {
             this.target = target;
         }
+        public NPCTravelState(NPCStateMachine stateMachine, Vector3 target, string animationName) : base(stateMachine)
+        {
+            this.target = target;
+            travelAnimationHash = Animator.StringToHash(animationName);
+        }
 
         public override void Enter()
         {
-            stateMachine.Animator.CrossFadeInFixedTime(WalkHash, CrossFadeInFixedTime);
+            if (!CheckPosition(stateMachine.Agent.destination))
+            {
+                stateMachine.ChangeState();
+                return;
+            }
+            stateMachine.Animator.CrossFadeInFixedTime(travelAnimationHash, CrossFadeInFixedTime);
             stateMachine.Agent.destination = target;
             stateMachine.Agent.speed = stateMachine.WalkSpeed;
         }
@@ -34,6 +45,15 @@ namespace RPG.Control.NPCController
         public override void Exit()
         {
             
+        }
+
+        private bool CheckPosition(Vector3 positionToCheck)
+        {
+            if (NavMesh.SamplePosition(positionToCheck, out NavMeshHit hit, 0.1f, NavMesh.AllAreas))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
