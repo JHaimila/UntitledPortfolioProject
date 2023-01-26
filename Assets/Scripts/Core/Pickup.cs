@@ -11,6 +11,12 @@ namespace RPG.Core
         {
             return Range;
         }
+
+        public bool IsInteractable()
+        {
+            return true;
+        }
+
         public abstract void OnInteract();
     }
 }

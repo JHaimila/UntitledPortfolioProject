@@ -26,5 +26,10 @@ namespace RPG.Control
         {
             pickup.PickupItem();
         }
+
+        public bool IsInteractable()
+        {
+            return true;
+        }
     }
 }

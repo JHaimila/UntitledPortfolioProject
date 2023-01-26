@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Attributes;
 using RPG.Core;
 using UnityEngine;
 
@@ -27,6 +28,12 @@ namespace RPG.Dialogue
                 _dialogueController = GameObject.FindGameObjectWithTag("Player").GetComponent<DialogueController>();
             }
             _dialogueController.StartDialogue(_dialouge, this);
+        }
+
+        public bool IsInteractable()
+        {
+            Health health = transform.GetComponent<Health>();
+            return !health.isDead && !health.Attackable();
         }
     }
 }

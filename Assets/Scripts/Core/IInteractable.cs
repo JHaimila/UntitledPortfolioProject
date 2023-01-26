@@ -8,5 +8,6 @@ namespace RPG.Core
     {
         void OnInteract();
         float GetInteractRange();
+        bool IsInteractable();
     }
 }

@@ -92,23 +92,23 @@ namespace RPG.Control.PlayerController
                 
                 IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
 
+                hit.transform.TryGetComponent<IInteractable>(out IInteractable interactable);
+                hit.transform.TryGetComponent<IAttackable>(out IAttackable target);
+
                 
                 if(MouseOverUILayerObject.IsPointerOverUIObject(InputReader.pointerPosition))
                 {
                     SetCursor(CursorType.UI);
                 }
-                else if(hit.transform.TryGetComponent<IInteractable>(out IInteractable interactable))
+                else if(interactable != null && interactable.IsInteractable())
                 {
                     SetCursor(CursorType.Interact);
                 }
-                else if(hit.transform.TryGetComponent<IAttackable>(out IAttackable target))
+                else if(target != null && target.Attackable())
                 {
-                    if(target.Attackable())
+                    if(hit.transform != transform)
                     {
-                        if(hit.transform != transform)
-                        {
-                            SetCursor(CursorType.Combat);
-                        }
+                        SetCursor(CursorType.Combat);
                     }
                 }
                 else
@@ -133,6 +133,9 @@ namespace RPG.Control.PlayerController
 
             IAttackable target;
             hit.transform.TryGetComponent<IAttackable>(out target);
+
+            IInteractable interactable;
+            hit.transform.TryGetComponent<IInteractable>(out interactable);
             
             Debug.Log(hit.transform.position);
             
@@ -141,7 +144,7 @@ namespace RPG.Control.PlayerController
                 AttackEvent?.Invoke(hit.transform);
                 return;
             }
-            if(hit.transform.TryGetComponent<IInteractable>(out IInteractable interactable))
+            if(interactable != null && interactable.IsInteractable())
             {
                 InteractEvent?.Invoke(hit.transform);
                 return;
