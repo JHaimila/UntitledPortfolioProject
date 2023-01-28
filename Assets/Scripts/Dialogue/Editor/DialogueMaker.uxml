@@ -1,3 +1,16 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <Style src="project://database/Assets/Scripts/Dialogue/Editor/DialogueMaker.uss?fileID=7433441132597879392&amp;guid=b2dcdc0922340f04cba8e2644a83d76c&amp;type=3#DialogueMaker" />
+    <uie:Toolbar>
+        <uie:ToolbarMenu display-tooltip-when-elided="true" text="Assets&#10;" />
+    </uie:Toolbar>
+    <SplitView fixed-pane-initial-dimension="300">
+        <ui:VisualElement name="left-panel">
+            <InspectorView />
+            <ui:Label text="Inspector" display-tooltip-when-elided="true" style="background-color: rgba(37, 37, 37, 255);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="right-panel">
+            <ui:Label text="Tree View" display-tooltip-when-elided="true" style="background-color: rgba(37, 37, 37, 255);" />
+            <DialogueMakerView focusable="true" style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </SplitView>
 </ui:UXML>

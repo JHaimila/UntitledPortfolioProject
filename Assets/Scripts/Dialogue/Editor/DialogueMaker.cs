@@ -7,7 +7,7 @@ using UnityEditor.UIElements;
 public class DialogueMaker : EditorWindow
 {
     [MenuItem("Tools/DialogueMaker")]
-    public static void ShowExample()
+    public static void OpenWindow()
     {
         DialogueMaker wnd = GetWindow<DialogueMaker>();
         wnd.titleContent = new GUIContent("DialogueMaker");
@@ -24,14 +24,11 @@ public class DialogueMaker : EditorWindow
 
         // Import UXML
         var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Scripts/Dialogue/Editor/DialogueMaker.uxml");
-        VisualElement labelFromUXML = visualTree.Instantiate();
-        root.Add(labelFromUXML);
+        visualTree.CloneTree(root); //Using CloneTree instead of instantitate b/c with instantiate you have an intermediary object that you have to assign the instantitated object. THis skips that
 
         // A stylesheet can be added to a VisualElement.
         // The style will be applied to the VisualElement and all of its children.
         var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Scripts/Dialogue/Editor/DialogueMaker.uss");
-        VisualElement labelWithStyle = new Label("Hello World! With Style");
-        labelWithStyle.styleSheets.Add(styleSheet);
-        root.Add(labelWithStyle);
+        root.styleSheets.Add(styleSheet);
     }
 }
