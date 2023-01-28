@@ -1,14 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace RPG.Control.Routine
 {
     public class Routine : MonoBehaviour
     {
-        [SerializeField] List<RoutineNode> nodes = new List<RoutineNode>();
+        private List<RoutineNode> nodes = new List<RoutineNode>();
         [SerializeField] private bool loops = true;
+        [SerializeField] private bool reverseOrder;
         private int currentIndex = 0;
+
+        private void Awake()
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).TryGetComponent<RoutineNode>(out RoutineNode tNode);
+                if (tNode != null)
+                {
+                    nodes.Add((tNode));
+                }
+            }
+        }
 
         public void NextNode()
         {
@@ -19,7 +34,16 @@ namespace RPG.Control.Routine
             else
             {
                 if(!loops){return;}
-                currentIndex = 0;
+
+                if (reverseOrder)
+                {
+                    nodes.Reverse();
+                    currentIndex = 1;
+                }
+                else
+                {
+                    currentIndex = 0;
+                }
             }
         }
         public RoutineNode GetCurrentNode()
@@ -32,5 +56,42 @@ namespace RPG.Control.Routine
             if(currentIndex+1 < nodes.Count || loops){return true;}
             return false;
         }
+        
+#if UNITY_EDITOR
+        private void OnDrawGizmosSelected() 
+        {
+            for(int i = 0; i < transform.childCount; i++ )
+            {
+                GameObject routineNode = transform.GetChild(i).gameObject;
+                if(transform.GetChild(i) == transform.GetChild(0))
+                {
+                    Gizmos.color = Color.green;
+                }
+                else if(i + 1 >= transform.childCount)
+                {
+                    Gizmos.color = Color.red;
+                }
+                else
+                {
+                    Gizmos.color = Color.gray;
+                }
+                Gizmos.DrawSphere(routineNode.transform.position, 1);
+
+                Gizmos.color = Color.gray;
+
+                if(i+1 < transform.childCount)
+                {
+                    Gizmos.DrawLine(transform.GetChild(i).transform.position, transform.GetChild(i+1).transform.position);
+                }
+                else
+                {
+                    if (loops && !reverseOrder)
+                    {
+                        Gizmos.DrawLine(transform.GetChild(i).transform.position, transform.GetChild(0).transform.position);
+                    }
+                }
+            }
+        }
+#endif
     }
 }

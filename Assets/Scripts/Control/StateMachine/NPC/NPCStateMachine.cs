@@ -128,6 +128,11 @@ namespace RPG.Control.NPCController
                     SwitchState(new NPCFleeingState(this));
                     break;
                 }
+                case BehaviourState.Idle:
+                {
+                    SwitchState(new NPCIdlingState(this));
+                    break;
+                }
             }
             if(StateHandler.GetCurrentBehaviour() != BehaviourState.Searching && isSearching)
             {

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8995557279766315295
+--- !u!114 &-9052731930060693643
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,247 +10,176 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 50b92e6b-ce72-4565-b762-d7ba20a59d0c
+  m_Name: 667a12dc-d34d-4662-9f87-c5674c6a1aba
   m_EditorClassIdentifier: 
-  text: Don't worry about it
+  text: I don't know
+  children:
+  - 1c8cb821-25e4-40e1-afd7-b49997a600d4
+  nodeRect:
+    serializedVersion: 2
+    x: 1281
+    y: 391
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-8629663491828724428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 3b8cc643-2fbd-417a-9c8e-832142e679a1
+  m_EditorClassIdentifier: 
+  text: Why are you dressed like that?
+  children:
+  - 31b49ba5-4d98-45ae-8750-5cda474cf5dd
+  nodeRect:
+    serializedVersion: 2
+    x: 605
+    y: 383
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-6277544555704328440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: b9b067a8-5ad8-4a09-8da7-f7161fad89d5
+  m_EditorClassIdentifier: 
+  text: Now, what do you want?
+  children:
+  - b2e90f2c-e1e7-402d-8d47-41993137247e
+  - 667a12dc-d34d-4662-9f87-c5674c6a1aba
+  nodeRect:
+    serializedVersion: 2
+    x: 1034
+    y: 385
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-5625589436791479624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 19589064-9a7b-484c-9e14-c835f7148d98
+  m_EditorClassIdentifier: 
+  text: I'd say you should go to town
+  children:
+  - b8b7040b-2edd-4680-a2b0-3d883861f99f
+  nodeRect:
+    serializedVersion: 2
+    x: 1691
+    y: 391
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-4804934790336361878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: b8b7040b-2edd-4680-a2b0-3d883861f99f
+  m_EditorClassIdentifier: 
+  text: You'll have to pay the toll.
+  children:
+  - 3db480ab-2a9a-463d-a41d-b57fd7ff56f1
+  nodeRect:
+    serializedVersion: 2
+    x: 1931
+    y: 110
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-3220897706429614311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 66c4bac4-c46c-46d4-89fe-bcbdf873a52f
+  m_EditorClassIdentifier: 
+  text: Anyways I gotta get back to it
   children: []
   nodeRect:
     serializedVersion: 2
-    x: 1491
-    y: 327
-    width: 200
-    height: 150
-  isPlayerSpeaking: 0
-  EnterActions: 
-  ExitActions: GiveQuest
-  condition:
-    and: []
---- !u!114 &-7705381241770091275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: d03c8f6e-74ce-4708-b9a6-e4a752bcede4
-  m_EditorClassIdentifier: 
-  text: Newton eh? I heard theres trouble brewing down there
-  children:
-  - 2e3cdff2-5b8b-404e-9fd1-7ff98d83be32
-  - ea809fa7-bdcd-47f2-89bd-580aed307f8a
-  nodeRect:
-    serializedVersion: 2
-    x: 496
+    x: 2581
     y: 100
     width: 200
-    height: 150
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: GiveQuest
+  ExitActions: ChangeRoutine
+  condition:
+    and: []
+--- !u!114 &-2146911823884865506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 3db480ab-2a9a-463d-a41d-b57fd7ff56f1
+  m_EditorClassIdentifier: 
+  text: By the looks of you, I'm going to assume thats not an option.
+  children:
+  - be3da610-602e-47a1-92c6-b96c3bb6cc38
+  nodeRect:
+    serializedVersion: 2
+    x: 2146
+    y: 102
+    width: 200
+    height: 250
   isPlayerSpeaking: 0
   EnterActions: 
   ExitActions: 
-  condition:
-    and: []
---- !u!114 &-7679574804369107462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: ea809fa7-bdcd-47f2-89bd-580aed307f8a
-  m_EditorClassIdentifier: 
-  text: Did I say Newton? I meant Springville
-  children:
-  - b6cc2137-f4a9-411f-b50c-f670e33d9c92
-  nodeRect:
-    serializedVersion: 2
-    x: 750
-    y: 280
-    width: 200
-    height: 150
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &-6953727837174478247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: ae862289-e442-41ce-9ac6-01cca2e4e4f0
-  m_EditorClassIdentifier: 
-  text: Who?
-  children:
-  - 50b92e6b-ce72-4565-b762-d7ba20a59d0c
-  nodeRect:
-    serializedVersion: 2
-    x: 1237
-    y: 427
-    width: 200
-    height: 150
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &-6687604531177175849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 2e3cdff2-5b8b-404e-9fd1-7ff98d83be32
-  m_EditorClassIdentifier: 
-  text: I haven't heard of any trouble
-  children:
-  - 50b92e6b-ce72-4565-b762-d7ba20a59d0c
-  nodeRect:
-    serializedVersion: 2
-    x: 767
-    y: 69
-    width: 200
-    height: 150
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &-5605877864719760259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: b6d16c37-0356-4c97-8922-c2b2557a44d9
-  m_EditorClassIdentifier: 
-  text: I have the bow
-  children:
-  - b6cc2137-f4a9-411f-b50c-f670e33d9c92
-  nodeRect:
-    serializedVersion: 2
-    x: 261
-    y: 326
-    width: 200
-    height: 150
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and:
-    - or:
-      - predicate: 6
-        parameters:
-        - c4dac422-1c33-43a8-9912-becedc8c4457
-        negate: 0
---- !u!114 &-5215358252438461492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 912dff53-38e4-4a64-b960-02d53a934bfb
-  m_EditorClassIdentifier: 
-  text: '[Give Quest]'
-  children:
-  - 5ed018e3-f288-46fa-9a0d-ee029acdc3b9
-  nodeRect:
-    serializedVersion: 2
-    x: 260
-    y: 478
-    width: 200
-    height: 250
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: GiveQuest
-  condition:
-    and:
-    - or:
-      - predicate: 1
-        parameters:
-        - First Quest
-        negate: 1
---- !u!114 &-1889431842445006487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: f3f28053-048f-4c72-a225-a6bb2489cf1b
-  m_EditorClassIdentifier: 
-  text: '[Return Quest]'
-  children:
-  - 5ed018e3-f288-46fa-9a0d-ee029acdc3b9
-  nodeRect:
-    serializedVersion: 2
-    x: 268
-    y: 735
-    width: 200
-    height: 250
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: CompleteQuest
-  condition:
-    and:
-    - or:
-      - predicate: 1
-        parameters:
-        - First Quest
-        negate: 0
-    - or:
-      - predicate: 2
-        parameters:
-        - First Quest
-        negate: 1
---- !u!114 &-3469072355524526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: c3ac4dc5-0ebe-4478-9ce0-5023092ddee3
-  m_EditorClassIdentifier: 
-  text: You liar there is no Mr bowler
-  children: []
-  nodeRect:
-    serializedVersion: 2
-    x: 1493
-    y: 618
-    width: 200
-    height: 150
-  isPlayerSpeaking: 0
-  EnterActions: 
-  ExitActions: CompleteQuest
   condition:
     and: []
 --- !u!114 &11400000
@@ -263,25 +192,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9f72b4f58e46da4c97dd8bc0a002cb5, type: 3}
-  m_Name: New Dialogue
+  m_Name: Toll
   m_EditorClassIdentifier: 
   <nodes>k__BackingField:
-  - {fileID: 6642900027015792664}
-  - {fileID: 3457210994876183541}
-  - {fileID: -7705381241770091275}
-  - {fileID: -5605877864719760259}
-  - {fileID: 1897237981536216549}
-  - {fileID: 5582987231304510508}
-  - {fileID: -6953727837174478247}
-  - {fileID: -3469072355524526}
-  - {fileID: -8995557279766315295}
-  - {fileID: -6687604531177175849}
-  - {fileID: -7679574804369107462}
-  - {fileID: -5215358252438461492}
-  - {fileID: -1889431842445006487}
-  - {fileID: 8050725843754771043}
+  - {fileID: 2970855599210535711}
+  - {fileID: -4804934790336361878}
+  - {fileID: -2146911823884865506}
+  - {fileID: -3220897706429614311}
+  - {fileID: 8661106415978552677}
+  - {fileID: -8629663491828724428}
+  - {fileID: 2698962480033250857}
+  - {fileID: -6277544555704328440}
+  - {fileID: 8031740912426013516}
+  - {fileID: -9052731930060693643}
+  - {fileID: 8813252427983176423}
+  - {fileID: -5625589436791479624}
   newNodeOffset: {x: 250, y: 0}
---- !u!114 &1897237981536216549
+--- !u!114 &2698962480033250857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -291,24 +218,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: b6cc2137-f4a9-411f-b50c-f670e33d9c92
+  m_Name: 31b49ba5-4d98-45ae-8750-5cda474cf5dd
   m_EditorClassIdentifier: 
-  text: Oh really? Then you must know Mr. Bowler
+  text: This is what happens when you can't pay the poral toll.
   children:
-  - 9180663d-4d82-4217-bd61-c40ceb99e95f
-  - ae862289-e442-41ce-9ac6-01cca2e4e4f0
+  - b9b067a8-5ad8-4a09-8da7-f7161fad89d5
   nodeRect:
     serializedVersion: 2
-    x: 999
-    y: 443
+    x: 830
+    y: 386
     width: 200
-    height: 150
+    height: 250
   isPlayerSpeaking: 0
   EnterActions: 
   ExitActions: 
   condition:
     and: []
---- !u!114 &3457210994876183541
+--- !u!114 &2970855599210535711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -318,23 +244,109 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 865b62df-5ce4-4fd9-b6fe-c27290150c85
+  m_Name: 7d408890-2464-484a-a88c-83a017161235
   m_EditorClassIdentifier: 
-  text: I've lived here all my life
+  text: What do you want?
   children:
-  - d03c8f6e-74ce-4708-b9a6-e4a752bcede4
+  - b2e90f2c-e1e7-402d-8d47-41993137247e
+  - 3b8cc643-2fbd-417a-9c8e-832142e679a1
   nodeRect:
     serializedVersion: 2
-    x: 251
+    x: 303
+    y: 184
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &7585242278063641920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: fe80ca6e-1438-47ca-955a-852d6eda7e24
+  m_EditorClassIdentifier: 
+  text: Who are you
+  children:
+  - b8b7040b-2edd-4680-a2b0-3d883861f99f
+  - 27dc9475-6cdf-47dc-8d42-fe926283fe09
+  nodeRect:
+    serializedVersion: 2
+    x: 579
+    y: 91
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and:
+    - or:
+      - predicate: 1
+        parameters:
+        - 
+        negate: 1
+--- !u!114 &8031740912426013516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: be3da610-602e-47a1-92c6-b96c3bb6cc38
+  m_EditorClassIdentifier: 
+  text: I'd reccommend that you go back the way you came and talk to the man in the
+    cabin. Legend has it he was an adventurer for a time.
+  children:
+  - 66c4bac4-c46c-46d4-89fe-bcbdf873a52f
+  nodeRect:
+    serializedVersion: 2
+    x: 2363
+    y: 102
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &8661106415978552677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: b2e90f2c-e1e7-402d-8d47-41993137247e
+  m_EditorClassIdentifier: 
+  text: I need to get to town!
+  children:
+  - b8b7040b-2edd-4680-a2b0-3d883861f99f
+  nodeRect:
+    serializedVersion: 2
+    x: 1266
     y: 105
     width: 200
-    height: 150
+    height: 250
   isPlayerSpeaking: 1
   EnterActions: 
   ExitActions: 
   condition:
     and: []
---- !u!114 &5582987231304510508
+--- !u!114 &8813252427983176423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,69 +356,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 9180663d-4d82-4217-bd61-c40ceb99e95f
+  m_Name: 1c8cb821-25e4-40e1-afd7-b49997a600d4
   m_EditorClassIdentifier: 
-  text: Mr. bowler is a good friend of mine
+  text: Well there not much out here.
   children:
-  - c3ac4dc5-0ebe-4478-9ce0-5023092ddee3
+  - 19589064-9a7b-484c-9e14-c835f7148d98
   nodeRect:
     serializedVersion: 2
-    x: 1238
-    y: 572
-    width: 200
-    height: 150
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &6642900027015792664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 8ea43cfb-92dd-4f2e-96f3-f3aab3a2bbcc
-  m_EditorClassIdentifier: 
-  text: You don't look like you're from around here
-  children:
-  - 865b62df-5ce4-4fd9-b6fe-c27290150c85
-  - b6d16c37-0356-4c97-8922-c2b2557a44d9
-  - 912dff53-38e4-4a64-b960-02d53a934bfb
-  - f3f28053-048f-4c72-a225-a6bb2489cf1b
-  nodeRect:
-    serializedVersion: 2
-    x: -6
-    y: 244
-    width: 200
-    height: 150
-  isPlayerSpeaking: 0
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &8050725843754771043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 5ed018e3-f288-46fa-9a0d-ee029acdc3b9
-  m_EditorClassIdentifier: 
-  text: Okay
-  children: []
-  nodeRect:
-    serializedVersion: 2
-    x: 626
-    y: 621
+    x: 1485
+    y: 391
     width: 200
     height: 250
   isPlayerSpeaking: 0

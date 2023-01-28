@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NPCMedSitLoop
+  m_Controller: {fileID: 9100000, guid: 8b222c254ed283747a96035df7b38fc5, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400002, guid: f58c88b804445a04dabcd316aac2be50, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 3414f82f5a48f9946b55f670bec5d5f6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 011e91f47c50ac647aa9d4bfc804e9b0, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 6b8892e6533598146a18924791c50c8e, type: 2}
+  - m_OriginalClip: {fileID: 7400006, guid: 6022a6c7dde080a43965659679c58504, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: b92c1f3bd0bf43344a7360725807dd1e, type: 2}

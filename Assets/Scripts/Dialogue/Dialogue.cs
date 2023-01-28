@@ -17,7 +17,15 @@ namespace RPG.Dialogue
         [SerializeField] Vector2 newNodeOffset = new Vector2(250, 0);
 
         private Dictionary<string,DialogueNode> _nodeLookup = new Dictionary<string, DialogueNode>();
-        
+
+        private void Awake()
+        {
+#if UNITY_EDITOR
+            if (nodes.Count == 0) nodes.Add(new DialogueNode());
+#endif
+            CreateLookupTable();
+        }
+
         public IEnumerable<DialogueNode> GetAllChildren(DialogueNode parentNode)
         {
             foreach(var childID in parentNode.GetChildren())
@@ -88,7 +96,7 @@ namespace RPG.Dialogue
         {
             DialogueNode newNode = ScriptableObject.CreateInstance<DialogueNode>();
 
-            newNode.name = System.Guid.NewGuid().ToString();
+            newNode.name = Guid.NewGuid().ToString();
             newNode.SetText("[Unwritten Dialogue]");
             newNode.SetPlayerSpeaking(!parentNode.IsPlayerSpeaking());
             newNode.SetPosition(parentNode.GetRect().position + newNodeOffset);

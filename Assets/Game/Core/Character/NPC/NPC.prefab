@@ -339,6 +339,7 @@ MonoBehaviour:
     m_Bits: 64
   seesPlayer: 0
   playerPosition: {fileID: 0}
+  stateChecker: {fileID: 0}
 --- !u!1 &2619821073782195042
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +362,8 @@ GameObject:
   - component: {fileID: 3391917005159417209}
   - component: {fileID: 1153460013174831805}
   - component: {fileID: 851253912758079381}
+  - component: {fileID: 6925633896289287156}
+  - component: {fileID: 423004355679598034}
   m_Layer: 6
   m_Name: NPC
   m_TagString: Untagged
@@ -414,21 +417,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  Death:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6632615443719001309}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  isAttackable: 0
 --- !u!195 &2619821073782195046
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -618,11 +607,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maps:
-  - <TransitionsTo>k__BackingField: 4
-    <Behaviour>k__BackingField: 0
+  - <Behaviour>k__BackingField: 0
     <TriggeredBy>k__BackingField: 0
-    <AmountOfActionsBeforeTransition>k__BackingField: 0
-    <IsDefault>k__BackingField: 1
+    <TransitionsTo>k__BackingField: 4
+--- !u!114 &6925633896289287156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619821073782195042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dab6b527bd95845b2b441990f75dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Agent>k__BackingField: {fileID: 2619821073782195046}
+  <Health>k__BackingField: {fileID: 2619821073782195040}
+  <Sight>k__BackingField: {fileID: 2619821072740914130}
+  <Animator>k__BackingField: {fileID: 2619821073782195051}
+  <WalkSpeed>k__BackingField: 3.5
+  <RunSpeed>k__BackingField: 4.5
+  searchedCount: 0
+  MaxSearchCount: 3
+  <RotationSpeed>k__BackingField: 3
+  <Target>k__BackingField: {fileID: 0}
+  <RoutineHandler>k__BackingField: {fileID: 423004355679598034}
+  <StateHandler>k__BackingField: {fileID: 851253912758079381}
+  <DefaultBehaviour>k__BackingField: 0
+  <WeaponHandler>k__BackingField: {fileID: 5540592205401382300}
+  <BehaviourMaps>k__BackingField: []
+  aggroRadius: 8
+  agroLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  isChasing: 0
+--- !u!114 &423004355679598034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619821073782195042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155c8bcd30777924da4e2531fcfd5e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  routine: {fileID: 0}
 --- !u!1 &4339534233034607440
 GameObject:
   m_ObjectHideFlags: 0

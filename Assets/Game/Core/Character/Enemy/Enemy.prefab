@@ -587,7 +587,6 @@ MonoBehaviour:
   maps:
   - <Behaviour>k__BackingField: 0
     <TriggeredBy>k__BackingField: 0
-    <AmountOfActionsBeforeTransition>k__BackingField: 1
     <TransitionsTo>k__BackingField: 3
 --- !u!1 &6040359562865615047
 GameObject:
@@ -728,6 +727,7 @@ GameObject:
   - component: {fileID: 6827951590814827657}
   - component: {fileID: 4474722685744223156}
   - component: {fileID: 5203283626314785760}
+  - component: {fileID: 4695768056164419585}
   m_Layer: 0
   m_Name: Bar
   m_TagString: Untagged
@@ -794,6 +794,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4695768056164419585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8295317060093317533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8485ce138ada0643a145d1892bc1ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8886356344894400968
 GameObject:
   m_ObjectHideFlags: 0

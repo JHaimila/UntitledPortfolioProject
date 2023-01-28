@@ -14,6 +14,8 @@ namespace RPG.Control
         LostTarget,
         Killed,
         Revived,
-        TargetInRange
+        TargetInRange,
+        InteractedStart,
+        InteractedEnd
     }
 }

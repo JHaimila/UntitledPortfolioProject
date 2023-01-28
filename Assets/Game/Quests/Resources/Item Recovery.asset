@@ -10,15 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 799d0275446f262469f5fc216c39307d, type: 3}
-  m_Name: Find the Sword
+  m_Name: Item Recovery
   m_EditorClassIdentifier: 
   objectives:
   - _reference: a
-    _description: Use the portal by the cabin
+    _description: Use the portal by the cabin to go to the bandit camp
     _optional: 0
     _hasTrigger: 0
   - _reference: b
-    _description: Use the portal by the cabin
+    _description: Find the bow
     _optional: 0
     _hasTrigger: 0
-  rewards: []
+  - _reference: c
+    _description: Find the juice
+    _optional: 0
+    _hasTrigger: 0
+  - _reference: d
+    _description: Find the fireball
+    _optional: 0
+    _hasTrigger: 0
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: c213a2c7c8a17454c8c7d2e5add817ee, type: 2}
+  repeatable: 0

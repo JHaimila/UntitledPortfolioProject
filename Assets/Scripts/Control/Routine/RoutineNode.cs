@@ -2,41 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using RPG.Combat;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RPG.Control.Routine
 {
     public class RoutineNode : MonoBehaviour
     {
         // [SerializeField] private RoutineType type;
-        [SerializeField, Min(0)] private float waitSeconds;
         [SerializeField] private Transform point;
-        [SerializeField] private AnimatorOverrideController nodeAnimation;
         [SerializeField] private GameObject interactObject;
-        [SerializeField] private Weapon  interactItem;
+        [SerializeField] private List<RoutineNodeAnimation> nodeAnimations;
+        
 
         public Transform GetTransform()
         {
-            if(point == null)
+            if(!point)
             {
                 return transform;
             }
             return point;
         }
-        public float GetWaitTime()
+
+        public List<RoutineNodeAnimation> GetAnimations()
         {
-            return waitSeconds;
+            return nodeAnimations;
         }
-        public bool HasItem()
+
+        public bool HasAnimations()
         {
-            return interactItem != null;
-        }
-        public Weapon GetItem()
-        {
-            return interactItem;
-        }
-        public AnimatorOverrideController GetAnimation()
-        {
-            return nodeAnimation;
+            return nodeAnimations.Count > 0;
         }
         public void Interact()
         {
@@ -47,5 +41,13 @@ namespace RPG.Control.Routine
                 tRoutineInteract.Interact();
             }
         }
+    }
+    [System.Serializable]
+    public class RoutineNodeAnimation
+    {
+        public AnimatorOverrideController nodeAnimation;
+        public float waitSeconds;
+        public UnityEvent triggers;
+        public Weapon  interactItem;
     }
 }

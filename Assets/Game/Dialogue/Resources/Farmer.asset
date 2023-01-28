@@ -1,0 +1,617 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8995557279766315295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 50b92e6b-ce72-4565-b762-d7ba20a59d0c
+  m_EditorClassIdentifier: 
+  text: Don't worry about it
+  children: []
+  nodeRect:
+    serializedVersion: 2
+    x: 1491
+    y: 327
+    width: 200
+    height: 150
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: GiveQuest
+  condition:
+    and: []
+--- !u!114 &-8620275746608346883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 6fccd926-cf38-41f2-96ae-7933a5d78534
+  m_EditorClassIdentifier: 
+  text: If you can get it back for me, I will help you get to town
+  children:
+  - bf315702-a759-4d77-bb2b-bf4c2b0983ed
+  - e1ac7fbc-09b8-483f-93a6-3540d02d6642
+  nodeRect:
+    serializedVersion: 2
+    x: 1345
+    y: 856
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-7705381241770091275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: d03c8f6e-74ce-4708-b9a6-e4a752bcede4
+  m_EditorClassIdentifier: 
+  text: Newton eh? I heard theres trouble brewing down there
+  children:
+  - 2e3cdff2-5b8b-404e-9fd1-7ff98d83be32
+  - ea809fa7-bdcd-47f2-89bd-580aed307f8a
+  nodeRect:
+    serializedVersion: 2
+    x: 496
+    y: 100
+    width: 200
+    height: 150
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-7679574804369107462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: ea809fa7-bdcd-47f2-89bd-580aed307f8a
+  m_EditorClassIdentifier: 
+  text: Did I say Newton? I meant Springville
+  children:
+  - b6cc2137-f4a9-411f-b50c-f670e33d9c92
+  nodeRect:
+    serializedVersion: 2
+    x: 750
+    y: 280
+    width: 200
+    height: 150
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-7554791412937377140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: bf315702-a759-4d77-bb2b-bf4c2b0983ed
+  m_EditorClassIdentifier: 
+  text: Sure I can do that
+  children:
+  - f4f9427a-17fd-4f75-8f73-35e9b7ddcc5d
+  nodeRect:
+    serializedVersion: 2
+    x: 1618
+    y: 791
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: Give Quest
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-7481696895052704589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: f4f9427a-17fd-4f75-8f73-35e9b7ddcc5d
+  m_EditorClassIdentifier: 
+  text: Great! Take the portal just up the north path from here. It will take you
+    to their camp!
+  children: []
+  nodeRect:
+    serializedVersion: 2
+    x: 1882
+    y: 790
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-6953727837174478247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: ae862289-e442-41ce-9ac6-01cca2e4e4f0
+  m_EditorClassIdentifier: 
+  text: Who?
+  children:
+  - 50b92e6b-ce72-4565-b762-d7ba20a59d0c
+  nodeRect:
+    serializedVersion: 2
+    x: 1237
+    y: 427
+    width: 200
+    height: 150
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-6687604531177175849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 2e3cdff2-5b8b-404e-9fd1-7ff98d83be32
+  m_EditorClassIdentifier: 
+  text: I haven't heard of any trouble
+  children:
+  - 50b92e6b-ce72-4565-b762-d7ba20a59d0c
+  nodeRect:
+    serializedVersion: 2
+    x: 767
+    y: 69
+    width: 200
+    height: 150
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-5605877864719760259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: b6d16c37-0356-4c97-8922-c2b2557a44d9
+  m_EditorClassIdentifier: 
+  text: I have the bow
+  children:
+  - b6cc2137-f4a9-411f-b50c-f670e33d9c92
+  nodeRect:
+    serializedVersion: 2
+    x: 261
+    y: 326
+    width: 200
+    height: 150
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and:
+    - or:
+      - predicate: 6
+        parameters:
+        - c4dac422-1c33-43a8-9912-becedc8c4457
+        negate: 0
+--- !u!114 &-5215358252438461492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 912dff53-38e4-4a64-b960-02d53a934bfb
+  m_EditorClassIdentifier: 
+  text: '[Give Quest]'
+  children:
+  - 5ed018e3-f288-46fa-9a0d-ee029acdc3b9
+  nodeRect:
+    serializedVersion: 2
+    x: 260
+    y: 478
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: GiveQuest
+  condition:
+    and:
+    - or:
+      - predicate: 1
+        parameters:
+        - First Quest
+        negate: 1
+--- !u!114 &-1889431842445006487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: f3f28053-048f-4c72-a225-a6bb2489cf1b
+  m_EditorClassIdentifier: 
+  text: I was told you can help me get to town
+  children:
+  - 5ed018e3-f288-46fa-9a0d-ee029acdc3b9
+  nodeRect:
+    serializedVersion: 2
+    x: 275
+    y: 367
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and:
+    - or:
+      - predicate: 1
+        parameters:
+        - Find the Sword
+        negate: 0
+    - or:
+      - predicate: 1
+        parameters:
+        - Item Recovery
+        negate: 1
+--- !u!114 &-1259340159358554471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: e1ac7fbc-09b8-483f-93a6-3540d02d6642
+  m_EditorClassIdentifier: 
+  text: Nah
+  children:
+  - da2ac713-1899-448a-8c0b-dd4119aeec5a
+  nodeRect:
+    serializedVersion: 2
+    x: 1618
+    y: 1054
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-3469072355524526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: c3ac4dc5-0ebe-4478-9ce0-5023092ddee3
+  m_EditorClassIdentifier: 
+  text: You liar there is no Mr bowler
+  children: []
+  nodeRect:
+    serializedVersion: 2
+    x: 1493
+    y: 618
+    width: 200
+    height: 150
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: CompleteQuest
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f72b4f58e46da4c97dd8bc0a002cb5, type: 3}
+  m_Name: Farmer
+  m_EditorClassIdentifier: 
+  <nodes>k__BackingField:
+  - {fileID: 6642900027015792664}
+  - {fileID: 3457210994876183541}
+  - {fileID: -7705381241770091275}
+  - {fileID: 1897237981536216549}
+  - {fileID: 5582987231304510508}
+  - {fileID: -6953727837174478247}
+  - {fileID: -3469072355524526}
+  - {fileID: -8995557279766315295}
+  - {fileID: -6687604531177175849}
+  - {fileID: -7679574804369107462}
+  - {fileID: -1889431842445006487}
+  - {fileID: 8050725843754771043}
+  - {fileID: 8404609017941474082}
+  - {fileID: 8000739922093505341}
+  - {fileID: -8620275746608346883}
+  - {fileID: -7554791412937377140}
+  - {fileID: -1259340159358554471}
+  - {fileID: 3388474743311100437}
+  - {fileID: -7481696895052704589}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &1897237981536216549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: b6cc2137-f4a9-411f-b50c-f670e33d9c92
+  m_EditorClassIdentifier: 
+  text: Oh really? Then you must know Mr. Bowler
+  children:
+  - 9180663d-4d82-4217-bd61-c40ceb99e95f
+  - ae862289-e442-41ce-9ac6-01cca2e4e4f0
+  nodeRect:
+    serializedVersion: 2
+    x: 999
+    y: 443
+    width: 200
+    height: 150
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &3388474743311100437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: da2ac713-1899-448a-8c0b-dd4119aeec5a
+  m_EditorClassIdentifier: 
+  text: Your loss
+  children: []
+  nodeRect:
+    serializedVersion: 2
+    x: 1869
+    y: 1103
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &3457210994876183541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 865b62df-5ce4-4fd9-b6fe-c27290150c85
+  m_EditorClassIdentifier: 
+  text: I've got your stuff
+  children:
+  - d03c8f6e-74ce-4708-b9a6-e4a752bcede4
+  nodeRect:
+    serializedVersion: 2
+    x: 270
+    y: 114
+    width: 200
+    height: 150
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and:
+    - or:
+      - predicate: 6
+        parameters:
+        - 1d67e4ef-6e01-4a78-b55c-03754856003b
+        negate: 0
+    - or:
+      - predicate: 6
+        parameters:
+        - cda236d8-72ad-46ac-9386-8327b7e19220
+        negate: 0
+    - or:
+      - predicate: 6
+        parameters:
+        - 09ccfa93-64e2-4d2b-b697-b394409cf5e8
+        negate: 0
+--- !u!114 &5582987231304510508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 9180663d-4d82-4217-bd61-c40ceb99e95f
+  m_EditorClassIdentifier: 
+  text: Mr. bowler is a good friend of mine
+  children:
+  - c3ac4dc5-0ebe-4478-9ce0-5023092ddee3
+  nodeRect:
+    serializedVersion: 2
+    x: 1238
+    y: 572
+    width: 200
+    height: 150
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &6642900027015792664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 8ea43cfb-92dd-4f2e-96f3-f3aab3a2bbcc
+  m_EditorClassIdentifier: 
+  text: Eh?
+  children:
+  - 865b62df-5ce4-4fd9-b6fe-c27290150c85
+  - f3f28053-048f-4c72-a225-a6bb2489cf1b
+  nodeRect:
+    serializedVersion: 2
+    x: -6
+    y: 244
+    width: 200
+    height: 150
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &8000739922093505341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: f8ac7ea1-9c54-4610-8fa3-9c73f4d7f6ed
+  m_EditorClassIdentifier: 
+  text: Some Bandits came by and stole my stuff
+  children:
+  - 6fccd926-cf38-41f2-96ae-7933a5d78534
+  nodeRect:
+    serializedVersion: 2
+    x: 1106
+    y: 750
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &8050725843754771043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 5ed018e3-f288-46fa-9a0d-ee029acdc3b9
+  m_EditorClassIdentifier: 
+  text: Oh did you hey?
+  children:
+  - c92a5bad-d847-4b71-adaf-b4f3a81c3ab3
+  nodeRect:
+    serializedVersion: 2
+    x: 551
+    y: 530
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &8404609017941474082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: c92a5bad-d847-4b71-adaf-b4f3a81c3ab3
+  m_EditorClassIdentifier: 
+  text: You know, I could use the help of a young strapping adventurer.
+  children:
+  - f8ac7ea1-9c54-4610-8fa3-9c73f4d7f6ed
+  nodeRect:
+    serializedVersion: 2
+    x: 808
+    y: 652
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []

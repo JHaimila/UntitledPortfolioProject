@@ -14,6 +14,7 @@ namespace RPG.Control
         Searching,
         Neutral,
         Dead,
-        Chasing
+        Chasing,
+        Idle
     }
 }

@@ -14,7 +14,7 @@ namespace RPG.Dialogue
         public event Action UpdatedNode;
         private bool isChoosing = false;
         private Speaker _currentSpeaker;
-        private Speaker _aiSpeaker;
+        private AISpeaker _aiSpeaker;
         private Speaker _playerSpeaker;
         
         public void StartDialogue(Dialogue newDialogue, AISpeaker speaker)
@@ -35,7 +35,6 @@ namespace RPG.Dialogue
         {
             if(currentDialogue == null)
             {
-                Debug.Log("NO DIalogue is selected rn");
                 return "";
             }
             return currentNode.GetText();
@@ -106,6 +105,7 @@ namespace RPG.Dialogue
             TriggerExitAction();
             currentNode = null;
             isChoosing = false;
+            _aiSpeaker.OnInteractEnd();
         }
 
         private void TriggerEnterAction()

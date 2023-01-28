@@ -1,20 +1,20 @@
 using RPG.Control.Routine;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace RPG.Control.NPCController
 {
     public class NPCRoutineState : NPCBaseState
     {
         private readonly int WalkHash = Animator.StringToHash("1H_Walk_Forward");
-        private readonly int RoutinePerforming = Animator.StringToHash("RoutineEnter");
-        private readonly int RoutineEnter = Animator.StringToHash("RoutineEnter");
-        private readonly int RoutineExit = Animator.StringToHash("RoutineExit");
+        private readonly int RoutineHash = Animator.StringToHash("Routine");
         private readonly int IdleHash = Animator.StringToHash("Idle2");
 
         private const float AnimatorDampTime = 0.1f;
         private const float CrossFadeInFixedTime = 0.1f;
         private RoutineNode node;
+        private List<RoutineNodeAnimation> animations;
         public NPCRoutineState(NPCStateMachine stateMachine, RoutineNode node) : base(stateMachine)
         {
             this.node = node;
@@ -23,14 +23,15 @@ namespace RPG.Control.NPCController
         public override void Enter()
         {
             stateMachine.Agent.isStopped = false;
-            
-
             stateMachine.Animator.CrossFadeInFixedTime(WalkHash, CrossFadeInFixedTime);
             stateMachine.Agent.destination = node.GetTransform().position;
-
+            if (node.HasAnimations())
+            {
+                animations = node.GetAnimations();
+            }
             if(Vector3.Distance(node.GetTransform().position, stateMachine.transform.position) < 1)
             {
-                stateMachine.BeginCorotine(PerformRoutine(node.GetWaitTime()));
+                stateMachine.BeginCorotine(PerformRoutine());
             }
             else
             {
@@ -44,36 +45,38 @@ namespace RPG.Control.NPCController
             stateMachine.Agent.updateRotation = true;
             stateMachine.EndAllCorotines();
         }
-        private IEnumerator PerformRoutine(float waitSeconds)
+        private IEnumerator PerformRoutine()
         {
             stateMachine.Agent.updateRotation = false;
             stateMachine.Animator.CrossFadeInFixedTime(IdleHash, CrossFadeInFixedTime);
-            yield return new WaitForSeconds(1);
-
-            stateMachine.Animator.CrossFadeInFixedTime(IdleHash, CrossFadeInFixedTime);
-            SetYRotation(stateMachine.Agent, node.GetTransform(), Time.deltaTime, stateMachine.RotationSpeed);
-            yield return new WaitForSeconds(0.5f);
-
-            stateMachine.Animator.CrossFadeInFixedTime(RoutineEnter, CrossFadeInFixedTime);
-            yield return new WaitForSeconds(1f);
-
-            RuntimeAnimatorController originalController = stateMachine.Animator.runtimeAnimatorController;
-            if(node.GetAnimation() != null)
-            {
-                stateMachine.Animator.runtimeAnimatorController = node.GetAnimation();
-            }
             
-            if(node.HasItem())
-            {
-                stateMachine.WeaponHandler.EquipWeapon(node.GetItem());
-            }
+            yield return new WaitForSeconds(0.5f);
+            SetYRotation(stateMachine.Agent, node.GetTransform(), Time.deltaTime, stateMachine.RotationSpeed);
+            
+            yield return new WaitForSeconds(0.5f);
+           
+            RuntimeAnimatorController originalController = stateMachine.Animator.runtimeAnimatorController;
             node.Interact();
 
-            stateMachine.Animator.CrossFadeInFixedTime(RoutinePerforming, CrossFadeInFixedTime);
-            yield return new WaitForSeconds(waitSeconds);
-            
-            stateMachine.Animator.CrossFadeInFixedTime(RoutineExit, CrossFadeInFixedTime);
-            yield return new WaitForSeconds(0.5f);
+            if (node.HasAnimations())
+            {
+                foreach (RoutineNodeAnimation animation in animations)
+                {
+                    if (animation.interactItem != null)
+                    {
+                        stateMachine.WeaponHandler.EquipWeapon(animation.interactItem);
+                    }
+
+                    if (animation.nodeAnimation != null)
+                    {
+                        stateMachine.Animator.runtimeAnimatorController = animation.nodeAnimation;
+                        stateMachine.Animator.CrossFadeInFixedTime(RoutineHash, CrossFadeInFixedTime);
+                    }
+                    
+                    animation.triggers?.Invoke();
+                    yield return new WaitForSeconds(animation.waitSeconds);
+                }
+            }
 
             if(!stateMachine.RoutineHandler.GetRoutine().HasNext())
             {
@@ -82,7 +85,7 @@ namespace RPG.Control.NPCController
             else
             {
                 stateMachine.RoutineHandler.GetRoutine().NextNode();
-                stateMachine.SwitchState(new NPCIdlingState(stateMachine, node.GetWaitTime()));
+                stateMachine.SwitchState(new NPCIdlingState(stateMachine, 1));
             }
             stateMachine.Animator.runtimeAnimatorController = originalController;
             stateMachine.Agent.updateRotation = true;

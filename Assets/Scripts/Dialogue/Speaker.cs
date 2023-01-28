@@ -21,6 +21,7 @@ namespace RPG.Dialogue
         {
             return speakerIcon;
         }
+        
     }
 }
 
