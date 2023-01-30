@@ -45,8 +45,11 @@ namespace RPG.Dialogue
 
         public bool IsInteractable()
         {
-            Health health = transform.GetComponent<Health>();
-            return !health.isDead && !health.Attackable();
+            if(transform.TryGetComponent(out Health health))
+            {
+               return !health.isDead && !health.Attackable();
+            }
+            return true;
         }
     }
 }

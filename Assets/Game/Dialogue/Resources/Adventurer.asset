@@ -131,6 +131,32 @@ MonoBehaviour:
   ExitActions: 
   condition:
     and: []
+--- !u!114 &-7553453350325878671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 51cffd87-e74f-4507-802e-f21928dcf5db
+  m_EditorClassIdentifier: 
+  text: Get my stuff back and I'll help you
+  children:
+  - a3234b9c-22af-40a8-b366-12234603d231
+  nodeRect:
+    serializedVersion: 2
+    x: 2025
+    y: 1457
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
 --- !u!114 &-7481696895052704589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +205,32 @@ MonoBehaviour:
     width: 200
     height: 150
   isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-6692506836945433649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 8ae7e3c2-dfc8-45c0-a116-5b0333c056b6
+  m_EditorClassIdentifier: 
+  text: But for me to tell you, you'll have to get my stuff back from some bandits
+  children:
+  - d5fa2804-e5d8-4ffc-b569-82c349baaaf6
+  nodeRect:
+    serializedVersion: 2
+    x: 1511
+    y: 1380
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
   EnterActions: 
   ExitActions: 
   condition:
@@ -271,6 +323,57 @@ MonoBehaviour:
         parameters:
         - First Quest
         negate: 1
+--- !u!114 &-4884789251389076740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: d5fa2804-e5d8-4ffc-b569-82c349baaaf6
+  m_EditorClassIdentifier: 
+  text: A while ago they came here and stole my bow, fireball, and hat
+  children:
+  - 51cffd87-e74f-4507-802e-f21928dcf5db
+  nodeRect:
+    serializedVersion: 2
+    x: 1770
+    y: 1416
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-3748321467145917339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 690b964f-5d8f-4334-a6fd-eb9b45ebe8bb
+  m_EditorClassIdentifier: 
+  text: Because you're a nice guy?
+  children: []
+  nodeRect:
+    serializedVersion: 2
+    x: 743
+    y: 953
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
 --- !u!114 &-1889431842445006487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +436,32 @@ MonoBehaviour:
   ExitActions: 
   condition:
     and: []
+--- !u!114 &-869537610724020037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 54572ef5-8d85-4c9d-8741-637fc12e7000
+  m_EditorClassIdentifier: 
+  text: A man by the portal told me you would help me
+  children:
+  - 0c870820-42c6-43ed-bdae-13a02eced0ed
+  nodeRect:
+    serializedVersion: 2
+    x: 743
+    y: 1222
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
 --- !u!114 &-3469072355524526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,7 +497,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9f72b4f58e46da4c97dd8bc0a002cb5, type: 3}
-  m_Name: Farmer
+  m_Name: Adventurer
   m_EditorClassIdentifier: 
   <nodes>k__BackingField:
   - {fileID: 6642900027015792664}
@@ -390,7 +519,44 @@ MonoBehaviour:
   - {fileID: -1259340159358554471}
   - {fileID: 3388474743311100437}
   - {fileID: -7481696895052704589}
+  - {fileID: 7262371603328132978}
+  - {fileID: 1063821387185060880}
+  - {fileID: -3748321467145917339}
+  - {fileID: -869537610724020037}
+  - {fileID: 4128367539849864175}
+  - {fileID: 2905546005053593098}
+  - {fileID: -6692506836945433649}
+  - {fileID: -4884789251389076740}
+  - {fileID: -7553453350325878671}
+  - {fileID: 0}
   newNodeOffset: {x: 250, y: 0}
+--- !u!114 &1063821387185060880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 229b5ad8-9e00-431d-a9d3-b34a04ec109c
+  m_EditorClassIdentifier: 
+  text: Now why would I do that?
+  children:
+  - 690b964f-5d8f-4334-a6fd-eb9b45ebe8bb
+  - 54572ef5-8d85-4c9d-8741-637fc12e7000
+  nodeRect:
+    serializedVersion: 2
+    x: 461
+    y: 928
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
 --- !u!114 &1897237981536216549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,6 +579,32 @@ MonoBehaviour:
     y: 443
     width: 200
     height: 150
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &2905546005053593098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: b30ae891-070f-4b6e-ba9c-75147862c4c0
+  m_EditorClassIdentifier: 
+  text: Well I suppose there is one way to get by the guards
+  children:
+  - 8ae7e3c2-dfc8-45c0-a116-5b0333c056b6
+  nodeRect:
+    serializedVersion: 2
+    x: 1253
+    y: 1283
+    width: 200
+    height: 250
   isPlayerSpeaking: 0
   EnterActions: 
   ExitActions: 
@@ -460,8 +652,8 @@ MonoBehaviour:
   - d03c8f6e-74ce-4708-b9a6-e4a752bcede4
   nodeRect:
     serializedVersion: 2
-    x: 270
-    y: 114
+    x: 269
+    y: 126
     width: 200
     height: 150
   isPlayerSpeaking: 1
@@ -484,6 +676,32 @@ MonoBehaviour:
         parameters:
         - 09ccfa93-64e2-4d2b-b697-b394409cf5e8
         negate: 0
+--- !u!114 &4128367539849864175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 0c870820-42c6-43ed-bdae-13a02eced0ed
+  m_EditorClassIdentifier: 
+  text: Oh he did hey?
+  children:
+  - b30ae891-070f-4b6e-ba9c-75147862c4c0
+  nodeRect:
+    serializedVersion: 2
+    x: 1001
+    y: 1260
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
 --- !u!114 &5582987231304510508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +744,7 @@ MonoBehaviour:
   children:
   - 865b62df-5ce4-4fd9-b6fe-c27290150c85
   - f3f28053-048f-4c72-a225-a6bb2489cf1b
+  - 4b532b6d-aac2-4aff-9d27-8836dad1e8c1
   nodeRect:
     serializedVersion: 2
     x: -6
@@ -533,6 +752,32 @@ MonoBehaviour:
     width: 200
     height: 150
   isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &7262371603328132978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 4b532b6d-aac2-4aff-9d27-8836dad1e8c1
+  m_EditorClassIdentifier: 
+  text: Can you help me get to town?
+  children:
+  - 229b5ad8-9e00-431d-a9d3-b34a04ec109c
+  nodeRect:
+    serializedVersion: 2
+    x: 239
+    y: 888
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
   EnterActions: 
   ExitActions: 
   condition:

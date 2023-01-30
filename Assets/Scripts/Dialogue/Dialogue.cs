@@ -16,7 +16,7 @@ namespace RPG.Dialogue
         [field: SerializeField] public List<DialogueNode> nodes{get; private set;} = new List<DialogueNode>();
         [SerializeField] Vector2 newNodeOffset = new Vector2(250, 0);
 
-        private Dictionary<string,DialogueNode> _nodeLookup = new Dictionary<string, DialogueNode>();
+        private Dictionary<string,DialogueNode> nodeLookup = new Dictionary<string, DialogueNode>();
 
         private void Awake()
         {
@@ -30,9 +30,9 @@ namespace RPG.Dialogue
         {
             foreach(var childID in parentNode.GetChildren())
             {
-                if(_nodeLookup.ContainsKey(childID))
+                if(nodeLookup.ContainsKey(childID))
                 {
-                    yield return _nodeLookup[childID];
+                    yield return nodeLookup[childID];
                 }
             }
         }
@@ -122,10 +122,10 @@ namespace RPG.Dialogue
 
         public void CreateLookupTable()
         {
-            _nodeLookup.Clear();
+            nodeLookup.Clear();
             foreach(var node in nodes)
             {
-                _nodeLookup.Add(node.name, node);
+                nodeLookup.Add(node.name, node);
             }
         }
         public IEnumerable<DialogueNode> GetPlayerChildren(DialogueNode currentNode)

@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8905853547293784644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Ugh what happened last night?
+  children:
+  - 836e6002-4e1e-4118-999c-8507a8ed5b3b
+  nodeRect:
+    serializedVersion: 2
+    x: 286
+    y: 239
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-6852406396494569108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 1f55d8e0-a22c-4709-a0ca-3ee36b63fe9a
+  m_EditorClassIdentifier: 
+  text: Oh well better get back to town
+  children: []
+  nodeRect:
+    serializedVersion: 2
+    x: 1288
+    y: 256
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: GiveQuest
+  condition:
+    and: []
+--- !u!114 &-2576782299098582427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 622f9bc9-07f8-4753-b520-1a7a031a62fc
+  m_EditorClassIdentifier: 
+  text: I gotta get back to town
+  children: []
+  nodeRect:
+    serializedVersion: 2
+    x: 825
+    y: 248
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: GiveQuest
+  condition:
+    and: []
+--- !u!114 &-867666942901973871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 8d807b94-b922-4f33-9a1f-26711229ac8b
+  m_EditorClassIdentifier: 
+  text: Next
+  children:
+  - 836e6002-4e1e-4118-999c-8507a8ed5b3b
+  nodeRect:
+    serializedVersion: 2
+    x: 538
+    y: 256
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f72b4f58e46da4c97dd8bc0a002cb5, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  <nodes>k__BackingField:
+  - {fileID: -8905853547293784644}
+  - {fileID: 3692816277334137676}
+  - {fileID: -6852406396494569108}
+  - {fileID: -2576782299098582427}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &3692816277334137676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 836e6002-4e1e-4118-999c-8507a8ed5b3b
+  m_EditorClassIdentifier: 
+  text: Where am I and how did I get here?
+  children:
+  - 622f9bc9-07f8-4753-b520-1a7a031a62fc
+  nodeRect:
+    serializedVersion: 2
+    x: 574
+    y: 247
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &4264169744952311193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: e8e986f2-e006-4378-b946-adf3532ce6d9
+  m_EditorClassIdentifier: 
+  text: Next
+  children:
+  - 1f55d8e0-a22c-4709-a0ca-3ee36b63fe9a
+  nodeRect:
+    serializedVersion: 2
+    x: 1038
+    y: 256
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []

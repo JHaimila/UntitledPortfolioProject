@@ -14,17 +14,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectives:
   - _reference: a
-    _description: Talk to the Farmer
+    _description: Find the portal
     _optional: 0
     _hasTrigger: 0
   - _reference: b
-    _description: Talk to him again
+    _description: Talk to crazy dude in the cabin
     _optional: 0
     _hasTrigger: 0
   - _reference: c
-    _description: And again
+    _description: Go to the bandit camp
+    _optional: 0
+    _hasTrigger: 0
+  - _reference: d
+    _description: Find the Bow
+    _optional: 0
+    _hasTrigger: 0
+  - _reference: e
+    _description: Find the hat
+    _optional: 0
+    _hasTrigger: 0
+  - _reference: f
+    _description: Find the Fireball
+    _optional: 0
+    _hasTrigger: 0
+  - _reference: g
+    _description: Return to the man
+    _optional: 0
+    _hasTrigger: 0
+  - _reference: h
+    _description: Fight the portal guards
+    _optional: 0
+    _hasTrigger: 0
+  - _reference: i
+    _description: Enter the portal
     _optional: 0
     _hasTrigger: 0
   rewards:
   - number: 1
     item: {fileID: 11400000, guid: c74c2f08b15e67044b52e67addcd38bf, type: 2}
+  repeatable: 0

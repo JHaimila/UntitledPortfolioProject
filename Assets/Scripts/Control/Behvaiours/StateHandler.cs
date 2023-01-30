@@ -7,10 +7,16 @@ namespace RPG.Control
 {
     public class StateHandler : MonoBehaviour
     {
+        [field:SerializeField] public BehaviourState DefaultBehaviour {get; private set;}
         [SerializeField] List<StateActionMap> maps = new List<StateActionMap>();
 
         private BehaviourState currentBehaviour;
         public event System.Action OnBehaviourChange;
+
+        public void SetDefault()
+        {
+            SetCurrentBehaviour(DefaultBehaviour);
+        }
         
         public void Check(RPG.Control.Action givenAction)
         {

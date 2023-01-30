@@ -1934,6 +1934,11 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6925633896289287156, guid: 5b3119219494ffc46a9d27cca1f6e89e,
+        type: 3}
+      propertyPath: <DefaultBehaviour>k__BackingField
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7142575175357650537, guid: 5b3119219494ffc46a9d27cca1f6e89e,
         type: 3}
       propertyPath: _giveQuest

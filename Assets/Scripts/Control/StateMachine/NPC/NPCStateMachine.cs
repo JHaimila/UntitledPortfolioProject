@@ -35,7 +35,7 @@ namespace RPG.Control.NPCController
         [field:SerializeField] public GameObject Target {get; private set;}
         [field:SerializeField] public RoutineHandler RoutineHandler {get; private set;} = null;
         [field:SerializeField] public StateHandler StateHandler {get; private set;}
-        [field:SerializeField] public BehaviourState DefaultBehaviour {get; private set;}
+        
         [field:SerializeField] public WeaponHandler WeaponHandler {get; private set;} = null;
         [field:SerializeField] public List<StateBehaviourMap> BehaviourMaps {get; private set;} = new List<StateBehaviourMap>();
         [SerializeField] private float aggroRadius = 8f;
@@ -52,7 +52,7 @@ namespace RPG.Control.NPCController
                 Sight.SetTarget(Target);
             }
             
-            StateHandler.SetCurrentBehaviour(DefaultBehaviour);
+            StateHandler.SetDefault();
             if(Health != null)
             {
                 if(Health.GetHealth() > 0)
@@ -175,7 +175,7 @@ namespace RPG.Control.NPCController
         {
             if(RoutineHandler.GetRoutine() != null)
             {
-                SwitchState(new NPCRoutineState(this, RoutineHandler.GetRoutine().GetCurrentNode()));
+                SwitchState(new NPCRoutineState(this, RoutineHandler.GetCurrentNode()));
             }
             else
             {

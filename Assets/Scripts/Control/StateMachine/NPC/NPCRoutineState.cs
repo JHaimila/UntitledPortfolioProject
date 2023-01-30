@@ -78,13 +78,13 @@ namespace RPG.Control.NPCController
                 }
             }
 
-            if(!stateMachine.RoutineHandler.GetRoutine().HasNext())
+            if(!stateMachine.RoutineHandler.HasNext())
             {
                 stateMachine.SwitchState(new NPCIdlingState(stateMachine));
             }
             else
             {
-                stateMachine.RoutineHandler.GetRoutine().NextNode();
+                stateMachine.RoutineHandler.NextNode();
                 stateMachine.SwitchState(new NPCIdlingState(stateMachine, 1));
             }
             stateMachine.Animator.runtimeAnimatorController = originalController;

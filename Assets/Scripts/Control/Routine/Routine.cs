@@ -13,48 +13,14 @@ namespace RPG.Control.Routine
         [SerializeField] private bool reverseOrder;
         private int currentIndex = 0;
 
-        private void Awake()
+        public bool Loops()
         {
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                transform.GetChild(i).TryGetComponent<RoutineNode>(out RoutineNode tNode);
-                if (tNode != null)
-                {
-                    nodes.Add((tNode));
-                }
-            }
+            return loops;
         }
 
-        public void NextNode()
+        public bool ReverseOrder()
         {
-            if(currentIndex+1 < nodes.Count)
-            {
-                currentIndex++;
-            }
-            else
-            {
-                if(!loops){return;}
-
-                if (reverseOrder)
-                {
-                    nodes.Reverse();
-                    currentIndex = 1;
-                }
-                else
-                {
-                    currentIndex = 0;
-                }
-            }
-        }
-        public RoutineNode GetCurrentNode()
-        {
-            if(nodes.Count == 0){return null;}
-            return nodes[currentIndex];
-        }
-        public bool HasNext()
-        {
-            if(currentIndex+1 < nodes.Count || loops){return true;}
-            return false;
+            return reverseOrder;
         }
         
 #if UNITY_EDITOR
