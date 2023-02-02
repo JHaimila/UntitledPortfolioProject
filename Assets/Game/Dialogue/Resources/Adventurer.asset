@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8995557279766315295
+--- !u!114 &-9012275502803611283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,41 +10,66 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 50b92e6b-ce72-4565-b762-d7ba20a59d0c
+  m_Name: e2c29203-4af3-4e2b-a7c2-5784277d74bf
   m_EditorClassIdentifier: 
-  text: Don't worry about it
+  text: I just wanted to get rid of you
+  children:
+  - a7a4582b-42c3-4ad3-ae3f-2878215657e0
+  nodeRect:
+    serializedVersion: 2
+    x: 2928
+    y: 943
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-8826679566176572763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 5c63567a-2f9a-4ca6-89e8-5b6aedb47a56
+  m_EditorClassIdentifier: 
+  text: Well I'll be damned you actually did it.
+  children:
+  - ced01076-b2ea-498a-b5a6-a8b52255094b
+  nodeRect:
+    serializedVersion: 2
+    x: 1433
+    y: 564
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-8292375742837732902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 4d83be29-0ef3-440d-bb4d-b45f3a17787f
+  m_EditorClassIdentifier: 
+  text: Good luck!
   children: []
   nodeRect:
     serializedVersion: 2
-    x: 1491
-    y: 327
-    width: 200
-    height: 150
-  isPlayerSpeaking: 0
-  EnterActions: 
-  ExitActions: GiveQuest
-  condition:
-    and: []
---- !u!114 &-8620275746608346883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 6fccd926-cf38-41f2-96ae-7933a5d78534
-  m_EditorClassIdentifier: 
-  text: If you can get it back for me, I will help you get to town
-  children:
-  - bf315702-a759-4d77-bb2b-bf4c2b0983ed
-  - e1ac7fbc-09b8-483f-93a6-3540d02d6642
-  nodeRect:
-    serializedVersion: 2
-    x: 1345
-    y: 856
+    x: 2651
+    y: 186
     width: 200
     height: 250
   isPlayerSpeaking: 0
@@ -52,7 +77,7 @@ MonoBehaviour:
   ExitActions: 
   condition:
     and: []
---- !u!114 &-7705381241770091275
+--- !u!114 &-7853229286370015817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,120 +87,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: d03c8f6e-74ce-4708-b9a6-e4a752bcede4
+  m_Name: 10b6a046-6046-4ede-b1fb-6dff6d1e7f29
   m_EditorClassIdentifier: 
-  text: Newton eh? I heard theres trouble brewing down there
-  children:
-  - 2e3cdff2-5b8b-404e-9fd1-7ff98d83be32
-  - ea809fa7-bdcd-47f2-89bd-580aed307f8a
-  nodeRect:
-    serializedVersion: 2
-    x: 496
-    y: 100
-    width: 200
-    height: 150
-  isPlayerSpeaking: 0
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &-7679574804369107462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: ea809fa7-bdcd-47f2-89bd-580aed307f8a
-  m_EditorClassIdentifier: 
-  text: Did I say Newton? I meant Springville
-  children:
-  - b6cc2137-f4a9-411f-b50c-f670e33d9c92
-  nodeRect:
-    serializedVersion: 2
-    x: 750
-    y: 280
-    width: 200
-    height: 150
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &-7554791412937377140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: bf315702-a759-4d77-bb2b-bf4c2b0983ed
-  m_EditorClassIdentifier: 
-  text: Sure I can do that
-  children:
-  - f4f9427a-17fd-4f75-8f73-35e9b7ddcc5d
-  nodeRect:
-    serializedVersion: 2
-    x: 1618
-    y: 791
-    width: 200
-    height: 250
-  isPlayerSpeaking: 1
-  EnterActions: Give Quest
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &-7553453350325878671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 51cffd87-e74f-4507-802e-f21928dcf5db
-  m_EditorClassIdentifier: 
-  text: Get my stuff back and I'll help you
-  children:
-  - a3234b9c-22af-40a8-b366-12234603d231
-  nodeRect:
-    serializedVersion: 2
-    x: 2025
-    y: 1457
-    width: 200
-    height: 250
-  isPlayerSpeaking: 0
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &-7481696895052704589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: f4f9427a-17fd-4f75-8f73-35e9b7ddcc5d
-  m_EditorClassIdentifier: 
-  text: Great! Take the portal just up the north path from here. It will take you
-    to their camp!
+  text: Well, good luck in your travels, I have work to do
   children: []
   nodeRect:
     serializedVersion: 2
-    x: 1882
-    y: 790
+    x: 3419
+    y: 702
     width: 200
     height: 250
   isPlayerSpeaking: 0
@@ -183,7 +102,7 @@ MonoBehaviour:
   ExitActions: 
   condition:
     and: []
---- !u!114 &-6953727837174478247
+--- !u!114 &-6121407049514774009
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,23 +112,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: ae862289-e442-41ce-9ac6-01cca2e4e4f0
+  m_Name: f79abcfa-1c4e-4767-806b-ad74b99e3ab0
   m_EditorClassIdentifier: 
-  text: Who?
+  text: Goodbye
   children:
-  - 50b92e6b-ce72-4565-b762-d7ba20a59d0c
+  - b14bb429-a29e-468d-a11f-90144f42f4a6
   nodeRect:
     serializedVersion: 2
-    x: 1237
-    y: 427
+    x: 639
+    y: 862
     width: 200
-    height: 150
+    height: 250
   isPlayerSpeaking: 1
   EnterActions: 
   ExitActions: 
   condition:
     and: []
---- !u!114 &-6692506836945433649
+--- !u!114 &-5122216989379620250
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,15 +138,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 8ae7e3c2-dfc8-45c0-a116-5b0333c056b6
+  m_Name: e1625012-c9c8-4467-a446-c71e4d2efef1
   m_EditorClassIdentifier: 
-  text: But for me to tell you, you'll have to get my stuff back from some bandits
+  text: Okay
   children:
-  - d5fa2804-e5d8-4ffc-b569-82c349baaaf6
+  - 1df688b8-8313-4eb3-9a87-117035033da4
   nodeRect:
     serializedVersion: 2
-    x: 1511
-    y: 1380
+    x: 2151
+    y: 186
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-3617656106033009442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: a52eaa50-b7b6-4df9-bbfc-928dcb09e831
+  m_EditorClassIdentifier: 
+  text: Get those back for me and I'll help you with the toll
+  children:
+  - e1625012-c9c8-4467-a446-c71e4d2efef1
+  - 6e066bed-9f95-425d-986b-be1bf00d55c5
+  nodeRect:
+    serializedVersion: 2
+    x: 1893
+    y: 267
     width: 200
     height: 250
   isPlayerSpeaking: 0
@@ -235,7 +181,7 @@ MonoBehaviour:
   ExitActions: 
   condition:
     and: []
---- !u!114 &-6687604531177175849
+--- !u!114 &-3520691323659863346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,23 +191,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 2e3cdff2-5b8b-404e-9fd1-7ff98d83be32
+  m_Name: a8a92666-d5fa-4a4a-a131-57ba2c9bc3eb
   m_EditorClassIdentifier: 
-  text: I haven't heard of any trouble
+  text: You what!
   children:
-  - 50b92e6b-ce72-4565-b762-d7ba20a59d0c
+  - a8570c3c-6d54-49da-9c2e-17efcf3b9090
+  - 40fcbc86-c768-43b8-97eb-74beccfd2206
   nodeRect:
     serializedVersion: 2
-    x: 767
-    y: 69
+    x: 888
+    y: 560
     width: 200
-    height: 150
-  isPlayerSpeaking: 1
+    height: 250
+  isPlayerSpeaking: 0
   EnterActions: 
   ExitActions: 
   condition:
     and: []
---- !u!114 &-5605877864719760259
+--- !u!114 &-3077914298367813444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,17 +218,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: b6d16c37-0356-4c97-8922-c2b2557a44d9
+  m_Name: ced01076-b2ea-498a-b5a6-a8b52255094b
   m_EditorClassIdentifier: 
-  text: I have the bow
+  text: You're dumber than you look
   children:
-  - b6cc2137-f4a9-411f-b50c-f670e33d9c92
+  - a9a5cc12-8cad-4491-8ecd-fb7423e3c20d
   nodeRect:
     serializedVersion: 2
-    x: 261
-    y: 326
+    x: 1689
+    y: 564
     width: 200
-    height: 150
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-2258226420383309170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 14504362-f786-4097-bffb-36575942a41a
+  m_EditorClassIdentifier: 
+  text: Hey, I have your stuff!
+  children:
+  - a8a92666-d5fa-4a4a-a131-57ba2c9bc3eb
+  nodeRect:
+    serializedVersion: 2
+    x: 644
+    y: 555
+    width: 200
+    height: 250
   isPlayerSpeaking: 1
   EnterActions: 
   ExitActions: 
@@ -290,40 +263,17 @@ MonoBehaviour:
     - or:
       - predicate: 6
         parameters:
-        - c4dac422-1c33-43a8-9912-becedc8c4457
+        - 1d67e4ef-6e01-4a78-b55c-03754856003b
         negate: 0
---- !u!114 &-5215358252438461492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 912dff53-38e4-4a64-b960-02d53a934bfb
-  m_EditorClassIdentifier: 
-  text: '[Give Quest]'
-  children:
-  - 5ed018e3-f288-46fa-9a0d-ee029acdc3b9
-  nodeRect:
-    serializedVersion: 2
-    x: 260
-    y: 478
-    width: 200
-    height: 250
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: GiveQuest
-  condition:
-    and:
-    - or:
-      - predicate: 1
+      - predicate: 6
         parameters:
-        - First Quest
-        negate: 1
---- !u!114 &-4884789251389076740
+        - c4b81223-9870-48d2-91ac-90b69a25682c
+        negate: 0
+      - predicate: 6
+        parameters:
+        - dfc41d06-d90f-4993-87c7-c70252d8e5cc
+        negate: 0
+--- !u!114 &-1502408090267128667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -333,15 +283,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: d5fa2804-e5d8-4ffc-b569-82c349baaaf6
+  m_Name: a9a5cc12-8cad-4491-8ecd-fb7423e3c20d
   m_EditorClassIdentifier: 
-  text: A while ago they came here and stole my bow, fireball, and hat
+  text: Ha! That stuff isn't mine! How did you even manage to find something called
+    fireball?
   children:
-  - 51cffd87-e74f-4507-802e-f21928dcf5db
+  - ce93aebc-283b-467b-84fb-b66f66ee8946
   nodeRect:
     serializedVersion: 2
-    x: 1770
-    y: 1416
+    x: 1939
+    y: 686
     width: 200
     height: 250
   isPlayerSpeaking: 0
@@ -349,7 +300,7 @@ MonoBehaviour:
   ExitActions: 
   condition:
     and: []
---- !u!114 &-3748321467145917339
+--- !u!114 &-1426945847525566848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -359,132 +310,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 690b964f-5d8f-4334-a6fd-eb9b45ebe8bb
+  m_Name: d7ee7e35-c9b8-4377-9271-7e223c3b9039
   m_EditorClassIdentifier: 
-  text: Because you're a nice guy?
-  children: []
-  nodeRect:
-    serializedVersion: 2
-    x: 743
-    y: 953
-    width: 200
-    height: 250
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &-1889431842445006487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: f3f28053-048f-4c72-a225-a6bb2489cf1b
-  m_EditorClassIdentifier: 
-  text: I was told you can help me get to town
+  text: Well good luck with that
   children:
-  - 5ed018e3-f288-46fa-9a0d-ee029acdc3b9
+  - 3e39b15d-60ce-4f1e-852b-c203e2b80b14
   nodeRect:
     serializedVersion: 2
-    x: 275
-    y: 367
+    x: 2409
+    y: 434
     width: 200
     height: 250
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and:
-    - or:
-      - predicate: 1
-        parameters:
-        - Find the Sword
-        negate: 0
-    - or:
-      - predicate: 1
-        parameters:
-        - Item Recovery
-        negate: 1
---- !u!114 &-1259340159358554471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: e1ac7fbc-09b8-483f-93a6-3540d02d6642
-  m_EditorClassIdentifier: 
-  text: Nah
-  children:
-  - da2ac713-1899-448a-8c0b-dd4119aeec5a
-  nodeRect:
-    serializedVersion: 2
-    x: 1618
-    y: 1054
-    width: 200
-    height: 250
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &-869537610724020037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 54572ef5-8d85-4c9d-8741-637fc12e7000
-  m_EditorClassIdentifier: 
-  text: A man by the portal told me you would help me
-  children:
-  - 0c870820-42c6-43ed-bdae-13a02eced0ed
-  nodeRect:
-    serializedVersion: 2
-    x: 743
-    y: 1222
-    width: 200
-    height: 250
-  isPlayerSpeaking: 1
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &-3469072355524526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: c3ac4dc5-0ebe-4478-9ce0-5023092ddee3
-  m_EditorClassIdentifier: 
-  text: You liar there is no Mr bowler
-  children: []
-  nodeRect:
-    serializedVersion: 2
-    x: 1493
-    y: 618
-    width: 200
-    height: 150
   isPlayerSpeaking: 0
   EnterActions: 
-  ExitActions: CompleteQuest
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-584052573111774416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 06e8d176-f0ae-493f-8e22-2098b6bf1f09
+  m_EditorClassIdentifier: 
+  text: Well now that you have all that stuff you can just go and fight the at the
+    portal to town
+  children:
+  - f3d95ff3-c073-460b-b457-5f1e7abcc426
+  - 034ecaca-1aac-45ed-802a-7b0b778cbdb9
+  nodeRect:
+    serializedVersion: 2
+    x: 2415
+    y: 748
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
   condition:
     and: []
 --- !u!114 &11400000
@@ -500,37 +367,40 @@ MonoBehaviour:
   m_Name: Adventurer
   m_EditorClassIdentifier: 
   <nodes>k__BackingField:
-  - {fileID: 6642900027015792664}
-  - {fileID: 3457210994876183541}
-  - {fileID: -7705381241770091275}
-  - {fileID: 1897237981536216549}
-  - {fileID: 5582987231304510508}
-  - {fileID: -6953727837174478247}
-  - {fileID: -3469072355524526}
-  - {fileID: -8995557279766315295}
-  - {fileID: -6687604531177175849}
-  - {fileID: -7679574804369107462}
-  - {fileID: -1889431842445006487}
-  - {fileID: 8050725843754771043}
-  - {fileID: 8404609017941474082}
-  - {fileID: 8000739922093505341}
-  - {fileID: -8620275746608346883}
-  - {fileID: -7554791412937377140}
-  - {fileID: -1259340159358554471}
-  - {fileID: 3388474743311100437}
-  - {fileID: -7481696895052704589}
-  - {fileID: 7262371603328132978}
-  - {fileID: 1063821387185060880}
-  - {fileID: -3748321467145917339}
-  - {fileID: -869537610724020037}
-  - {fileID: 4128367539849864175}
-  - {fileID: 2905546005053593098}
-  - {fileID: -6692506836945433649}
-  - {fileID: -4884789251389076740}
-  - {fileID: -7553453350325878671}
-  - {fileID: 0}
+  - {fileID: 2532440128670558853}
+  - {fileID: 7803155099338090267}
+  - {fileID: 6016816790665145144}
+  - {fileID: -6121407049514774009}
+  - {fileID: 913112032656692196}
+  - {fileID: 2570510488158798638}
+  - {fileID: 5880063548192286393}
+  - {fileID: 1451854745556616423}
+  - {fileID: 8881609579266958171}
+  - {fileID: 7134548175623668787}
+  - {fileID: 3607410884155371660}
+  - {fileID: -3617656106033009442}
+  - {fileID: -5122216989379620250}
+  - {fileID: 4721974616855622890}
+  - {fileID: -1426945847525566848}
+  - {fileID: 7062574318488661693}
+  - {fileID: 3580259564506604929}
+  - {fileID: -8292375742837732902}
+  - {fileID: -2258226420383309170}
+  - {fileID: -3520691323659863346}
+  - {fileID: 7476523019039553875}
+  - {fileID: 661521703104401651}
+  - {fileID: -8826679566176572763}
+  - {fileID: -3077914298367813444}
+  - {fileID: -1502408090267128667}
+  - {fileID: 5342267873667226512}
+  - {fileID: -584052573111774416}
+  - {fileID: 8198733084753858534}
+  - {fileID: 9086259640078769601}
+  - {fileID: -9012275502803611283}
+  - {fileID: 7365451051257728594}
+  - {fileID: -7853229286370015817}
   newNodeOffset: {x: 250, y: 0}
---- !u!114 &1063821387185060880
+--- !u!114 &661521703104401651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -540,24 +410,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 229b5ad8-9e00-431d-a9d3-b34a04ec109c
+  m_Name: 40fcbc86-c768-43b8-97eb-74beccfd2206
   m_EditorClassIdentifier: 
-  text: Now why would I do that?
+  text: I got your stuff, now give me the money for the toll
   children:
-  - 690b964f-5d8f-4334-a6fd-eb9b45ebe8bb
-  - 54572ef5-8d85-4c9d-8741-637fc12e7000
+  - 5c63567a-2f9a-4ca6-89e8-5b6aedb47a56
   nodeRect:
     serializedVersion: 2
-    x: 461
-    y: 928
+    x: 1141
+    y: 754
     width: 200
     height: 250
-  isPlayerSpeaking: 0
+  isPlayerSpeaking: 1
   EnterActions: 
   ExitActions: 
   condition:
     and: []
---- !u!114 &1897237981536216549
+--- !u!114 &913112032656692196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -567,67 +436,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: b6cc2137-f4a9-411f-b50c-f670e33d9c92
+  m_Name: b14bb429-a29e-468d-a11f-90144f42f4a6
   m_EditorClassIdentifier: 
-  text: Oh really? Then you must know Mr. Bowler
-  children:
-  - 9180663d-4d82-4217-bd61-c40ceb99e95f
-  - ae862289-e442-41ce-9ac6-01cca2e4e4f0
-  nodeRect:
-    serializedVersion: 2
-    x: 999
-    y: 443
-    width: 200
-    height: 150
-  isPlayerSpeaking: 0
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &2905546005053593098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: b30ae891-070f-4b6e-ba9c-75147862c4c0
-  m_EditorClassIdentifier: 
-  text: Well I suppose there is one way to get by the guards
-  children:
-  - 8ae7e3c2-dfc8-45c0-a116-5b0333c056b6
-  nodeRect:
-    serializedVersion: 2
-    x: 1253
-    y: 1283
-    width: 200
-    height: 250
-  isPlayerSpeaking: 0
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &3388474743311100437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: da2ac713-1899-448a-8c0b-dd4119aeec5a
-  m_EditorClassIdentifier: 
-  text: Your loss
+  text: Meh
   children: []
   nodeRect:
     serializedVersion: 2
-    x: 1869
-    y: 1103
+    x: 880
+    y: 869
     width: 200
     height: 250
   isPlayerSpeaking: 0
@@ -635,7 +451,7 @@ MonoBehaviour:
   ExitActions: 
   condition:
     and: []
---- !u!114 &3457210994876183541
+--- !u!114 &1451854745556616423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -645,38 +461,248 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 865b62df-5ce4-4fd9-b6fe-c27290150c85
+  m_Name: 3e286310-db0e-49ec-8bc0-29bca7e3a16d
   m_EditorClassIdentifier: 
-  text: I've got your stuff
+  text: Oh did he now?
   children:
-  - d03c8f6e-74ce-4708-b9a6-e4a752bcede4
+  - 00f40fa7-da28-4785-9025-ff753339525c
   nodeRect:
     serializedVersion: 2
-    x: 269
-    y: 126
+    x: 893
+    y: 265
     width: 200
-    height: 150
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &2532440128670558853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Eh?
+  children:
+  - c28f96bf-1c47-4d14-ade5-086f5d141eec
+  - 384fbb49-03ee-47a4-85f6-42da96baf929
+  - f79abcfa-1c4e-4767-806b-ad74b99e3ab0
+  - 14504362-f786-4097-bffb-36575942a41a
+  nodeRect:
+    serializedVersion: 2
+    x: 348
+    y: 161
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &2570510488158798638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: a58211e6-e8e9-43b4-8ac8-14630f151569
+  m_EditorClassIdentifier: 
+  text: Head down the road until you see a portal. Its a bunch of rocks in a circle
+    on the ground. Don't ask me why.
+  children:
+  - 6d67876a-5a0c-4c7e-95be-9b0f2fa170c8
+  nodeRect:
+    serializedVersion: 2
+    x: 893
+    y: 18
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &3580259564506604929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 1df688b8-8313-4eb3-9a87-117035033da4
+  m_EditorClassIdentifier: 
+  text: Great, I'll give you access to my portal thats in the stone path north of
+    my cabin.
+  children:
+  - 4d83be29-0ef3-440d-bb4d-b45f3a17787f
+  nodeRect:
+    serializedVersion: 2
+    x: 2401
+    y: 186
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: CompleteObj
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &3607410884155371660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: fe7d36c6-bf4a-43a5-89c0-533cba11ea95
+  m_EditorClassIdentifier: 
+  text: They got my bow, fireball, and sword
+  children:
+  - a52eaa50-b7b6-4df9-bbfc-928dcb09e831
+  nodeRect:
+    serializedVersion: 2
+    x: 1643
+    y: 266
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &4721974616855622890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 6e066bed-9f95-425d-986b-be1bf00d55c5
+  m_EditorClassIdentifier: 
+  text: I'd rather you just give me money for the toll
+  children:
+  - d7ee7e35-c9b8-4377-9271-7e223c3b9039
+  nodeRect:
+    serializedVersion: 2
+    x: 2152
+    y: 435
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &5342267873667226512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: ce93aebc-283b-467b-84fb-b66f66ee8946
+  m_EditorClassIdentifier: 
+  text: I just came up with that off the top of my head!
+  children:
+  - 06e8d176-f0ae-493f-8e22-2098b6bf1f09
+  nodeRect:
+    serializedVersion: 2
+    x: 2165
+    y: 704
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &5880063548192286393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 6d67876a-5a0c-4c7e-95be-9b0f2fa170c8
+  m_EditorClassIdentifier: 
+  text: Now if you'll excuse me, I have to get back to work.
+  children: []
+  nodeRect:
+    serializedVersion: 2
+    x: 1143
+    y: 18
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &6016816790665145144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 384fbb49-03ee-47a4-85f6-42da96baf929
+  m_EditorClassIdentifier: 
+  text: A man at the portal told me you could help me pay the toll
+  children:
+  - 3e286310-db0e-49ec-8bc0-29bca7e3a16d
+  nodeRect:
+    serializedVersion: 2
+    x: 643
+    y: 265
+    width: 200
+    height: 250
   isPlayerSpeaking: 1
   EnterActions: 
   ExitActions: 
   condition:
     and:
     - or:
-      - predicate: 6
+      - predicate: 1
         parameters:
-        - 1d67e4ef-6e01-4a78-b55c-03754856003b
+        - Going to town
         negate: 0
-    - or:
-      - predicate: 6
+      - predicate: 3
         parameters:
-        - cda236d8-72ad-46ac-9386-8327b7e19220
+        - a
         negate: 0
-    - or:
-      - predicate: 6
+      - predicate: 3
         parameters:
-        - 09ccfa93-64e2-4d2b-b697-b394409cf5e8
-        negate: 0
---- !u!114 &4128367539849864175
+        - b
+        negate: 1
+--- !u!114 &7062574318488661693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -686,15 +712,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 0c870820-42c6-43ed-bdae-13a02eced0ed
+  m_Name: 3e39b15d-60ce-4f1e-852b-c203e2b80b14
   m_EditorClassIdentifier: 
-  text: Oh he did hey?
-  children:
-  - b30ae891-070f-4b6e-ba9c-75147862c4c0
+  text: Now leave me alone, I have to get back to work
+  children: []
   nodeRect:
     serializedVersion: 2
-    x: 1001
-    y: 1260
+    x: 2659
+    y: 434
     width: 200
     height: 250
   isPlayerSpeaking: 0
@@ -702,7 +727,7 @@ MonoBehaviour:
   ExitActions: 
   condition:
     and: []
---- !u!114 &5582987231304510508
+--- !u!114 &7134548175623668787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -712,23 +737,75 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 9180663d-4d82-4217-bd61-c40ceb99e95f
+  m_Name: 26fca672-80d7-47cd-96d4-597b40c18fa6
   m_EditorClassIdentifier: 
-  text: Mr. bowler is a good friend of mine
+  text: A while back bandits came and stole some stuff from me
   children:
-  - c3ac4dc5-0ebe-4478-9ce0-5023092ddee3
+  - fe7d36c6-bf4a-43a5-89c0-533cba11ea95
   nodeRect:
     serializedVersion: 2
-    x: 1238
-    y: 572
+    x: 1393
+    y: 266
     width: 200
-    height: 150
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &7365451051257728594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: a7a4582b-42c3-4ad3-ae3f-2878215657e0
+  m_EditorClassIdentifier: 
+  text: Come to think of it I kind of want you to leave now too
+  children:
+  - 10b6a046-6046-4ede-b1fb-6dff6d1e7f29
+  nodeRect:
+    serializedVersion: 2
+    x: 3168
+    y: 944
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &7476523019039553875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: a8570c3c-6d54-49da-9c2e-17efcf3b9090
+  m_EditorClassIdentifier: 
+  text: I got the stuff you asked for
+  children:
+  - 5c63567a-2f9a-4ca6-89e8-5b6aedb47a56
+  nodeRect:
+    serializedVersion: 2
+    x: 1140
+    y: 508
+    width: 200
+    height: 250
   isPlayerSpeaking: 1
   EnterActions: 
   ExitActions: 
   condition:
     and: []
---- !u!114 &6642900027015792664
+--- !u!114 &7803155099338090267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -738,43 +815,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 8ea43cfb-92dd-4f2e-96f3-f3aab3a2bbcc
+  m_Name: c28f96bf-1c47-4d14-ade5-086f5d141eec
   m_EditorClassIdentifier: 
-  text: Eh?
+  text: Hey do you know how to get to town?
   children:
-  - 865b62df-5ce4-4fd9-b6fe-c27290150c85
-  - f3f28053-048f-4c72-a225-a6bb2489cf1b
-  - 4b532b6d-aac2-4aff-9d27-8836dad1e8c1
+  - a58211e6-e8e9-43b4-8ac8-14630f151569
   nodeRect:
     serializedVersion: 2
-    x: -6
-    y: 244
-    width: 200
-    height: 150
-  isPlayerSpeaking: 0
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &7262371603328132978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 4b532b6d-aac2-4aff-9d27-8836dad1e8c1
-  m_EditorClassIdentifier: 
-  text: Can you help me get to town?
-  children:
-  - 229b5ad8-9e00-431d-a9d3-b34a04ec109c
-  nodeRect:
-    serializedVersion: 2
-    x: 239
-    y: 888
+    x: 642
+    y: 18
     width: 200
     height: 250
   isPlayerSpeaking: 1
@@ -782,7 +831,7 @@ MonoBehaviour:
   ExitActions: 
   condition:
     and: []
---- !u!114 &8000739922093505341
+--- !u!114 &8198733084753858534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -792,15 +841,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: f8ac7ea1-9c54-4610-8fa3-9c73f4d7f6ed
+  m_Name: f3d95ff3-c073-460b-b457-5f1e7abcc426
   m_EditorClassIdentifier: 
-  text: Some Bandits came by and stole my stuff
+  text: ...
   children:
-  - 6fccd926-cf38-41f2-96ae-7933a5d78534
+  - 10b6a046-6046-4ede-b1fb-6dff6d1e7f29
   nodeRect:
     serializedVersion: 2
-    x: 1106
-    y: 750
+    x: 2668
+    y: 700
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &8881609579266958171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 00f40fa7-da28-4785-9025-ff753339525c
+  m_EditorClassIdentifier: 
+  text: Well in that case, I can help you if you help me first.
+  children:
+  - 26fca672-80d7-47cd-96d4-597b40c18fa6
+  nodeRect:
+    serializedVersion: 2
+    x: 1143
+    y: 266
     width: 200
     height: 250
   isPlayerSpeaking: 0
@@ -808,7 +883,7 @@ MonoBehaviour:
   ExitActions: 
   condition:
     and: []
---- !u!114 &8050725843754771043
+--- !u!114 &9086259640078769601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -818,44 +893,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: 5ed018e3-f288-46fa-9a0d-ee029acdc3b9
+  m_Name: 034ecaca-1aac-45ed-802a-7b0b778cbdb9
   m_EditorClassIdentifier: 
-  text: Oh did you hey?
+  text: Why would you lie about something like that?
   children:
-  - c92a5bad-d847-4b71-adaf-b4f3a81c3ab3
+  - e2c29203-4af3-4e2b-a7c2-5784277d74bf
   nodeRect:
     serializedVersion: 2
-    x: 551
-    y: 530
+    x: 2671
+    y: 945
     width: 200
     height: 250
-  isPlayerSpeaking: 0
-  EnterActions: 
-  ExitActions: 
-  condition:
-    and: []
---- !u!114 &8404609017941474082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
-  m_Name: c92a5bad-d847-4b71-adaf-b4f3a81c3ab3
-  m_EditorClassIdentifier: 
-  text: You know, I could use the help of a young strapping adventurer.
-  children:
-  - f8ac7ea1-9c54-4610-8fa3-9c73f4d7f6ed
-  nodeRect:
-    serializedVersion: 2
-    x: 808
-    y: 652
-    width: 200
-    height: 250
-  isPlayerSpeaking: 0
+  isPlayerSpeaking: 1
   EnterActions: 
   ExitActions: 
   condition:

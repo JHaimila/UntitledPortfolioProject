@@ -34,6 +34,8 @@ namespace InventorySystem.Inventories
         /// </summary>
         public event Action inventoryUpdated;
 
+        public event Action<InventoryItem> itemAdded;
+
         /// <summary>
         /// Convenience for getting the player's inventory.
         /// </summary>
@@ -67,7 +69,6 @@ namespace InventorySystem.Inventories
         /// <returns>Whether or not the item could be added.</returns>
         public bool AddToFirstEmptySlot(InventoryItem item, int number)
         {
-            Debug.Log("Added item");
             int i = FindSlot(item);
 
             if (i < 0)
@@ -157,10 +158,12 @@ namespace InventorySystem.Inventories
 
             slots[slot].item = item;
             slots[slot].number += number;
+            itemAdded?.Invoke(item);
             if (inventoryUpdated != null)
             {
                 inventoryUpdated();
             }
+            itemAdded?.Invoke(item);
             return true;
         }
 

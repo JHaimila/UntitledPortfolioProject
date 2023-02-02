@@ -41,12 +41,38 @@ namespace RPG.Combat
             this.Target = target;
         }
         
-        public void ToggleMeleeAttack()
+        public void ToggleMeleeAttackEnter()
         {
-            currentWeapon.HandleMelee(gameObject,GetComponent<BaseStats>().GetStat(Stat.Damage));
+            if (!currentWeapon){return;}
+
+            GameObject currentWeaponObj;
+            if (rightHandTransform.childCount > 0)
+            {
+                currentWeaponObj = rightHandTransform.GetChild(0).gameObject;
+            }
+            else
+            {
+                currentWeaponObj = leftHandTransform.GetChild(0).gameObject;
+            }
+            currentWeapon.HandleMeleeEnter(gameObject,GetComponent<BaseStats>().GetStat(Stat.Damage), currentWeaponObj);
+        }
+        public void ToggleMeleeAttackExit()
+        {
+            if (!currentWeapon){return;}
+            GameObject currentWeaponObj;
+            if (rightHandTransform.childCount > 0)
+            {
+                currentWeaponObj = rightHandTransform.GetChild(0).gameObject;
+            }
+            else
+            {
+                currentWeaponObj = leftHandTransform.GetChild(0).gameObject;
+            }
+            currentWeapon.HandleMeleeExit(currentWeaponObj);
         }
         public void LaunchProjectile()
         {
+            if (!currentWeapon){return;}
             currentWeapon.LaunchProjectile(rightHandTransform,leftHandTransform, Target, gameObject, GetComponent<BaseStats>().GetStat(Stat.Damage));
         }
 

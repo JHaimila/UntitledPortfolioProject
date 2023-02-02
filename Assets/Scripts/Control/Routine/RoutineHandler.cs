@@ -16,7 +16,11 @@ namespace RPG.Control.Routine
         {
             GetNodes();
         }
-        
+
+        public bool HasRoutine()
+        {
+            return routine != null;
+        }
         public Routine GetRoutine()
         {
             return routine;
@@ -31,6 +35,8 @@ namespace RPG.Control.Routine
 
         public void GetNodes()
         {
+            if (!HasRoutine()){return;}
+            if (routine.transform.childCount == 0){return;}
             nodes.Clear();
             for (int i = 0; i < routine.transform.childCount; i++)
             {

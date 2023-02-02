@@ -20,4 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BanditCamp/BanditCamp.unity
     guid: d9a6abc714d2a5b429b9df85b0fda6d5
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 10d973021e52821439e9db527b4e5374,
+      type: 2}

@@ -6,7 +6,7 @@ using InventorySystem.Inventories;
 
 namespace InventorySystem
 {
-    [RequireComponent(typeof(ItemDropper))]
+    [RequireComponent(typeof(RandomDropper))]
     public class Container : MonoBehaviour, IInteractable
     {
         [SerializeField] private float interactRange;

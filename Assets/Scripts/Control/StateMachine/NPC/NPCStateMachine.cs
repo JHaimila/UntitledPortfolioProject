@@ -173,7 +173,7 @@ namespace RPG.Control.NPCController
 
         public void SetNeutralState()
         {
-            if(RoutineHandler.GetRoutine() != null)
+            if(RoutineHandler.HasRoutine())
             {
                 SwitchState(new NPCRoutineState(this, RoutineHandler.GetCurrentNode()));
             }

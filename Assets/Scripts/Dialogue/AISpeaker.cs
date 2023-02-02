@@ -11,6 +11,7 @@ namespace RPG.Dialogue
     {
         [SerializeField] private float _interactRange;
         [SerializeField] private Dialogue _dialouge;
+        [SerializeField] private bool interactable;
         private DialogueController _dialogueController;
         private void OnEnable() 
         {
@@ -24,6 +25,8 @@ namespace RPG.Dialogue
 
         public void OnInteract()
         {
+            if (!interactable){return;}
+            
             if(_dialogueController == null)
             {
                 _dialogueController = GameObject.FindGameObjectWithTag("Player").GetComponent<DialogueController>();
@@ -43,13 +46,21 @@ namespace RPG.Dialogue
             }
         }
 
+        public void SetInteractable(bool state)
+        {
+            interactable = state;
+        }
         public bool IsInteractable()
         {
             if(transform.TryGetComponent(out Health health))
             {
-               return !health.isDead && !health.Attackable();
+                if (!health.isDead && !health.Attackable() && interactable)
+                {
+                    return true;
+                }
+                return false;
             }
-            return true;
+            return interactable;
         }
     }
 }

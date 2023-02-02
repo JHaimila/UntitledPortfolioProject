@@ -19,12 +19,10 @@ namespace RPG.Combat
         [field:SerializeField] public string AnimationString{get; private set;} = null;
 
         private bool colliderState = false;
-        private Collider collider;
         private float additionalDamage;
 
         // private GameObject loadedWeapon;
         private GameObject instigator;
-
         const string weaponName = "Weapon";
 
 
@@ -41,8 +39,9 @@ namespace RPG.Combat
                 {
                     weapon.GetComponent<MeleeHandler>().SetDamage(totalDamage);
                 }
-                collider = weapon.GetComponent<Collider>();
+
                 weapon.name = weaponName;
+
             }
         }
 
@@ -96,13 +95,23 @@ namespace RPG.Combat
                 _projectile.SetTarget(target, totalDamage, instigator);
             }
         }
-        public void HandleMelee(GameObject instigator, float totalDamage)
+        public void HandleMeleeEnter(GameObject instigator, float totalDamage, GameObject currentWeapon)
         {
-            MeleeHandler melee = collider.GetComponent<MeleeHandler>();
-            melee.SetInstigator(instigator);
-            melee.SetDamage(totalDamage);
-            melee.OnSwing();
-            collider.enabled = !collider.enabled;
+            if (!currentWeapon.TryGetComponent(out CapsuleCollider collider))
+            {
+                Debug.LogError("Weapon collider was null for "+currentWeapon.name);
+                return;
+            }
+            MeleeHandler meleeHandler2 = collider.GetComponent<MeleeHandler>();
+            meleeHandler2.SetInstigator(instigator);
+            meleeHandler2.SetDamage(totalDamage);
+            meleeHandler2.OnSwing();
+            collider.enabled = true;
+        }
+
+        public void HandleMeleeExit(GameObject currentWeapon)
+        {
+            currentWeapon.GetComponent<Collider>().enabled = false;
         }
         public float GetDamage()
         {

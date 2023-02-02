@@ -1,3 +1,4 @@
+using System;
 using RPG.Attributes;
 using UnityEngine;
 
@@ -9,6 +10,13 @@ namespace RPG.Combat
         GameObject instigator;
         [SerializeField] AudioSource swingSfx;
         [SerializeField] AudioSource hitSfx;
+        private Collider collider;
+
+        private void Start()
+        {
+            collider = GetComponent<Collider>();
+        }
+
         public void SetDamage(float damage)
         {
             this.damage = damage;
@@ -22,8 +30,9 @@ namespace RPG.Combat
             swingSfx.Play();
         }
         private void OnTriggerEnter(Collider other) {
-            if(other.TryGetComponent<Health>(out Health target))
+            if(other.TryGetComponent(out Health target))
             {
+                
                 if(GetComponent<Collider>().enabled)
                 {
                     hitSfx.Play();

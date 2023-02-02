@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 using RPG.Control.PlayerController;
+using UnityEngine.Events;
 
 namespace RPG.SceneManagement
 {
@@ -21,14 +23,46 @@ namespace RPG.SceneManagement
         [SerializeField] private float fadeOutTime = 1;
         [SerializeField] private float fadeWaitTime = .5f;
 
+        [SerializeField] private bool locked;
+        [SerializeField] private ParticleSystem VFX;
+
+        private void Start()
+        {
+            if (locked)
+            {
+                VFX.Pause();
+                VFX.gameObject.SetActive(false);
+            }
+            else
+            {
+                VFX.Play();
+                VFX.gameObject.SetActive(true);
+            }
+        }
+
+        public void SetLocked(bool state)
+        {
+            locked = state;
+            if (locked)
+            {
+                VFX.Pause();
+                VFX.gameObject.SetActive(false);
+            }
+            else
+            {
+                VFX.Play();
+                VFX.gameObject.SetActive(true);
+            }
+        }
         private void OnTriggerEnter(Collider other) 
         {
+            if(locked){return;}
+            
             if(other.tag.Equals("Player"))
             {
                 StartCoroutine(Transition());
             }
         }
-
         private IEnumerator Transition()
         {
             if(sceneToLoad < 0)

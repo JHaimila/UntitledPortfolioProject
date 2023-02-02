@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using RPG.Quests;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace InventorySystem.Inventories
 {
@@ -27,6 +29,12 @@ namespace InventorySystem.Inventories
         [SerializeField] Pickup pickup = null;
         [Tooltip("If true, multiple items of this type can be stacked in the same inventory slot.")]
         [SerializeField] bool stackable = false;
+
+        [Tooltip("Quest the item is for")] 
+        [SerializeField] private Quest forQuest;
+        [FormerlySerializedAs("objective")]
+        [Tooltip("Objective the item is for")]
+        [SerializeField] private string forObjective;
 
         // STATE
         static Dictionary<string, InventoryItem> itemLookupCache;
@@ -101,6 +109,16 @@ namespace InventorySystem.Inventories
         public string GetDescription()
         {
             return description;
+        }
+
+        public Quest GetQuest()
+        {
+            return forQuest;
+        }
+
+        public string GetObjective()
+        {
+            return forObjective;
         }
 
         // PRIVATE

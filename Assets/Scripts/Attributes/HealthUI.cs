@@ -12,7 +12,9 @@ namespace RPG.Attributes
             if(health == null)
             {
                 health = GameObject.FindWithTag("Player").GetComponent<Health>();
+                
             }
+            health.DeathEvent += OnDeath;
         }
 
         private void Update() {
@@ -30,6 +32,12 @@ namespace RPG.Attributes
             float top = actual - min;
             float bottom = max - min;
             return top/bottom;
+        }
+
+        private void OnDeath()
+        {
+            gameObject.SetActive(false);
+            health.DeathEvent -= OnDeath;
         }
     }
 }

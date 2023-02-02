@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using InventorySystem.Inventories;
 using Saving.Saving;
 using UnityEngine;
 using RPG.Core;
+using Unity.VisualScripting;
 
 namespace RPG.Quests
 {
@@ -18,6 +20,31 @@ namespace RPG.Quests
         {
             return statuses;
         }
+
+        private void Awake()
+        {
+            if (transform.TryGetComponent(out Inventory inventory))
+            {
+                inventory.itemAdded += CheckAddedItem;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (transform.TryGetComponent(out Inventory inventory))
+            {
+                inventory.itemAdded -= CheckAddedItem;
+            }
+        }
+
+        private void CheckAddedItem(InventoryItem item)
+        {
+            if (HasQuest(item.GetQuest()))
+            {
+                CompleteObjective( item.GetQuest(),item.GetObjective());
+            }
+        }
+
         public void AddQuest(Quest quest)
         {
             if(HasQuest(quest) && !quest.IsRepeatable()){return;}
