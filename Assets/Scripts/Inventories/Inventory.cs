@@ -82,6 +82,7 @@ namespace InventorySystem.Inventories
             {
                 inventoryUpdated();
             }
+            itemAdded?.Invoke(item);
             return true;
         }
 

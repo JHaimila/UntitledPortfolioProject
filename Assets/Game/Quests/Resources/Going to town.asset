@@ -26,11 +26,11 @@ MonoBehaviour:
     _optional: 0
     _hasTrigger: 0
   - _reference: d
-    _description: Find the Bow
+    _description: Find the Sword
     _optional: 0
     _hasTrigger: 0
   - _reference: e
-    _description: Find the hat
+    _description: Find the Bow
     _optional: 0
     _hasTrigger: 0
   - _reference: f

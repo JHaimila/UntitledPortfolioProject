@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb958add1c07ca41adcc248ca03755b, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  itemID: c4dac422-1c33-43a8-9912-becedc8c4457
-  displayName: Bow
-  description: Bow and arrow, what else is there to say really
-  icon: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
+  itemID: a3ed05a8-73e6-4ece-b853-96fb8848f8f2
+  displayName: EnemyBow
+  description: 
+  icon: {fileID: 21300000, guid: e12105cefc2de9f428435db85337bf42, type: 3}
   pickup: {fileID: 8450779169784231210, guid: 536c10535cb05b349bfddae47f8f4e70, type: 3}
   stackable: 0
+  forQuest: {fileID: 11400000, guid: fd7ff123bd4f56c4097f18e109ad6ea3, type: 2}
+  forObjective: e
   allowedEquipLocation: 5
-  equippedPrefab: {fileID: 2778661688892715896, guid: 0cf147321e89d9846842ae58a25e35cf,
+  equippedPrefab: {fileID: 5575783717032458128, guid: 6c6256d61997cfd4c9760463d9751545,
     type: 3}
-  <Range>k__BackingField: 12
-  <Damage>k__BackingField: 50
+  <Range>k__BackingField: 10
+  <Damage>k__BackingField: 25
   <PercentageBonus>k__BackingField: 0
   <isRightHand>k__BackingField: 0
-  <Projectile>k__BackingField: {fileID: 4212491158958301297, guid: e2f28a2dd8c6dc3488c3dfc885ddfde9,
+  <Projectile>k__BackingField: {fileID: 7809277931145528955, guid: aed0462bb056c3d4c9bdb87ae2910177,
     type: 3}
   <AnimationString>k__BackingField: ArcherAttack1

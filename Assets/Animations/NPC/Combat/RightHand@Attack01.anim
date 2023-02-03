@@ -97042,7 +97042,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.8666667
+  - time: 0.53333336
     functionName: ToggleMeleeAttackExit
     data: 
     objectReferenceParameter: {fileID: 0}
