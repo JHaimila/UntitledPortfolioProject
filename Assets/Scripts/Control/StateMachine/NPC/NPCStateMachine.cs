@@ -108,6 +108,7 @@ namespace RPG.Control.NPCController
         }
         public void ChangeState()
         {
+            WeaponHandler.ToggleMeleeAttackExit();
             switch(StateHandler.GetCurrentBehaviour())
             {
                 case BehaviourState.Neutral:

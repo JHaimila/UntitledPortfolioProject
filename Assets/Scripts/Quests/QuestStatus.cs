@@ -20,6 +20,7 @@ namespace RPG.Quests
             _quest = Quest.GetByName(state.questName);
             completedObjs = state.completedObjs;
             PopulateObjectives();
+            RestoreState();
         }
         [System.Serializable]
         class QuestStatusRecord
@@ -81,6 +82,17 @@ namespace RPG.Quests
             state.questName = _quest.name;
             state.completedObjs = completedObjs;
             return state;
+        }
+
+        public void RestoreState()
+        {
+            foreach (var objective in _objectiveStatuses)
+            {
+                if (completedObjs.Contains(objective.GetObjective().GetReference()))
+                {
+                    objective.SetCompleted(true);
+                }
+            }
         }
         public void TrackQuest(bool status)
         {

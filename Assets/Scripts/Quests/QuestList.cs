@@ -39,7 +39,6 @@ namespace RPG.Quests
 
         private void CheckAddedItem(InventoryItem item)
         {
-            Debug.Log("CHecking item: "+item.GetDisplayName());
             if (HasQuest(item.GetQuest()))
             {
                 CompleteObjective( item.GetQuest(),item.GetObjective());

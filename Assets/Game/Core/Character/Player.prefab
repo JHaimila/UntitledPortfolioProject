@@ -86,7 +86,7 @@ MonoBehaviour:
   <InteractionHandler>k__BackingField: {fileID: 320454903019054861}
   <InteractionRange>k__BackingField: 2
   <RotationSpeed>k__BackingField: 5
-  <AttackCooldownTime>k__BackingField: 2
+  <AttackCooldownTime>k__BackingField: 1
   <Health>k__BackingField: {fileID: 320454903019054860}
   <WeaponHandler>k__BackingField: {fileID: 7059760471533182974}
   isInMovingState: 0
@@ -2324,6 +2324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4718336035418708857}
   - component: {fileID: 4847595966742400097}
+  - component: {fileID: 4485255754528398506}
   m_Layer: 0
   m_Name: AudioListener
   m_TagString: Untagged
@@ -2354,6 +2355,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3515557204740852821}
   m_Enabled: 1
+--- !u!114 &4485255754528398506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3515557204740852821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc75ee0d2176bc45a6c4acef7fd9f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3792858101367668472
 GameObject:
   m_ObjectHideFlags: 0

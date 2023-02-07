@@ -21,12 +21,10 @@ namespace RPG.SceneManagement
 
         public Coroutine FadeOut(float time)
         {
-            Debug.Log("FADE OUT");
             return Fade(1, time);
         }
         public Coroutine FadeIn(float time)
         {
-            Debug.Log("FADE IN");
             return Fade(0, time);
         }
 

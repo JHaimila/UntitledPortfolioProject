@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace RPG.Quests
 {
+    [System.Serializable]
     public class ObjectiveStatus : MonoBehaviour
     {
         public ObjectiveStatus(Objective objective, bool complete, bool failed)

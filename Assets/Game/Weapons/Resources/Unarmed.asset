@@ -18,10 +18,12 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
   pickup: {fileID: 8450779169784231210, guid: 536c10535cb05b349bfddae47f8f4e70, type: 3}
   stackable: 0
+  forQuest: {fileID: 0}
+  forObjective: 
   allowedEquipLocation: 5
   equippedPrefab: {fileID: 6014969307932933403, guid: 34335f0c74ab9d646b221b4d74bb5f7e,
     type: 3}
-  <Range>k__BackingField: 1
+  <Range>k__BackingField: 0.8
   <Damage>k__BackingField: 3
   <PercentageBonus>k__BackingField: 0
   <isRightHand>k__BackingField: 1

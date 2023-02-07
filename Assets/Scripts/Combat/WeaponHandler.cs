@@ -3,6 +3,7 @@ using RPG.Attributes;
 using RPG.Stats;
 using System.Collections.Generic;
 using InventorySystem.Inventories;
+using Unity.VisualScripting;
 
 namespace RPG.Combat
 {
@@ -68,7 +69,11 @@ namespace RPG.Combat
             {
                 currentWeaponObj = leftHandTransform.GetChild(0).gameObject;
             }
-            currentWeapon.HandleMeleeExit(currentWeaponObj);
+
+            if(currentWeaponObj.TryGetComponent(out CapsuleCollider weaponCollider))
+            {
+                weaponCollider.enabled = false;
+            }
         }
         public void LaunchProjectile()
         {

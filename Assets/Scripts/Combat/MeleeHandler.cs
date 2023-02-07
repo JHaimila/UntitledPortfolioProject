@@ -30,7 +30,7 @@ namespace RPG.Combat
         public void OnSwing()
         {
             swingSfx.Play();
-            StartCoroutine(EnableCollider());
+            collider.enabled = true;
         }
 
         public void SetTag(string newTag)
@@ -40,19 +40,19 @@ namespace RPG.Combat
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag.Equals(userTag)){return;}
-            
+            // Debug.Log(damage +"hit before health "+other.name);
             if(other.TryGetComponent(out Health target))
             {
                 hitSfx.Play();
                 target.OnAttacked(damage, instigator);
+                // Debug.Log(damage +"hit health detected");
             }
         }
 
-        private IEnumerator EnableCollider()
-        {
-            collider.enabled = true;
-            yield return new WaitForSeconds(1);
-            collider.enabled = false;
-        }
+        // private IEnumerator DisableCollider()
+        // {
+        //     yield return new WaitForSeconds(1);
+        //     collider.enabled = false;
+        // }
     }
 }

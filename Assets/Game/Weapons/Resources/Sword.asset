@@ -23,7 +23,7 @@ MonoBehaviour:
   allowedEquipLocation: 5
   equippedPrefab: {fileID: 5988361274057650805, guid: 1d303d64f168ce840903831e11b859c0,
     type: 3}
-  <Range>k__BackingField: 2
+  <Range>k__BackingField: 1.5
   <Damage>k__BackingField: 25
   <PercentageBonus>k__BackingField: 10
   <isRightHand>k__BackingField: 1

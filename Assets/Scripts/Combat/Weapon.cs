@@ -110,11 +110,6 @@ namespace RPG.Combat
             meleeHandler2.OnSwing();
             // collider.enabled = true;
         }
-
-        public void HandleMeleeExit(GameObject currentWeapon)
-        {
-            currentWeapon.GetComponent<Collider>().enabled = false;
-        }
         public float GetDamage()
         {
             return Damage;

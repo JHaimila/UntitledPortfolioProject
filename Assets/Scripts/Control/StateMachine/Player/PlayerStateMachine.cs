@@ -87,6 +87,7 @@ namespace RPG.Control.PlayerController
 
         public void HandleMove(Transform target, float range)
         {
+            WeaponHandler.ToggleMeleeAttackExit();
             if(!isInMovingState)
             {
                 SwitchState(new PlayerMovingState(this, target, range));
@@ -94,6 +95,7 @@ namespace RPG.Control.PlayerController
         }
         public void HandleMove(Vector3 position)
         {
+            WeaponHandler.ToggleMeleeAttackExit();
             if(!isInMovingState)
             {
                 SwitchState(new PlayerMovingState(this, position));
@@ -116,7 +118,7 @@ namespace RPG.Control.PlayerController
         public void HandleInteraction(Transform target)
         {
             if(!target.TryGetComponent<IInteractable>(out IInteractable interact)){return;}
-            
+            WeaponHandler.ToggleMeleeAttackExit();
             if(Vector3.Distance(transform.position, target.position) > interact.GetInteractRange())
             {
                 HandleMove(target, target.GetComponent<IInteractable>().GetInteractRange());
