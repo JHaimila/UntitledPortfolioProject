@@ -44,6 +44,7 @@ namespace RPG.Control.NPCController
         private void OnEnable() 
         {
             StateHandler.OnBehaviourChange += ChangeState;
+            RoutineHandler.OnPauseChanged += RoutinePauseChanged;
         }
         private void Start() {
             Target = GameObject.FindGameObjectWithTag("Player");
@@ -63,10 +64,19 @@ namespace RPG.Control.NPCController
             }
             
         }
+
+        private void RoutinePauseChanged()
+        {
+            if (StateHandler.GetCurrentBehaviour() == BehaviourState.Neutral)
+            {
+                ChangeState();
+            }
+        }
         private void OnDisable() 
         {
             StateHandler.OnBehaviourChange -= ChangeState;
             Health.DeathEvent -= HandleDeath;
+            RoutineHandler.OnPauseChanged -= RoutinePauseChanged;
         }
 
         private void HandleRevive()
@@ -173,7 +183,7 @@ namespace RPG.Control.NPCController
 
         public void SetNeutralState()
         {
-            if(RoutineHandler.HasRoutine())
+            if(RoutineHandler.HasRoutine() && !RoutineHandler.IsPaused())
             {
                 SwitchState(new NPCRoutineState(this, RoutineHandler.GetCurrentNode()));
             }

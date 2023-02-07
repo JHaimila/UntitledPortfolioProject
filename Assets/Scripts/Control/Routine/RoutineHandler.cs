@@ -7,6 +7,9 @@ namespace RPG.Control.Routine
     public class RoutineHandler : MonoBehaviour
     {
         [SerializeField] private Routine routine;
+        [SerializeField] private bool paused;
+
+        public event System.Action OnPauseChanged;
 
         private List<RoutineNode> nodes = new List<RoutineNode>();
 
@@ -24,6 +27,22 @@ namespace RPG.Control.Routine
         public Routine GetRoutine()
         {
             return routine;
+        }
+        public bool IsPaused()
+        {
+            return paused;
+        }
+
+        public void Pause()
+        {
+            paused = true;
+            OnPauseChanged?.Invoke();
+        }
+
+        public void UnPause()
+        {
+            paused = false;
+            OnPauseChanged?.Invoke();
         }
 
         public void SwitchRoutine(Routine newRoutine)

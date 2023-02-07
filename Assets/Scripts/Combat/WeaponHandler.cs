@@ -34,7 +34,7 @@ namespace RPG.Combat
             {
                 currentWeapon = weapon;
             }
-            currentWeapon.Spawn(rightHandTransform, leftHandTransform, Animator, GetComponent<BaseStats>().GetStat(Stat.Damage));
+            currentWeapon.Spawn(rightHandTransform, leftHandTransform, Animator, GetComponent<BaseStats>().GetStat(Stat.Damage), tag);
         }
         public void SetTarget(Health target)
         {

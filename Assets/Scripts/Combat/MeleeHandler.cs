@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using RPG.Attributes;
 using UnityEngine;
 
@@ -11,8 +12,9 @@ namespace RPG.Combat
         [SerializeField] AudioSource swingSfx;
         [SerializeField] AudioSource hitSfx;
         private Collider collider;
+        private string userTag;
 
-        private void Start()
+        private void OnEnable()
         {
             collider = GetComponent<Collider>();
         }
@@ -28,17 +30,29 @@ namespace RPG.Combat
         public void OnSwing()
         {
             swingSfx.Play();
+            StartCoroutine(EnableCollider());
         }
-        private void OnTriggerEnter(Collider other) {
+
+        public void SetTag(string newTag)
+        {
+            userTag = newTag;
+        }
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag.Equals(userTag)){return;}
+            
             if(other.TryGetComponent(out Health target))
             {
-                
-                if(GetComponent<Collider>().enabled)
-                {
-                    hitSfx.Play();
-                    target.OnAttacked(damage, instigator);
-                }
+                hitSfx.Play();
+                target.OnAttacked(damage, instigator);
             }
+        }
+
+        private IEnumerator EnableCollider()
+        {
+            collider.enabled = true;
+            yield return new WaitForSeconds(1);
+            collider.enabled = false;
         }
     }
 }

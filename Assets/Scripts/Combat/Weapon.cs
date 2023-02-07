@@ -26,7 +26,7 @@ namespace RPG.Combat
         const string weaponName = "Weapon";
 
 
-        public void Spawn(Transform rightHand, Transform leftHand, Animator animator, float totalDamage)
+        public void Spawn(Transform rightHand, Transform leftHand, Animator animator, float totalDamage, string newTag)
         {
             DestroyOldWeapon(rightHand, leftHand);
             Transform handTransform = GetTransform(rightHand, leftHand);
@@ -37,7 +37,9 @@ namespace RPG.Combat
                 this.additionalDamage = totalDamage;
                 if(!HasProjectile())
                 {
-                    weapon.GetComponent<MeleeHandler>().SetDamage(totalDamage);
+                    MeleeHandler meleeHandler = weapon.GetComponent<MeleeHandler>();
+                    meleeHandler.SetDamage(totalDamage);
+                    meleeHandler.SetTag(newTag);
                 }
 
                 weapon.name = weaponName;
@@ -106,7 +108,7 @@ namespace RPG.Combat
             meleeHandler2.SetInstigator(instigator);
             meleeHandler2.SetDamage(totalDamage);
             meleeHandler2.OnSwing();
-            collider.enabled = true;
+            // collider.enabled = true;
         }
 
         public void HandleMeleeExit(GameObject currentWeapon)

@@ -152,8 +152,8 @@ MonoBehaviour:
     width: 200
     height: 250
   isPlayerSpeaking: 0
-  EnterActions: GiveQuest
-  ExitActions: ChangeRoutine
+  EnterActions: 
+  ExitActions: UnPause
   condition:
     and: []
 --- !u!114 &-2146911823884865506

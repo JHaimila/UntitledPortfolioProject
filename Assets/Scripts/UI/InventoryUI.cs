@@ -7,6 +7,7 @@ namespace InventorySystem.Inventories
 {
     public class InventoryUI : MonoBehaviour
     {
+        [SerializeField] private GameObject appear;
         InputReader inputReader;
         InteractionHandler interactionHandler;
         private bool isActive = false;
@@ -26,7 +27,7 @@ namespace InventorySystem.Inventories
         {
             isActive = !isActive;
             interactionHandler.uiOpen = isActive;
-            transform.GetChild(0).gameObject.SetActive(isActive);
+            appear.SetActive(isActive);
         }
     }
 }

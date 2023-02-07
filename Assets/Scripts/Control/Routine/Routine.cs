@@ -11,6 +11,7 @@ namespace RPG.Control.Routine
         private List<RoutineNode> nodes = new List<RoutineNode>();
         [SerializeField] private bool loops = true;
         [SerializeField] private bool reverseOrder;
+        
         private int currentIndex = 0;
 
         public bool Loops()

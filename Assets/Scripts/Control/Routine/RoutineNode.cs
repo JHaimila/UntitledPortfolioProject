@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Combat;
@@ -12,8 +13,9 @@ namespace RPG.Control.Routine
         [SerializeField] private Transform point;
         [SerializeField] private GameObject interactObject;
         [SerializeField] private List<RoutineNodeAnimation> nodeAnimations;
-        
-
+#if UNITY_EDITOR
+        private Mesh indicator;
+#endif
         public Transform GetTransform()
         {
             if(!point)
@@ -41,13 +43,25 @@ namespace RPG.Control.Routine
                 tRoutineInteract.Interact();
             }
         }
+#if UNITY_EDITOR
+        private void OnDrawGizmosSelected()
+        {
+            if (indicator == null)
+            {
+                indicator = Resources.Load<Mesh>("RoutineNode/SM_Prop_Arrow_01_Headless");
+            }
+            Gizmos.DrawWireMesh(indicator, transform.position, transform.rotation);
+        }
+#endif
     }
+
     [System.Serializable]
     public class RoutineNodeAnimation
     {
         public AnimatorOverrideController nodeAnimation;
         public float waitSeconds;
         public UnityEvent triggers;
-        public Weapon  interactItem;
+        public Weapon interactItem;
     }
+
 }

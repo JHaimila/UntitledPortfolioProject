@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 423004355679598034}
   m_Layer: 6
   m_Name: NPC
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -606,6 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326cc4b2557658745944d632ba834dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <DefaultBehaviour>k__BackingField: 0
   maps:
   - <Behaviour>k__BackingField: 0
     <TriggeredBy>k__BackingField: 0
@@ -634,7 +635,6 @@ MonoBehaviour:
   <Target>k__BackingField: {fileID: 0}
   <RoutineHandler>k__BackingField: {fileID: 423004355679598034}
   <StateHandler>k__BackingField: {fileID: 851253912758079381}
-  <DefaultBehaviour>k__BackingField: 0
   <WeaponHandler>k__BackingField: {fileID: 5540592205401382300}
   <BehaviourMaps>k__BackingField: []
   aggroRadius: 8
@@ -655,6 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   routine: {fileID: 0}
+  paused: 0
 --- !u!1 &4339534233034607440
 GameObject:
   m_ObjectHideFlags: 0

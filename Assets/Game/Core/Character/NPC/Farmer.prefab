@@ -1975,6 +1975,7 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: f65e5881bc268234fa9412c0609f52d2, type: 3}
   _interactRange: 3
   _dialouge: {fileID: 11400000, guid: c3815c228426d9f4f8c227c83ac3160a, type: 2}
+  interactable: 0
 --- !u!114 &7341845290279450060 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7142575175357650537, guid: 5b3119219494ffc46a9d27cca1f6e89e,

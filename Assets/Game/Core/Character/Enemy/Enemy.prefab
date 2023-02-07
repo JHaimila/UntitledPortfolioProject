@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: -7917974031847421175}
   m_Layer: 6
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -453,7 +453,6 @@ MonoBehaviour:
   <Target>k__BackingField: {fileID: 0}
   <RoutineHandler>k__BackingField: {fileID: 0}
   <StateHandler>k__BackingField: {fileID: 0}
-  <DefaultBehaviour>k__BackingField: 6
   <WeaponHandler>k__BackingField: {fileID: 6753179279312240536}
   <BehaviourMaps>k__BackingField: []
   aggroRadius: 8
@@ -584,6 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326cc4b2557658745944d632ba834dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <DefaultBehaviour>k__BackingField: 6
   maps:
   - <Behaviour>k__BackingField: 0
     <TriggeredBy>k__BackingField: 0
