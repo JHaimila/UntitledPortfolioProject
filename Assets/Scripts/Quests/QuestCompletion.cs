@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +7,19 @@ namespace RPG.Quests
 {
     public class QuestCompletion : MonoBehaviour
     {
-        [SerializeField] private Quest quest;
-        [SerializeField] private string objective;
-
-        public void CompleteObjective()
+        [SerializeField] private List<ObjectiveCompletion> objectives;
+        public void CompleteObjective(int index)
         {
+            if (index + 1 < objectives.Count) {return;}
             QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
-            questList.CompleteObjective(quest, objective);
+            questList.CompleteObjective(objectives[index].quest, objectives[index].objective);
         }
+    }
+
+    [Serializable]
+    class ObjectiveCompletion
+    {
+        public Quest quest;
+        public string objective;
     }
 }

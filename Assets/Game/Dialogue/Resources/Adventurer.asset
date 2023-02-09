@@ -94,11 +94,11 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 3419
-    y: 702
+    y: 701
     width: 200
     height: 250
   isPlayerSpeaking: 0
-  EnterActions: 
+  EnterActions: CompleteObjective2
   ExitActions: 
   condition:
     and: []
@@ -115,8 +115,7 @@ MonoBehaviour:
   m_Name: f79abcfa-1c4e-4767-806b-ad74b99e3ab0
   m_EditorClassIdentifier: 
   text: Goodbye
-  children:
-  - b14bb429-a29e-468d-a11f-90144f42f4a6
+  children: []
   nodeRect:
     serializedVersion: 2
     x: 639
@@ -150,6 +149,31 @@ MonoBehaviour:
     width: 200
     height: 250
   isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
+--- !u!114 &-4597690558108736065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 5c4714ad-076e-4f66-9b1c-15e08ec4e9df
+  m_EditorClassIdentifier: 
+  text: Meh
+  children: []
+  nodeRect:
+    serializedVersion: 2
+    x: 908
+    y: 890
+    width: 200
+    height: 250
+  isPlayerSpeaking: 0
   EnterActions: 
   ExitActions: 
   condition:
@@ -370,8 +394,6 @@ MonoBehaviour:
   - {fileID: 2532440128670558853}
   - {fileID: 7803155099338090267}
   - {fileID: 6016816790665145144}
-  - {fileID: -6121407049514774009}
-  - {fileID: 913112032656692196}
   - {fileID: 2570510488158798638}
   - {fileID: 5880063548192286393}
   - {fileID: 1451854745556616423}
@@ -399,6 +421,8 @@ MonoBehaviour:
   - {fileID: -9012275502803611283}
   - {fileID: 7365451051257728594}
   - {fileID: -7853229286370015817}
+  - {fileID: 5817687057068972936}
+  - {fileID: -4597690558108736065}
   newNodeOffset: {x: 250, y: 0}
 --- !u!114 &661521703104401651
 MonoBehaviour:
@@ -493,12 +517,12 @@ MonoBehaviour:
   children:
   - c28f96bf-1c47-4d14-ade5-086f5d141eec
   - 384fbb49-03ee-47a4-85f6-42da96baf929
-  - f79abcfa-1c4e-4767-806b-ad74b99e3ab0
   - 14504362-f786-4097-bffb-36575942a41a
+  - 1a33f393-891f-4db9-9950-07c7df1cbac1
   nodeRect:
     serializedVersion: 2
     x: 348
-    y: 161
+    y: 160
     width: 200
     height: 250
   isPlayerSpeaking: 0
@@ -638,6 +662,32 @@ MonoBehaviour:
   ExitActions: 
   condition:
     and: []
+--- !u!114 &5817687057068972936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88b181c36b3bd245b5ee5f9eee06df1, type: 3}
+  m_Name: 1a33f393-891f-4db9-9950-07c7df1cbac1
+  m_EditorClassIdentifier: 
+  text: Bye
+  children:
+  - 5c4714ad-076e-4f66-9b1c-15e08ec4e9df
+  nodeRect:
+    serializedVersion: 2
+    x: 643
+    y: 847
+    width: 200
+    height: 250
+  isPlayerSpeaking: 1
+  EnterActions: 
+  ExitActions: 
+  condition:
+    and: []
 --- !u!114 &5880063548192286393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,18 +740,11 @@ MonoBehaviour:
   condition:
     and:
     - or:
-      - predicate: 1
+      - predicate: 3
         parameters:
         - Going to town
-        negate: 0
-      - predicate: 3
-        parameters:
         - a
         negate: 0
-      - predicate: 3
-        parameters:
-        - b
-        negate: 1
 --- !u!114 &7062574318488661693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,7 +944,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 2671
-    y: 945
+    y: 946
     width: 200
     height: 250
   isPlayerSpeaking: 1

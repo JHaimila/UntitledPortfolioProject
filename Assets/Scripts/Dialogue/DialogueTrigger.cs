@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,13 +10,24 @@ namespace RPG.Dialogue
     {
         [SerializeField] private string _action;
         [SerializeField] private UnityEvent _onTrigger;
-
+        [SerializeField] private List<DialogueAction> actions;
+        
+        
         public void Trigger(string actionToTrigger)
         {
-            if(actionToTrigger == _action)
+            foreach (var action in actions)
             {
-                _onTrigger?.Invoke();
+                if(actionToTrigger == action.actionTrigger)
+                {
+                    action.onTrigger?.Invoke();
+                }   
             }
         }
+    }
+    [Serializable]
+    class DialogueAction
+    {
+        public string actionTrigger;
+        public UnityEvent onTrigger;
     }
 }

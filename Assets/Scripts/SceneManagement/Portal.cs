@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 using RPG.Control.PlayerController;
+using Saving.Saving;
 using UnityEngine.Events;
 
 namespace RPG.SceneManagement
 {
-    public class Portal : MonoBehaviour
+    public class Portal : MonoBehaviour, ISaveable
     {
         enum DestinationIdentifier
         {
@@ -119,5 +120,25 @@ namespace RPG.SceneManagement
             }
             return null;
         }
+
+        public object CaptureState()
+        {
+            PortalRecord newRecord = new PortalRecord();
+            newRecord.locked = locked;
+            return newRecord;
+        }
+
+        public void RestoreState(object state)
+        {
+            PortalRecord restoredRecord = state as PortalRecord;
+            this.locked = restoredRecord.locked;
+            SetLocked(locked);
+        }
+    }
+
+    [Serializable]
+    class PortalRecord
+    {
+        public bool locked;
     }
 }

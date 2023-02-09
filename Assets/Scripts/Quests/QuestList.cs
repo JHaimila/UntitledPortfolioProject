@@ -65,7 +65,6 @@ namespace RPG.Quests
             QuestStatus status = GetQuestStatus(quest);
 
             if(status.IsCompleted()){return;}
-            Debug.Log("COMPLETE OBJ: "+objective);
             status.CompleteObjective(objective);
             OnUpdate?.Invoke();
         }
@@ -136,7 +135,9 @@ namespace RPG.Quests
                 }
                 case EPredicate.CompletedObjective:
                 {
-                    return GetQuestStatus(Quest.GetByName(parameters[0])).GetCompleteObjectives().Contains(parameters[0]);
+                    // if (parameters.Count < 2){return null;}
+                    
+                    return GetQuestStatus(Quest.GetByName(parameters[0])).GetCompleteObjectives().Contains(parameters[1]);
                 }
             }
             

@@ -110,7 +110,6 @@ namespace RPG.Dialogue
 
         private void TriggerEnterAction()
         {
-            Debug.Log("EnterAction");
             if(currentNode != null)
             {
                 TriggerAction(currentNode.GetEnterActions());
@@ -118,7 +117,6 @@ namespace RPG.Dialogue
         }
         private void TriggerExitAction()
         {
-            Debug.Log("ExitAction");
             if(currentNode != null)
             {
                 TriggerAction(currentNode.GetExitActions());
@@ -130,7 +128,6 @@ namespace RPG.Dialogue
 
             foreach(DialogueTrigger trigger in _currentSpeaker.GetComponents<DialogueTrigger>())
             {
-                Debug.Log("ACTION TRIGGERED");
                 trigger.Trigger(action);
             }
         }
