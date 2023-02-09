@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8797191096013276684}
   - component: {fileID: 8797191096013276683}
   - component: {fileID: 8768250344212535623}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AreaTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,6 +72,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   singleUse: 1
+  triggered: 0
 --- !u!114 &8768250344212535623
 MonoBehaviour:
   m_ObjectHideFlags: 0

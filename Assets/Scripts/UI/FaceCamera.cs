@@ -15,7 +15,8 @@ namespace RPG.UI
 
         private void Update()
         {
-            transform.LookAt(cam.transform);
+            // transform.LookAt(cam.transform);
+            transform.rotation = Quaternion.LookRotation((transform.position - cam.transform.position).normalized);
         }
     }   
 }

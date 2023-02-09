@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 namespace InventorySystem.Inventories
 {
@@ -8,6 +9,7 @@ namespace InventorySystem.Inventories
     /// </summary>
     public class Pickup : MonoBehaviour
     {
+        [SerializeField] private TextMeshProUGUI nameText;
         // STATE
         InventoryItem item;
         int number = 1;
@@ -19,6 +21,7 @@ namespace InventorySystem.Inventories
 
         private void Awake()
         {
+            
             var player = GameObject.FindGameObjectWithTag("Player");
             inventory = player.GetComponent<Inventory>();
         }
@@ -38,6 +41,10 @@ namespace InventorySystem.Inventories
                 number = 1;
             }
             this.number = number;
+            if (item)
+            {
+                nameText.text = item.GetDisplayName();
+            }
         }
 
         public InventoryItem GetItem()
