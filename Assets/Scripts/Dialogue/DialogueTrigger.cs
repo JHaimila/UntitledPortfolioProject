@@ -8,8 +8,6 @@ namespace RPG.Dialogue
 {
     public class DialogueTrigger : MonoBehaviour
     {
-        [SerializeField] private string _action;
-        [SerializeField] private UnityEvent _onTrigger;
         [SerializeField] private List<DialogueAction> actions;
         
         

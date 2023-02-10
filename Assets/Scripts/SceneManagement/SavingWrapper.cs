@@ -14,9 +14,13 @@ namespace RPG.SceneManagement
         // Thie load last scene is called in awake to avoid racing conditions with the experience. When it was in start it wouldn't update the level if you loaded from a save.
         private void Awake() 
         {
-            StartCoroutine(LoadLastScene());
+            // StartCoroutine(LoadLastScene());
         }
 
+        public void LoadScene()
+        {
+            StartCoroutine(LoadLastScene());
+        }
         IEnumerator LoadLastScene()
         {
             Fader fader = FindObjectOfType<Fader>();
@@ -25,15 +29,22 @@ namespace RPG.SceneManagement
             yield return fader.FadeIn(fadeInTime);
         }
 
+        public bool HasFile()
+        {
+            return GetComponent<SavingSystem>().HasFile(defaultSaveFile);
+        }
         public void Load()
         {
-            Debug.Log("Load");
             GetComponent<SavingSystem>().Load(defaultSaveFile);
         }
         public void Save()
         {
-            Debug.Log("Save");
             GetComponent<SavingSystem>().Save(defaultSaveFile);
+        }
+
+        public void Delete()
+        {
+            GetComponent<SavingSystem>().Delete(defaultSaveFile);
         }
     }
 }

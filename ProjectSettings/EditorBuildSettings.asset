@@ -15,11 +15,17 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingScene/LoadingScene.unity
     guid: 36f36706abeb0ff4dafd7232e0094b1f
   - enabled: 1
+    path: Assets/Scenes/Menus/MainMenu.unity
+    guid: e747eeed51f14694282bae0a2e212a77
+  - enabled: 1
     path: Assets/Scenes/IntroMoment/IntroMoment.unity
     guid: 5a520127b800691469d269ff32ff1e8f
   - enabled: 1
     path: Assets/Scenes/BanditCamp/BanditCamp.unity
     guid: d9a6abc714d2a5b429b9df85b0fda6d5
+  - enabled: 1
+    path: Assets/Scenes/Menus/EndMenu.unity
+    guid: 52fcbe32f16d9e8499dbf2cf960ae3f8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 10d973021e52821439e9db527b4e5374,
       type: 2}

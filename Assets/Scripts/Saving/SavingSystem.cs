@@ -40,6 +40,11 @@ namespace Saving.Saving
             File.Delete(GetPathFromSaveFile(saveFile));
         }
 
+        public bool HasFile(string saveFile)
+        {
+            return File.Exists(GetPathFromSaveFile(saveFile));
+        }
+
         private Dictionary<string, object> LoadFile(string saveFile)
         {
             string path = GetPathFromSaveFile(saveFile);

@@ -10,7 +10,7 @@ namespace RPG.Quests
         [SerializeField] private List<ObjectiveCompletion> objectives;
         public void CompleteObjective(int index)
         {
-            if (index + 1 < objectives.Count) {return;}
+            if (index + 1 > objectives.Count) {return;}
             QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
             questList.CompleteObjective(objectives[index].quest, objectives[index].objective);
         }

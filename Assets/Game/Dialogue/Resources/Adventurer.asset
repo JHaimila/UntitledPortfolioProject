@@ -74,7 +74,7 @@ MonoBehaviour:
     height: 250
   isPlayerSpeaking: 0
   EnterActions: 
-  ExitActions: 
+  ExitActions: CompleteObjective
   condition:
     and: []
 --- !u!114 &-7853229286370015817
@@ -341,8 +341,8 @@ MonoBehaviour:
   - 3e39b15d-60ce-4f1e-852b-c203e2b80b14
   nodeRect:
     serializedVersion: 2
-    x: 2409
-    y: 434
+    x: 2401
+    y: 443
     width: 200
     height: 250
   isPlayerSpeaking: 0
@@ -492,8 +492,8 @@ MonoBehaviour:
   - 00f40fa7-da28-4785-9025-ff753339525c
   nodeRect:
     serializedVersion: 2
-    x: 893
-    y: 265
+    x: 890
+    y: 274
     width: 200
     height: 250
   isPlayerSpeaking: 0
@@ -575,12 +575,12 @@ MonoBehaviour:
   - 4d83be29-0ef3-440d-bb4d-b45f3a17787f
   nodeRect:
     serializedVersion: 2
-    x: 2401
-    y: 186
+    x: 2404
+    y: 185
     width: 200
     height: 250
   isPlayerSpeaking: 0
-  EnterActions: CompleteObj
+  EnterActions: 
   ExitActions: 
   condition:
     and: []
@@ -917,7 +917,7 @@ MonoBehaviour:
   - 26fca672-80d7-47cd-96d4-597b40c18fa6
   nodeRect:
     serializedVersion: 2
-    x: 1143
+    x: 1144
     y: 266
     width: 200
     height: 250
