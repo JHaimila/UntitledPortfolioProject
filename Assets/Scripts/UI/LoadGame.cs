@@ -9,7 +9,7 @@ namespace RPG.UI
     public class LoadGame : MonoBehaviour
     {
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             SavingWrapper savingWrapper = GameObject.FindObjectOfType<SavingWrapper>();
             Button button = GetComponent<Button>();

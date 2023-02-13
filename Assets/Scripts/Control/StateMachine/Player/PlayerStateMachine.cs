@@ -38,7 +38,7 @@ namespace RPG.Control.PlayerController
             InteractionHandler.MoveEvent += HandleMove;
             InteractionHandler.AttackEvent += HandleAttack;
             InteractionHandler.InteractEvent += HandleInteraction;
-            // Health.DeathEvent += HandleDeath;
+            Health.DeathEvent += HandleDeath;
             // Health.ReviveEvent += HandleRevive;
             equipment = GetComponent<Equipment>();
             if(equipment)
@@ -61,9 +61,6 @@ namespace RPG.Control.PlayerController
         private void Start() 
         {
             MainCamera = Camera.main;
-            // PlayerIdleState = new PlayerIdlingState(this);
-            // PlayerMovingState = new PlayerMovingState(this);
-            // PlayerAttackingState = new PlayerAttackingState(this);
         }
 
         
@@ -73,7 +70,7 @@ namespace RPG.Control.PlayerController
             InteractionHandler.MoveEvent -= HandleMove;
             InteractionHandler.AttackEvent -= HandleAttack;
             InteractionHandler.InteractEvent -= HandleInteraction;
-            // Health.DeathEvent -= HandleDeath;
+            Health.DeathEvent -= HandleDeath;
             // Health.ReviveEvent -= HandleRevive;
         }
 
@@ -147,7 +144,6 @@ namespace RPG.Control.PlayerController
         {
             
             // SwitchState(new PlayerIdlingState(this));
-            Debug.Log("Freeze Player");
             // InteractionHandler.enabled = false;
             InteractionHandler.uiOpen = true;
 
@@ -157,7 +153,6 @@ namespace RPG.Control.PlayerController
         {
             // InteractionHandler.enabled = true;
             InteractionHandler.uiOpen = false;
-            Debug.Log("Unfreeze Player");
             // Agent.isStopped = false;
             Agent.destination = transform.position;
         }
