@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using RPG.Attributes;
 using RPG.Control;
+using RPG.Control.Routine;
 using RPG.Core;
 using UnityEngine;
 
@@ -25,14 +26,18 @@ namespace RPG.Dialogue
 
         public void OnInteract()
         {
-            if (!interactable){return;}
+            if (!IsInteractable()){return;}
             
             if(_dialogueController == null)
             {
                 _dialogueController = GameObject.FindGameObjectWithTag("Player").GetComponent<DialogueController>();
             }
             _dialogueController.StartDialogue(_dialouge, this);
-            if (gameObject.TryGetComponent<StateHandler>(out StateHandler stateHandler))
+            if (gameObject.TryGetComponent(out RoutineHandler routineHandler))
+            {
+                routineHandler.Pause();
+            }
+            if (gameObject.TryGetComponent(out StateHandler stateHandler))
             {
                 stateHandler.Check(Action.InteractedStart);
             }
@@ -40,9 +45,13 @@ namespace RPG.Dialogue
 
         public void OnInteractEnd()
         {
-            if (gameObject.TryGetComponent<StateHandler>(out StateHandler stateHandler))
+            if (gameObject.TryGetComponent(out StateHandler stateHandler))
             {
                 stateHandler.Check(Action.InteractedEnd);
+            }
+            if (gameObject.TryGetComponent(out RoutineHandler routineHandler))
+            {
+                routineHandler.UnPause();
             }
         }
 

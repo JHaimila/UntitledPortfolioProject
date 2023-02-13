@@ -3,7 +3,9 @@ using RPG.Attributes;
 using RPG.Stats;
 using System.Collections.Generic;
 using InventorySystem.Inventories;
+using Saving.Saving;
 using Unity.VisualScripting;
+using UnityEngine.Serialization;
 
 namespace RPG.Combat
 {
@@ -21,8 +23,13 @@ namespace RPG.Combat
         // private void OnDisable() {
         //     GetComponent<BaseStats>().LevelUpEvent -= UpdateAdditionalDamage;
         // }
-        private void OnEnable() {
-            currentWeapon = null;
+        private void Start() {
+            // currentWeapon = null;
+            if (tag.Equals("Player"))
+            {
+                Equipment equipment = GameObject.FindWithTag("Player").GetComponent<Equipment>();
+                currentWeapon = equipment.GetItemInSlot(EquipLocation.Weapon) as Weapon;
+            }
             EquipWeapon(currentWeapon);
         }
         public void EquipWeapon(Weapon weapon)
@@ -80,14 +87,6 @@ namespace RPG.Combat
             if (!currentWeapon){return;}
             currentWeapon.LaunchProjectile(rightHandTransform,leftHandTransform, Target, gameObject, GetComponent<BaseStats>().GetStat(Stat.Damage));
         }
-
-        // private void UpdateAdditionalDamage()
-        // {
-        //     if(currentWeapon != null)
-        //     {
-        //         currentWeapon.SetAdditionalDamage(GetComponent<BaseStats>().GetStat(Stat.Damage));
-        //     }
-        // }
     }
 }
 

@@ -27,6 +27,7 @@ namespace UISystem.Inventories
             var player = GameObject.FindGameObjectWithTag("Player");
             playerEquipment = player.GetComponent<Equipment>();
             playerEquipment.equipmentUpdated += RedrawUI;
+            Debug.Log(playerEquipment.name);
         }
 
         private void Start() 

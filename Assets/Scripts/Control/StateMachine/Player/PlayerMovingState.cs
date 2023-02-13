@@ -5,7 +5,7 @@ namespace RPG.Control.PlayerController
 {
     public class PlayerMovingState : PlayerBaseState
     {
-        private readonly int WalkForwardHash = Animator.StringToHash("Run_Forward");
+        private readonly int MoveHash = Animator.StringToHash("Run_Forward");
 
         private const float AnimatorDampTime = 0.1f;
         private const float CrossFadeInFixedTime = 0.1f;
@@ -35,13 +35,17 @@ namespace RPG.Control.PlayerController
         {
             stateMachine.Agent.isStopped = false;
             stateMachine.InteractionHandler.MoveEvent += NewLocation;
-            stateMachine.Animator.CrossFadeInFixedTime(WalkForwardHash, CrossFadeInFixedTime);
+            stateMachine.Animator.CrossFadeInFixedTime(MoveHash, CrossFadeInFixedTime);
             NewLocation(destination);
             
             stateMachine.isInMovingState = true;
         }
         public override void Tick(float deltaTime)
         {
+            if (target != null && stateMachine.Agent.destination != target.position)
+            {
+                stateMachine.Agent.destination = target.position;
+            }
             if(range == 0f)
             {
                 if(stateMachine.transform.position == stateMachine.Agent.destination)
