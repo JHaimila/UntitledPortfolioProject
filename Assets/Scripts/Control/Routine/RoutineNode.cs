@@ -13,6 +13,7 @@ namespace RPG.Control.Routine
         [SerializeField] private Transform point;
         [SerializeField] private GameObject interactObject;
         [SerializeField] private List<RoutineNodeAnimation> nodeAnimations;
+        private int animationIndex = 0;
 #if UNITY_EDITOR
         private Mesh indicator;
 #endif
@@ -28,6 +29,23 @@ namespace RPG.Control.Routine
         public List<RoutineNodeAnimation> GetAnimations()
         {
             return nodeAnimations;
+        }
+
+        public RoutineNodeAnimation GetCurrentAnimation()
+        {
+            return nodeAnimations[animationIndex];
+        }
+
+        public bool HasNext()
+        {
+            return animationIndex + 1 < nodeAnimations.Count;
+        }
+        public void NextAnimation()
+        {
+            if (animationIndex + 1 < nodeAnimations.Count)
+            {
+                animationIndex++;
+            }
         }
 
         public bool HasAnimations()

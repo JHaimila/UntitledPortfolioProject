@@ -67,14 +67,16 @@ namespace RPG.Control.NPCController
                         stateMachine.WeaponHandler.EquipWeapon(animation.interactItem);
                     }
 
+                    float waitTime = animation.waitSeconds;
                     if (animation.nodeAnimation != null)
                     {
                         stateMachine.Animator.runtimeAnimatorController = animation.nodeAnimation;
                         stateMachine.Animator.CrossFadeInFixedTime(RoutineHash, CrossFadeInFixedTime);
                     }
-                    
                     animation.triggers?.Invoke();
-                    yield return new WaitForSeconds(animation.waitSeconds);
+                    
+                    
+                    yield return new WaitForSeconds(waitTime);
                 }
             }
 
