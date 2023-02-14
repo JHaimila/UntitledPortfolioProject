@@ -958,6 +958,7 @@ Transform:
   - {fileID: 2643449643016796466}
   - {fileID: 2644053962704987302}
   - {fileID: 2643961324937566198}
+  - {fileID: 2823765554039038887}
   m_Father: {fileID: 2643669390471619142}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2557,3 +2558,83 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &2358407026725766220
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2643980843328729394}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0020017624
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.018985199
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.010143558
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99682057
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0796786
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2516edcba6fec964787b5492b55edbd1, type: 2}
+    - target: {fileID: 919132149155446097, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_Chr_Attach_Criminal_Male_Beard_01 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 42ab34e7e6e2cbf4596c57a144ae83e5, type: 3}
+--- !u!4 &2823765554039038887 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 42ab34e7e6e2cbf4596c57a144ae83e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2358407026725766220}
+  m_PrefabAsset: {fileID: 0}

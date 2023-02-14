@@ -76,6 +76,20 @@ namespace RPG.Quests
             completedObjs.Add(objective);
         }
 
+        public Objective GetCurrentObjective()
+        {
+            Objective returnObjective = null;
+            foreach (ObjectiveStatus objectiveStatus in _objectiveStatuses)
+            {
+                if (!completedObjs.Contains(objectiveStatus.GetObjective().GetReference()))
+                {
+                    returnObjective = objectiveStatus.GetObjective();
+                    break;
+                }
+            }
+
+            return returnObjective;
+        }
         public object CaptureState()
         {
             QuestStatusRecord state = new QuestStatusRecord();

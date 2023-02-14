@@ -33,7 +33,8 @@ namespace RPG.Control
         {
             StartCoroutine(enumerator);
         }
-        public void EndAllCorotines()
+
+        public void StopCorotine()
         {
             StopAllCoroutines();
         }

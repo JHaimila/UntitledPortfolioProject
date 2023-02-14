@@ -6,29 +6,28 @@ namespace RPG.Control.PlayerController
     public class PlayerMovingState : PlayerBaseState
     {
         private readonly int MoveHash = Animator.StringToHash("Run_Forward");
-
-        private const float AnimatorDampTime = 0.1f;
+        
         private const float CrossFadeInFixedTime = 0.1f;
 
-        Vector3 destination;
-        Transform target;
-        float range = 0;
+        private Vector3 destination;
+        private Transform target;
+        private float range = 0;
 
 
         public PlayerMovingState(PlayerStateMachine stateMachine, Transform target, float range) : base(stateMachine)
         {
             this.target = target;
-            this.destination = target.position;
+            destination = target.position;
             this.range = range;
         }
         public PlayerMovingState(PlayerStateMachine stateMachine, Transform target) : base(stateMachine)
         {
             this.target = target;
-            this.destination = target.position;
+            destination = target.position;
         }
         public PlayerMovingState(PlayerStateMachine stateMachine, Vector3 desitnation) : base(stateMachine)
         {
-            this.destination = desitnation;
+            destination = desitnation;
         }
 
         public override void Enter()

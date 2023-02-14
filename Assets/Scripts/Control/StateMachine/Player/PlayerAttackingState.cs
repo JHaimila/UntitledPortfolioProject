@@ -7,12 +7,8 @@ namespace RPG.Control.PlayerController
     {
         private Transform target;
 
-        // private readonly int AttackHash = Animator.StringToHash();
-
         private const float AnimatorDampTime = 0.1f;
         private const float CrossFadeInFixedTime = 0.1f;
-
-        float previousFrameTime;
 
         public PlayerAttackingState(PlayerStateMachine stateMachine, Transform target) : base(stateMachine)
         {
@@ -33,34 +29,15 @@ namespace RPG.Control.PlayerController
         public override void Tick(float deltaTime)
         {
             stateMachine.transform.LookAt(target, Vector3.up);
-            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
-            if(normalizedTime < 0.8f)
+            float normalizedTime = NormalizedAnimationTime(stateMachine.Animator, "Attack");
+            if(normalizedTime >= 0.8f)
             {
-                // Do Attack stuff when you set that up
-
-                // if(normalizedTime > attack.ForceTime)
-                // {
-                //     TryApplyForce();
-                // }
-                // if(stateMachine.InputReader.IsAttacking)
-                // {
-                //     TryComboAttack(normalizedTime);
-                // }
-            }
-            else
-            {
-                // Will have to change at some point
-                // if(!stateMachine.WeaponHandler.currentWeapon.HasProjectile())
-                // {
-                //     _target.transform.GetComponent<IAttackable>().OnAttack(stateMachine.WeaponHandler.currentWeapon.Damage);
-                // }
                 stateMachine.SwitchState(new PlayerIdlingState(stateMachine));
             }
-            previousFrameTime = normalizedTime;
         }
         public override void Exit()
         {
-            
+            stateMachine.Agent.isStopped = false;
         }
         
     }

@@ -37,14 +37,6 @@ namespace RPG.Quests
             }
         }
 
-        private void CheckAddedItem(InventoryItem item)
-        {
-            if (HasQuest(item.GetQuest()))
-            {
-                CompleteObjective( item.GetQuest(),item.GetObjective());
-            }
-        }
-
         public void AddQuest(Quest quest)
         {
             if(HasQuest(quest) && !quest.IsRepeatable()){return;}
@@ -55,8 +47,11 @@ namespace RPG.Quests
                 return;
             }
 
-            statuses.Add(new QuestStatus(quest));
+            QuestStatus newQuest = new QuestStatus(quest);
+            statuses.Add(newQuest);
+            _trackedQuest = newQuest;
             OnUpdate?.Invoke();
+            
         }
 
         public void CompleteObjective(Quest quest, string objective)
@@ -67,6 +62,11 @@ namespace RPG.Quests
             if(status.IsCompleted()){return;}
             status.CompleteObjective(objective);
             OnUpdate?.Invoke();
+        }
+
+        public bool HasQuest()
+        {
+            return statuses.Count > 0;
         }
         public bool HasQuest(Quest quest)
         {
@@ -84,15 +84,7 @@ namespace RPG.Quests
             return null;
         }
 
-        public object CaptureState()
-        {
-            List<object> state = new List<object>();
-            foreach(QuestStatus status in statuses)
-            {
-                state.Add(status.CaptureState());
-            }
-            return state;
-        }
+        
 
         public void TrackQuest(Quest trackQuest)
         {
@@ -109,6 +101,15 @@ namespace RPG.Quests
                 }
             }
         }
+        public object CaptureState()
+        {
+            List<object> state = new List<object>();
+            foreach(QuestStatus status in statuses)
+            {
+                state.Add(status.CaptureState());
+            }
+            return state;
+        }
         public void RestoreState(object state)
         {
             List<object> stateList = state as List<object>;
@@ -119,6 +120,9 @@ namespace RPG.Quests
             {
                 statuses.Add(new QuestStatus(objectState));
             }
+
+            _trackedQuest = statuses[0];
+            OnUpdate?.Invoke();
         }
 
         public bool? Evaluate(EPredicate predicate, List<string> parameters)
@@ -142,6 +146,32 @@ namespace RPG.Quests
             }
             
             return null;
+        }
+
+        public string GetCurrentObjective()
+        {
+            Objective currentObjective = _trackedQuest.GetCurrentObjective();
+            if (currentObjective != null)
+            {
+                return currentObjective.GetDescription();
+            }
+            return null;
+        }
+
+        public string GetCurrentQuestName()
+        {
+            if (_trackedQuest == null)
+            {
+                return null;
+            }
+            return _trackedQuest.GetQuest().GetTitle();
+        }
+        private void CheckAddedItem(InventoryItem item)
+        {
+            if (HasQuest(item.GetQuest()))
+            {
+                CompleteObjective( item.GetQuest(),item.GetObjective());
+            }
         }
     }
 }

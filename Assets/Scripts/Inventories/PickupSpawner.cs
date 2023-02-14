@@ -43,6 +43,7 @@ namespace InventorySystem.Inventories
 
         private void SpawnPickup()
         {
+            if (item == null) {return;}
             var spawnedPickup = item.SpawnPickup(transform.position, number);
             spawnedPickup.transform.SetParent(transform);
         }

@@ -64,43 +64,13 @@ namespace RPG.Control.NPCController
             }
             
         }
-
-        private void RoutinePauseChanged()
-        {
-            if (StateHandler.GetCurrentBehaviour() == BehaviourState.Neutral)
-            {
-                ChangeState();
-            }
-        }
-        private void OnDisable() 
-        {
-            StateHandler.OnBehaviourChange -= ChangeState;
-            Health.DeathEvent -= HandleDeath;
-            RoutineHandler.OnPauseChanged -= RoutinePauseChanged;
-        }
-
-        private void HandleRevive()
-        {
-            Health.enabled = true;
-            Agent.enabled = true;
-            GetComponent<CapsuleCollider>().enabled = true;
-            Sight.enabled = true;
-        }
-        public void TriggerAggro()
-        {
-            WeaponHandler.SetTarget(Target.GetComponent<Health>());
-            StateHandler.Check(RPG.Control.Action.Attacked);
-        }
-        private void HandleDeath()
-        {
-            SwitchState(new NPCDeathState(this));
-        }
+        
         public void AggroNearByEnemies()
         {
             RaycastHit[] hits = Physics.SphereCastAll(transform.position, aggroRadius, Vector3.up, 0, agroLayer);
             foreach(RaycastHit enemyHit in hits)
             {
-                if (enemyHit.transform.TryGetComponent<StateHandler>(out StateHandler nearByEnemy))
+                if (enemyHit.transform.TryGetComponent(out StateHandler nearByEnemy))
                 {
                     nearByEnemy.Check(Action.Attacked);
                 }
@@ -192,6 +162,32 @@ namespace RPG.Control.NPCController
             {
                 SwitchState(new NPCIdlingState(this));
             }
+        }
+        
+        private void RoutinePauseChanged()
+        {
+            if (StateHandler.GetCurrentBehaviour() == BehaviourState.Neutral)
+            {
+                ChangeState();
+            }
+        }
+        private void OnDisable() 
+        {
+            StateHandler.OnBehaviourChange -= ChangeState;
+            Health.DeathEvent -= HandleDeath;
+            RoutineHandler.OnPauseChanged -= RoutinePauseChanged;
+        }
+
+        private void HandleRevive()
+        {
+            Health.enabled = true;
+            Agent.enabled = true;
+            GetComponent<CapsuleCollider>().enabled = true;
+            Sight.enabled = true;
+        }
+        private void HandleDeath()
+        {
+            SwitchState(new NPCDeathState(this));
         }
     }
 }

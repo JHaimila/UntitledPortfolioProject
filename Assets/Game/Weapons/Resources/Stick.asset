@@ -15,9 +15,11 @@ MonoBehaviour:
   itemID: bcc89ce2-372f-4c8b-925c-325e16dc60a7
   displayName: Stick
   description: Just a stick
-  icon: {fileID: 0}
-  pickup: {fileID: 0}
+  icon: {fileID: 21300000, guid: 29ca2b91ca14ac446b491a7917104d8f, type: 3}
+  pickup: {fileID: 8450779169784231210, guid: 536c10535cb05b349bfddae47f8f4e70, type: 3}
   stackable: 0
+  forQuest: {fileID: 0}
+  forObjective: 
   allowedEquipLocation: 5
   equippedPrefab: {fileID: 2825915541993362211, guid: 4c560adf11c04414ca219f45c2bcc003,
     type: 3}

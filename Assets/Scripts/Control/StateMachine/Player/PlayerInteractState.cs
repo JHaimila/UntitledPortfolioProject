@@ -5,10 +5,10 @@ namespace RPG.Control.PlayerController
 {
     public class PlayerInteractState : PlayerBaseState
     {
-        IInteractable interactable;
+        private IInteractable interactable;
         public PlayerInteractState(PlayerStateMachine stateMachine, IInteractable interact) : base(stateMachine)
         {
-            this.interactable = interact;
+            interactable = interact;
         }
 
         public override void Enter()
@@ -17,14 +17,8 @@ namespace RPG.Control.PlayerController
             interactable.OnInteract();
             stateMachine.SwitchState(new PlayerIdlingState(stateMachine));
         }
-        public override void Tick(float deltaTime)
-        {
-            
-        }
-        public override void Exit()
-        {
-            
-        }
+        public override void Tick(float deltaTime){}
+        public override void Exit(){}
 
         
     }

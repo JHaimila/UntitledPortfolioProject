@@ -43,7 +43,7 @@ namespace RPG.Control.NPCController
         public override void Exit()
         {
             stateMachine.Agent.updateRotation = true;
-            stateMachine.EndAllCorotines();
+            stateMachine.StopCorotine();
         }
         private IEnumerator PerformRoutine()
         {

@@ -10,7 +10,7 @@ namespace RPG.Control
         public abstract void Exit();
 
         // Gets the normalized time left in an animation. Handles inbetween animations states
-        protected float GetNormalizedTime(Animator animator, string tag)
+        protected float NormalizedAnimationTime(Animator animator, string tag)
         {
             //Unity animator can have you inbetween states. So you need to check the current one and the next one as well. 
             AnimatorStateInfo currentInfo = animator.GetCurrentAnimatorStateInfo(0);
@@ -39,9 +39,6 @@ namespace RPG.Control
         public void SetYRotation(NavMeshAgent agent, Transform target, float deltaTime, float rotationSpeed)
         {
             agent.isStopped = false;
-            // Vector3 direction = (target.position - agent.transform.position).normalized;
-            // Quaternion lookRotation = Quaternion.LookRotation(new Vector3(target.rotation.x, target.rotation.y, target.rotation.z));
-            // agent.transform.rotation = Quaternion.Slerp(agent.transform.rotation, lookRotation, deltaTime * rotationSpeed);
             agent.transform.rotation = Quaternion.Euler(agent.transform.localEulerAngles.x, target.localEulerAngles.y, agent.transform.localEulerAngles.z);
         }
     }

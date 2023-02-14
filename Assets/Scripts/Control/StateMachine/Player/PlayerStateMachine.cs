@@ -46,24 +46,10 @@ namespace RPG.Control.PlayerController
                 equipment.equipmentUpdated += UpdateWeapon;
             }
         }
-        private void UpdateWeapon()
-        {
-            Weapon equipWeapon = equipment.GetItemInSlot(EquipLocation.Weapon) as Weapon;
-            if(equipWeapon == null)
-            {
-                WeaponHandler.EquipWeapon(WeaponHandler.defaultWeapon);
-                return;
-            }
-            WeaponHandler.EquipWeapon(equipWeapon);
-        }
-        
-
         private void Start() 
         {
             MainCamera = Camera.main;
         }
-
-        
 
         private void OnDisable() 
         {
@@ -100,12 +86,12 @@ namespace RPG.Control.PlayerController
         }
         public void AtDestination(Transform target)
         {
-            if(target.TryGetComponent<IInteractable>(out IInteractable interact))
+            if(target.TryGetComponent(out IInteractable interact))
             {
                 HandleInteraction(target);
                 return;
             }
-            if(target.TryGetComponent<IAttackable>(out IAttackable attackable))
+            if(target.TryGetComponent(out IAttackable attackable))
             {
                 HandleAttack(target);
                 return;
@@ -114,7 +100,7 @@ namespace RPG.Control.PlayerController
         }
         public void HandleInteraction(Transform target)
         {
-            if(!target.TryGetComponent<IInteractable>(out IInteractable interact)){return;}
+            if(!target.TryGetComponent(out IInteractable interact)){return;}
             WeaponHandler.ToggleMeleeAttackExit();
             if(Vector3.Distance(transform.position, target.position) > interact.GetInteractRange())
             {
@@ -127,7 +113,7 @@ namespace RPG.Control.PlayerController
         }
         public void HandleAttack(Transform target)
         {
-            if(!target.TryGetComponent<Health>(out Health targetHealth)){return;}
+            if(!target.TryGetComponent(out Health targetHealth)){return;}
             if(!targetHealth.Attackable()){return;}
 
             WeaponHandler.SetTarget(targetHealth);
@@ -156,11 +142,7 @@ namespace RPG.Control.PlayerController
             // Agent.isStopped = false;
             Agent.destination = transform.position;
         }
-        private void HandleDeath()
-        {
-            SwitchState(new PlayerDeathState(this));
-        }
-        
+
         public override object CaptureState()
         {
             return new SerializableVector3(transform.position);
@@ -172,7 +154,20 @@ namespace RPG.Control.PlayerController
             transform.position = savedPos.ToVector();
             Agent.Warp(transform.position);
         }
-
+        private void HandleDeath()
+        {
+            SwitchState(new PlayerDeathState(this));
+        }
+        private void UpdateWeapon()
+        {
+            Weapon equipWeapon = equipment.GetItemInSlot(EquipLocation.Weapon) as Weapon;
+            if(equipWeapon == null)
+            {
+                WeaponHandler.EquipWeapon(WeaponHandler.defaultWeapon);
+                return;
+            }
+            WeaponHandler.EquipWeapon(equipWeapon);
+        }
         
 
         #if UNITY_EDITOR

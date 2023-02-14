@@ -25,7 +25,7 @@ namespace RPG.Control.NPCController
         public override void Tick(float deltaTime)
         {
             stateMachine.transform.LookAt(stateMachine.Target.transform, Vector3.up);
-            float normalizedTime = GetNormalizedTime(stateMachine.Animator, "Attack");
+            float normalizedTime = NormalizedAnimationTime(stateMachine.Animator, "Attack");
             if(normalizedTime > 0.8f)
             {
                 stateMachine.ChangeState();
