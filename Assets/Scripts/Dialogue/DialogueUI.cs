@@ -48,7 +48,6 @@ namespace RPG.UI
             
             if(_dialogueController.IsChoosing())
             {
-                Debug.Log("Is Hcoosing");
                 _nextButton.gameObject.SetActive(false);
 
                 foreach(DialogueNode choice in _dialogueController.GetChoices())

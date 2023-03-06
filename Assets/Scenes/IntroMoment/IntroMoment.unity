@@ -1868,8 +1868,8 @@ MonoBehaviour:
   point: {fileID: 0}
   interactObject: {fileID: 0}
   nodeAnimations:
-  - nodeAnimation: {fileID: 22100000, guid: c8bd705dcaa877040ae9c0d0f73da596, type: 2}
-    waitSeconds: 1
+  - nodeAnimation: {fileID: 0}
+    waitSeconds: 4
     triggers:
       m_PersistentCalls:
         m_Calls: []
@@ -6042,19 +6042,7 @@ MonoBehaviour:
     waitSeconds: 3
     triggers:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     interactItem: {fileID: 0}
 --- !u!1 &2141381709
 GameObject:
@@ -6108,19 +6096,19 @@ MonoBehaviour:
     triggers:
       m_PersistentCalls:
         m_Calls: []
-    interactItem: {fileID: 11400000, guid: 12d530b6a6527194f959589060c3aeca, type: 2}
+    interactItem: {fileID: 0}
   - nodeAnimation: {fileID: 22100000, guid: 440f5c449ea38f743b77ee54f2e119f0, type: 2}
     waitSeconds: 3
     triggers:
       m_PersistentCalls:
         m_Calls: []
-    interactItem: {fileID: 11400000, guid: f98841964bb42374ca2f1d5ad958cef2, type: 2}
+    interactItem: {fileID: 0}
   - nodeAnimation: {fileID: 22100000, guid: 0d4afd9f8a309944c89bf97c5cbd01eb, type: 2}
     waitSeconds: 1
     triggers:
       m_PersistentCalls:
         m_Calls: []
-    interactItem: {fileID: 11400000, guid: 12d530b6a6527194f959589060c3aeca, type: 2}
+    interactItem: {fileID: 0}
 --- !u!1 &398869960401911337
 GameObject:
   m_ObjectHideFlags: 0
